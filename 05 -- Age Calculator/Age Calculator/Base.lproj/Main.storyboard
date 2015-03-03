@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dmN-2d-Uhl">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1m-FH-iNb">
+                                <rect key="frame" x="238" y="113" width="122" height="26"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Users Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSy-fL-HXZ">
+                                <rect key="frame" x="233" y="230" width="134" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Users Birthday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoN-66-6jc">
+                                <rect key="frame" x="231" y="154" width="139" height="26"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAJ-ui-3VG">
+                                <rect key="frame" x="230" y="363" width="140" height="30"/>
+                                <color key="backgroundColor" red="0.90935560940000004" green="0.93459676430000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="u0G-EM-uiy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Calculate Age">
+                                    <color key="titleColor" red="0.52156862745098043" green="0.46666666666666667" blue="0.7803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculateAge:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iBx-Q6-6wh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MI7-rn-igz">
+                                <rect key="frame" x="230" y="316" width="140" height="30"/>
+                                <color key="backgroundColor" red="0.90935560940000004" green="0.93459676430000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="gTL-gh-eDT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Select Birthdate">
+                                    <color key="titleColor" red="0.52156862745098043" green="0.46666666666666667" blue="0.7803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="re8-S1-8XF" kind="show" identifier="ShowBirthdateDatePickerSegue" id="86j-qz-0tR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.59080406686300613" green="0.5526705773815016" blue="0.82512517265193375" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="x1m-FH-iNb" secondAttribute="centerX" constant="1" id="3ph-eJ-EER"/>
+                            <constraint firstItem="jAJ-ui-3VG" firstAttribute="top" secondItem="MI7-rn-igz" secondAttribute="bottom" constant="17" id="Aoa-PW-qkG"/>
+                            <constraint firstItem="jAJ-ui-3VG" firstAttribute="top" secondItem="TSy-fL-HXZ" secondAttribute="bottom" constant="85" id="DEz-5g-pDn"/>
+                            <constraint firstItem="TSy-fL-HXZ" firstAttribute="centerX" secondItem="PoN-66-6jc" secondAttribute="centerX" id="JtS-LG-6cA"/>
+                            <constraint firstItem="jAJ-ui-3VG" firstAttribute="centerY" secondItem="MI7-rn-igz" secondAttribute="centerY" id="Xod-67-MJH"/>
+                            <constraint firstItem="x1m-FH-iNb" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="49" id="ZOS-3a-u9i"/>
+                            <constraint firstItem="TSy-fL-HXZ" firstAttribute="top" secondItem="PoN-66-6jc" secondAttribute="bottom" constant="50" id="aGA-fZ-rdc"/>
+                            <constraint firstItem="PoN-66-6jc" firstAttribute="centerX" secondItem="x1m-FH-iNb" secondAttribute="centerX" constant="1" id="ay4-bM-H7H"/>
+                            <constraint firstItem="jAJ-ui-3VG" firstAttribute="centerX" secondItem="MI7-rn-igz" secondAttribute="centerX" id="eHT-tC-1Wq"/>
+                            <constraint firstItem="MI7-rn-igz" firstAttribute="trailing" secondItem="TSy-fL-HXZ" secondAttribute="trailing" constant="-92" id="lfE-9t-qQ8"/>
+                            <constraint firstItem="MI7-rn-igz" firstAttribute="centerX" secondItem="TSy-fL-HXZ" secondAttribute="centerX" id="lse-wx-nqG"/>
+                            <constraint firstItem="PoN-66-6jc" firstAttribute="top" secondItem="x1m-FH-iNb" secondAttribute="bottom" constant="15" id="olj-VP-wAq"/>
+                            <constraint firstItem="MI7-rn-igz" firstAttribute="top" secondItem="TSy-fL-HXZ" secondAttribute="bottom" constant="50" id="ssR-2Y-XZr"/>
+                            <constraint firstItem="jAJ-ui-3VG" firstAttribute="leading" secondItem="TSy-fL-HXZ" secondAttribute="leading" constant="98" id="tzd-GF-3wj"/>
+                            <constraint firstItem="MI7-rn-igz" firstAttribute="top" secondItem="TSy-fL-HXZ" secondAttribute="bottom" constant="85" id="yrf-ls-g8Z"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="lfE-9t-qQ8"/>
+                                <exclude reference="yrf-ls-g8Z"/>
+                                <exclude reference="DEz-5g-pDn"/>
+                                <exclude reference="Xod-67-MJH"/>
+                                <exclude reference="tzd-GF-3wj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="JdV-S8-IVT"/>
+                    <connections>
+                        <outlet property="currentDateLabel" destination="x1m-FH-iNb" id="cgt-OC-e6A"/>
+                        <outlet property="usersAgeLabel" destination="TSy-fL-HXZ" id="32n-S0-t79"/>
+                        <outlet property="usersBirthdayLabel" destination="PoN-66-6jc" id="10R-xr-eaR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1392" y="464"/>
+        </scene>
+        <!--Birthday Picker View Controller-->
+        <scene sceneID="drd-GP-oio">
+            <objects>
+                <viewController id="re8-S1-8XF" customClass="BirthdayPickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DIH-By-l6H"/>
+                        <viewControllerLayoutGuide type="bottom" id="NnX-dC-JLt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bDK-Zc-EKe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hix-7t-ca7">
+                                <rect key="frame" x="0.0" y="219" width="600" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="baq-aG-eoG"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="447013374.22166002">
+                                    <!--2015-03-02 18:22:54 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" red="0.60051661499999998" green="0.49864257400000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Hix-7t-ca7" secondAttribute="centerX" id="1Kh-Yb-Iym"/>
+                            <constraint firstAttribute="centerY" secondItem="Hix-7t-ca7" secondAttribute="centerY" id="vau-oY-WcR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Hix-7t-ca7" id="sMJ-XC-jxL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wPg-Ll-JG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2101" y="464"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="S7f-VX-dv4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dmN-2d-Uhl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zxA-Le-jp2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="LjT-HF-WBC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IU0-Ep-wed" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="634" y="464"/>
+        </scene>
+    </scenes>
+</document>
