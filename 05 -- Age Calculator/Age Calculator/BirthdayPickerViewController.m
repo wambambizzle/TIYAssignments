@@ -29,7 +29,7 @@
 
     [super viewWillDisappear:animated];
     
-    [self.delegate birthdayDateWasChoosen:self.datePicker.date];
+    [self.delegate birthdayDateWasChoosen:self.datePicker.date]; // more info
     
     
 }

@@ -100,12 +100,14 @@
     }
     else if (todayComponents.month == birthdayComponents.month)
     {
-        if (todayComponents.day < birthdayComponents.day) {
+        if (todayComponents.day < birthdayComponents.day)
+        {
             age = age -1;
         }
+        
     }
     
-    self.usersAgeLabel.text = [NSString stringWithFormat:@"%ld", (long)age];
+    self.usersAgeLabel.text = [NSString stringWithFormat:@"%ld years young", (long)age];
     
 }
 
@@ -113,8 +115,13 @@
 
 - (IBAction)calculateAge:(UIButton *)sender
 {
+    if (usersBirthDate)
+    {
+        [self findAge];
+        
+    }
     
-    [self findAge];
+   
     
 }
 
