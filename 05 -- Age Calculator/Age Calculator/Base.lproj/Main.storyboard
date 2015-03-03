@@ -17,25 +17,25 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1m-FH-iNb">
-                                <rect key="frame" x="238" y="113" width="122" height="26"/>
+                                <rect key="frame" x="238" y="153" width="122" height="26"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Users Birthday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoN-66-6jc">
+                                <rect key="frame" x="231" y="194" width="139" height="26"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Users Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSy-fL-HXZ">
-                                <rect key="frame" x="233" y="230" width="134" height="36"/>
+                                <rect key="frame" x="233" y="270" width="134" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Users Birthday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoN-66-6jc">
-                                <rect key="frame" x="231" y="154" width="139" height="26"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAJ-ui-3VG">
-                                <rect key="frame" x="230" y="363" width="140" height="30"/>
+                                <rect key="frame" x="230" y="402" width="140" height="30"/>
                                 <color key="backgroundColor" red="0.90935560940000004" green="0.93459676430000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="u0G-EM-uiy"/>
@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MI7-rn-igz">
-                                <rect key="frame" x="230" y="316" width="140" height="30"/>
+                                <rect key="frame" x="230" y="354" width="140" height="30"/>
                                 <color key="backgroundColor" red="0.90935560940000004" green="0.93459676430000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="gTL-gh-eDT"/>
@@ -67,17 +67,21 @@
                         </subviews>
                         <color key="backgroundColor" red="0.59080406686300613" green="0.5526705773815016" blue="0.82512517265193375" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="MI7-rn-igz" firstAttribute="top" secondItem="TSy-fL-HXZ" secondAttribute="bottom" constant="48" id="3ka-zi-Qaw"/>
                             <constraint firstAttribute="centerX" secondItem="x1m-FH-iNb" secondAttribute="centerX" constant="1" id="3ph-eJ-EER"/>
                             <constraint firstItem="jAJ-ui-3VG" firstAttribute="top" secondItem="MI7-rn-igz" secondAttribute="bottom" constant="17" id="Aoa-PW-qkG"/>
                             <constraint firstItem="jAJ-ui-3VG" firstAttribute="top" secondItem="TSy-fL-HXZ" secondAttribute="bottom" constant="85" id="DEz-5g-pDn"/>
+                            <constraint firstItem="TSy-fL-HXZ" firstAttribute="centerX" secondItem="MI7-rn-igz" secondAttribute="centerX" id="I5O-sg-miT"/>
                             <constraint firstItem="TSy-fL-HXZ" firstAttribute="centerX" secondItem="PoN-66-6jc" secondAttribute="centerX" id="JtS-LG-6cA"/>
                             <constraint firstItem="jAJ-ui-3VG" firstAttribute="centerY" secondItem="MI7-rn-igz" secondAttribute="centerY" id="Xod-67-MJH"/>
-                            <constraint firstItem="x1m-FH-iNb" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="49" id="ZOS-3a-u9i"/>
+                            <constraint firstItem="x1m-FH-iNb" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="89" id="ZOS-3a-u9i"/>
                             <constraint firstItem="TSy-fL-HXZ" firstAttribute="top" secondItem="PoN-66-6jc" secondAttribute="bottom" constant="50" id="aGA-fZ-rdc"/>
                             <constraint firstItem="PoN-66-6jc" firstAttribute="centerX" secondItem="x1m-FH-iNb" secondAttribute="centerX" constant="1" id="ay4-bM-H7H"/>
                             <constraint firstItem="jAJ-ui-3VG" firstAttribute="centerX" secondItem="MI7-rn-igz" secondAttribute="centerX" id="eHT-tC-1Wq"/>
+                            <constraint firstItem="jAJ-ui-3VG" firstAttribute="top" secondItem="MI7-rn-igz" secondAttribute="bottom" constant="18" id="kf4-Dj-AdH"/>
                             <constraint firstItem="MI7-rn-igz" firstAttribute="trailing" secondItem="TSy-fL-HXZ" secondAttribute="trailing" constant="-92" id="lfE-9t-qQ8"/>
                             <constraint firstItem="MI7-rn-igz" firstAttribute="centerX" secondItem="TSy-fL-HXZ" secondAttribute="centerX" id="lse-wx-nqG"/>
+                            <constraint firstItem="MI7-rn-igz" firstAttribute="centerX" secondItem="jAJ-ui-3VG" secondAttribute="centerX" id="nJE-8C-p9Z"/>
                             <constraint firstItem="PoN-66-6jc" firstAttribute="top" secondItem="x1m-FH-iNb" secondAttribute="bottom" constant="15" id="olj-VP-wAq"/>
                             <constraint firstItem="MI7-rn-igz" firstAttribute="top" secondItem="TSy-fL-HXZ" secondAttribute="bottom" constant="50" id="ssR-2Y-XZr"/>
                             <constraint firstItem="jAJ-ui-3VG" firstAttribute="leading" secondItem="TSy-fL-HXZ" secondAttribute="leading" constant="98" id="tzd-GF-3wj"/>
@@ -86,9 +90,13 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="lfE-9t-qQ8"/>
+                                <exclude reference="lse-wx-nqG"/>
+                                <exclude reference="ssR-2Y-XZr"/>
                                 <exclude reference="yrf-ls-g8Z"/>
+                                <exclude reference="Aoa-PW-qkG"/>
                                 <exclude reference="DEz-5g-pDn"/>
                                 <exclude reference="Xod-67-MJH"/>
+                                <exclude reference="eHT-tC-1Wq"/>
                                 <exclude reference="tzd-GF-3wj"/>
                             </mask>
                         </variation>

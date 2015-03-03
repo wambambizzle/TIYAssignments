@@ -30,7 +30,7 @@
     [super viewWillDisappear:animated];
     
     [self.delegate birthdayDateWasChoosen:self.datePicker.date]; // more info
-    
+    //^ viewctrler object calling a method on the delegate that returns the birthday choose from the date picker
     
 }
 

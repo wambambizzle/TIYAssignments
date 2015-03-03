@@ -11,7 +11,7 @@
 
 @interface BirthdayPickerViewController : UIViewController
 
-@property (strong, nonatomic) id<ViewControllerBdayPickerDelegate> delegate;
+@property (strong, nonatomic) id<ViewControllerBdayPickerDelegate> delegate; // create property to reference the ViewControllerBday Pickker delegate
 
 
 

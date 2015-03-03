@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol ViewControllerBdayPickerDelegate
+@protocol ViewControllerBdayPickerDelegate // names and call the protocol
 
 - (void) birthdayDateWasChoosen:(NSDate *) birthdayDate;
 
 @end
 
-@interface ViewController : UIViewController <ViewControllerBdayPickerDelegate>
+@interface ViewController : UIViewController <ViewControllerBdayPickerDelegate> // the protocols name and calling it
 
 
 @end

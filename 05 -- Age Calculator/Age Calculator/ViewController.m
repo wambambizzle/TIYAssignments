@@ -13,7 +13,7 @@
 @interface ViewController ()
 {
     
- NSDateFormatter *formatDate;
+ NSDateFormatter *formatDate; // class variables
  NSDate *usersBirthDate;
     
 }
@@ -69,7 +69,7 @@
     {
         BirthdayPickerViewController *bdayPickerVC = (BirthdayPickerViewController *)[segue destinationViewController];
         
-        bdayPickerVC.delegate = self; // more infoooooo !
+        bdayPickerVC.delegate = self; // assigning a pointer or memory location (object) of the self object to the bdaypicker.delegate 
     }
     
 }
@@ -82,6 +82,7 @@
     self.usersBirthdayLabel.text = [formatDate stringFromDate:birthdayDate];
     usersBirthDate = birthdayDate;
 }
+
 
 #pragma mark - Action Handlers
 
@@ -96,13 +97,13 @@
     
     if(todayComponents.month < birthdayComponents.month)
     {
-        age = age - 1;
+        age--;
     }
     else if (todayComponents.month == birthdayComponents.month)
     {
         if (todayComponents.day < birthdayComponents.day)
         {
-            age = age -1;
+            age--;
         }
         
     }
