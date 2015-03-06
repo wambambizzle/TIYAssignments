@@ -19,6 +19,8 @@
 -(IBAction)operandTapped:(UIButton *)sender;
 
 -(IBAction)allClearButton:(UIButton *)sender;
+-(IBAction)decimalPointButton:(UIButton *)sender;
+-(IBAction)percentConvertButton:(UIButton *)sender;
 
 -(IBAction)additionTapped:(UIButton *)sender;
 -(IBAction)subtractionTapped:(UIButton *)sender;
@@ -97,25 +99,25 @@
     if (brain.operatorType == OperatorTypeAddition)
     {
         float additionAnswer = brain.operand1 + brain.operand2;
-        self.displayLabel.text = [NSString stringWithFormat:@"%.0f", additionAnswer];
+        self.displayLabel.text = [NSString stringWithFormat:@"%.1f", additionAnswer];
     }
     
     else if (brain.operatorType == OperatorTypeSubtraction)
     {
         float subtractionAnswer = brain.operand1 - brain.operand2;
-        self.displayLabel.text = [NSString stringWithFormat:@"%.0f", subtractionAnswer];
+        self.displayLabel.text = [NSString stringWithFormat:@"%.1f", subtractionAnswer];
     }
     
     else if (brain.operatorType == OperatorTypeMultiplication)
     {
         float multiplicationAnswer = brain.operand1 * brain.operand2;
-        self.displayLabel.text = [NSString stringWithFormat:@"%.0f", multiplicationAnswer];
+        self.displayLabel.text = [NSString stringWithFormat:@"%.1f", multiplicationAnswer];
     }
 
     else if (brain.operatorType == OperatorTypeDivision)
     {
         float divisionAnswer = brain.operand1 / brain.operand2;
-        self.displayLabel.text = [NSString stringWithFormat:@"%.0f", divisionAnswer];
+        self.displayLabel.text = [NSString stringWithFormat:@"%.1f", divisionAnswer];
     }
     
 }
@@ -126,13 +128,46 @@
 
    {
         self.displayLabel.text = @"0";
-        brain = Nil;
+        brain = nil;
 
-    }
+   }
     
     
 }
 
+-(IBAction)decimalPointButton:(UIButton *)sender
+{
+    if (!brain)
+    {
+        brain =[[CalculatorBrain alloc] init];
+        brain.operand1String = [@"0." mutableCopy];
+        self.displayLabel.text = brain.operand1String;
+        
+    }
+    else if (brain.operatorType == OperatorTypeNone)
+    {
+        [brain.operand1String appendString:@"."];
+        self.displayLabel.text = brain.operand1String;
+    }
+    else if ([brain.operand2String isEqualToString:@""])
+    {
+        brain.operand2String = [@"0." mutableCopy];
+        self.displayLabel.text = brain.operand2String;
+    }
+    else if (brain.operand2String)
+    {
+       [brain.operand2String appendString:@"."];
+        self.displayLabel.text = brain.operand2String;
+    }
+
+    
+
+}
+
+-(IBAction)percentConvertButton:(UIButton *)sender
+{
+    
+}
 
 
 
