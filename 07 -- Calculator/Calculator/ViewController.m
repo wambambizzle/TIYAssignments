@@ -20,7 +20,7 @@
 
 -(IBAction)allClearButton:(UIButton *)sender;
 -(IBAction)decimalPointButton:(UIButton *)sender;
--(IBAction)percentConvertButton:(UIButton *)sender;
+//-(IBAction)percentConvertButton:(UIButton *)sender;
 
 -(IBAction)additionTapped:(UIButton *)sender;
 -(IBAction)subtractionTapped:(UIButton *)sender;
@@ -164,11 +164,23 @@
 
 }
 
--(IBAction)percentConvertButton:(UIButton *)sender
-{
-    
-}
+// COME BACK LATER SUCKA! JNA - fix % calculations
 
+//-(IBAction)percentConvertButton:(UIButton *)sender
+//{
+//    
+//    if (brain)
+//    {
+//        
+//        if (![brain.operand1String isEqualToString:@""])
+//        {
+//            float opReturn = [brain.operand1String floatValue];
+//            self.displayLabel.text = [NSString stringWithFormat:@"%.2f ",opReturn * .01];
+//        }
+//        
+//    }
+//
+//}
 
 
 

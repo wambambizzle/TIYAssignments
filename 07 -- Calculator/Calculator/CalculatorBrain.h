@@ -27,4 +27,5 @@ typedef enum
 @property (assign) OperatorType operatorType;
 @property (assign) BOOL userIsTypingANumber;
 
+
 @end
