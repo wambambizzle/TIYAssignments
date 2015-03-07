@@ -8,7 +8,11 @@
 
 #import "CalculatorBrain.h"
 
+
 @implementation CalculatorBrain
+{
+    CalculatorBrain *brain;
+}
 
 - (instancetype) init
 {
@@ -25,5 +29,24 @@
     
     return self;
 }
+
+- (NSString *) addOperandDigit:(NSString *)digit
+{
+    NSString *rc;
+    if (self.operatorType == OperatorTypeNone)
+    {
+        [self.operand1String appendString:digit];
+        rc = self.operand1String;
+    }
+    else
+    {
+        [self.operand2String appendString:digit];
+        rc = self.operand2String;
+    }
+    return rc;
+}
+
+
+
 
 @end

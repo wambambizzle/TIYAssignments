@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ViewController.h"
 
 typedef enum
 {
@@ -26,6 +27,8 @@ typedef enum
 @property (assign) float operand2;
 @property (assign) OperatorType operatorType;
 @property (assign) BOOL userIsTypingANumber;
+
+- (NSString *) addOperandDigit:(NSString *)digit;
 
 
 @end

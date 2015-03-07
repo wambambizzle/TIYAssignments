@@ -34,34 +34,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.title = @"Calculator";
     self.displayLabel.text = @"0";
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 - (IBAction)operandTapped:(UIButton *)sender
 {
+    
     if (!brain)
     {
-         brain =[[CalculatorBrain alloc] init];
+        brain =[[CalculatorBrain alloc] init];
     }
-   
-    if (brain.operatorType == OperatorTypeNone)
-    {
-        [brain.operand1String appendString:sender.titleLabel.text];
         
-        self.displayLabel.text = brain.operand1String;
-    }
-    else
-    {
-        [brain.operand2String appendString:sender.titleLabel.text];
-        self.displayLabel.text = brain.operand2String;
-    }
-    
+    self.displayLabel.text = [brain addOperandDigit:sender.titleLabel.text];
+
 }
 
 #pragma mark - Actions Handlers 
