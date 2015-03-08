@@ -52,6 +52,7 @@
     }
         
     self.displayLabel.text = [brain addOperandDigit:sender.titleLabel.text];
+   
 
 }
 
@@ -74,56 +75,29 @@
 }
 
 -(IBAction)divisionTapped:(UIButton *)sender
-{
+{       
     brain.operatorType = OperatorTypeDivision;
 }
 
 
-
-
 -(IBAction)equalTapped:(UIButton *)sender
 {
-    
-    brain.operand1 = [brain.operand1String floatValue];
-    brain.operand2 = [brain.operand2String floatValue];
-    
-    if (brain.operatorType == OperatorTypeAddition)
-    {
-        float additionAnswer = brain.operand1 + brain.operand2;
-        self.displayLabel.text = [NSString stringWithFormat:@"%.1f", additionAnswer];
-    }
-    
-    else if (brain.operatorType == OperatorTypeSubtraction)
-    {
-        float subtractionAnswer = brain.operand1 - brain.operand2;
-        self.displayLabel.text = [NSString stringWithFormat:@"%.1f", subtractionAnswer];
-    }
-    
-    else if (brain.operatorType == OperatorTypeMultiplication)
-    {
-        float multiplicationAnswer = brain.operand1 * brain.operand2;
-        self.displayLabel.text = [NSString stringWithFormat:@"%.1f", multiplicationAnswer];
-    }
-
-    else if (brain.operatorType == OperatorTypeDivision)
-    {
-        float divisionAnswer = brain.operand1 / brain.operand2;
-        self.displayLabel.text = [NSString stringWithFormat:@"%.1f", divisionAnswer];
-    }
+    float returnValue = [brain preformCalculation];
+    self.displayLabel.text = [NSString stringWithFormat:@"%.2f", returnValue];
     
 }
 
 -(IBAction)allClearButton:(UIButton *)sender
 {
+    
  if (brain)
 
    {
-        self.displayLabel.text = @"0";
-        brain = nil;
-
+       brain = nil;
+       self.displayLabel.text = @"0";
+      
    }
-    
-    
+        
 }
 
 -(IBAction)decimalPointButton:(UIButton *)sender

@@ -29,6 +29,9 @@ typedef enum
 @property (assign) BOOL userIsTypingANumber;
 
 - (NSString *) addOperandDigit:(NSString *)digit;
+- (float) preformCalculation;
+
+//- (void) calcClearAll:(NSString *)clearAll;
 
 
 @end

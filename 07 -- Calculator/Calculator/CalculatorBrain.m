@@ -43,8 +43,51 @@
         [self.operand2String appendString:digit];
         rc = self.operand2String;
     }
+    
     return rc;
 }
+
+- (float) preformCalculation
+{
+    float returnValue;
+    switch (_operatorType)
+    {
+        
+        case OperatorTypeAddition:
+            self.operand1 = [self.operand1String floatValue];
+            self.operand2 = [self.operand2String floatValue];
+            returnValue = self.operand1 + self.operand2;
+            break;
+        case OperatorTypeSubtraction:
+            self.operand1 = [self.operand1String floatValue];
+            self.operand2 = [self.operand2String floatValue];
+            returnValue = self.operand1 - self.operand2;
+            break;
+        case OperatorTypeMultiplication:
+            self.operand1 = [self.operand1String floatValue];
+            self.operand2 = [self.operand2String floatValue];
+            returnValue = self.operand1 * self.operand2;
+            break;
+        case OperatorTypeDivision:
+            self.operand1 = [self.operand1String floatValue];
+            self.operand2 = [self.operand2String floatValue];
+            returnValue = self.operand1 / self.operand2;
+            break;
+            
+        default:
+            break;
+    }
+    return returnValue;
+
+}
+
+
+//- (void) calcClearAll:(NSString *)clearAll
+//{
+//   
+//        brain = nil;
+//    
+//}
 
 
 
