@@ -18,6 +18,7 @@ typedef enum
   OperatorTypeDivision
 } OperatorType;
 
+
 @interface CalculatorBrain : NSObject
 
 @property (strong, nonatomic) NSMutableString *operand1String;
@@ -27,11 +28,13 @@ typedef enum
 @property (assign) float operand2;
 @property (assign) OperatorType operatorType;
 @property (assign) BOOL userIsTypingANumber;
+//@property (assign) DecimalPointLocal decimalPointLocal;
 
 - (NSString *) addOperandDigit:(NSString *)digit;
 - (float) preformCalculation;
+-(NSString *) insertDecimalPoint;
 
-//- (void) calcClearAll:(NSString *)clearAll;
+
 
 
 @end

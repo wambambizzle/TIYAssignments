@@ -25,6 +25,7 @@
         _operand2 = 0.0f;
         _operatorType = OperatorTypeNone;
         _userIsTypingANumber = NO;
+//        _decimalPointLocal = DecimalPointLocalNoObjCreated;
     }
     
     return self;
@@ -81,13 +82,82 @@
 
 }
 
+- (NSString *) insertDecimalPoint
+{
+    NSString *rc;
 
-//- (void) calcClearAll:(NSString *)clearAll
-//{
-//   
-//        brain = nil;
+    if (self.operatorType == OperatorTypeNone)
+    {
+        if (![self.operand1String containsString:@"."])
+        {
+            [self.operand1String appendString:@"."];
+        }
+        
+        rc = self.operand1String;
+        
+    }
+    else if ([self.operand2String isEqualToString:@""])
+    {
+        self.operand2String = [@"0." mutableCopy];
+        rc = self.operand2String;
+        
+    }
+    else if (self.operand2String)
+    {
+        if (![self.operand2String containsString:@"."])
+        {
+            [self.operand2String appendString:@"."];
+        }
+        
+        rc = self.operand2String;
+        
+    }
+    else if (![self.operand1String containsString:@"."] || ![self.operand2String containsString:@"."])
+    {
+        
+    }
+    
+    return rc;
+    
+//    NSString *returnValue;
 //    
+//    switch (_decimalPointLocal)
+//    {
+//        case DecimalPointLocalNoObjCreated:
+//            self.operand1String = [@"0." mutableCopy];
+//            returnValue = self.operand1String;
+//            break;
+////        case DecimalPointLocalAlreadyExist:
+////            if (<#condition#>)
+////            {
+////                <#statements#>
+////            }
+////            break;
+//        case DecimalPointLocalOperandOne:
+//            if (_operatorType == OperatorTypeNone)
+//            {
+//              returnValue = [self.operand1String appendString:@"."];
+//            }
+//            break;
+//        case DecimalPointLocalOperandTwo:
+//            if (brain.operand2String)
+//            {
+//                [brain.operand2String appendString:@"."];
+//            }
+//            break;
+//            
+//        default:
+//            break;
+//    }
+//    
+//    return returnValue;
 //}
+
+
+
+
+       
+}
 
 
 

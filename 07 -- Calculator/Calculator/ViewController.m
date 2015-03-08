@@ -89,7 +89,7 @@
 
 -(IBAction)allClearButton:(UIButton *)sender
 {
-    
+
  if (brain)
 
    {
@@ -97,7 +97,7 @@
        self.displayLabel.text = @"0";
       
    }
-        
+    
 }
 
 -(IBAction)decimalPointButton:(UIButton *)sender
@@ -109,23 +109,11 @@
         self.displayLabel.text = brain.operand1String;
         
     }
-    else if (brain.operatorType == OperatorTypeNone)
+    else
     {
-        [brain.operand1String appendString:@"."];
-        self.displayLabel.text = brain.operand1String;
+        NSString *returnValue = [brain insertDecimalPoint];
+        self.displayLabel.text = returnValue;
     }
-    else if ([brain.operand2String isEqualToString:@""])
-    {
-        brain.operand2String = [@"0." mutableCopy];
-        self.displayLabel.text = brain.operand2String;
-    }
-    else if (brain.operand2String)
-    {
-       [brain.operand2String appendString:@"."];
-        self.displayLabel.text = brain.operand2String;
-    }
-
-    
 
 }
 
