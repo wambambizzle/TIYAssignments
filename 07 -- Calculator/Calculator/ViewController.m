@@ -93,7 +93,7 @@
     }
     else
     {
-        self.displayLabel.text = [NSString stringWithFormat:@"%.2f", returnValue];
+        self.displayLabel.text = [NSString stringWithFormat:@"%g", returnValue];
     }
     
 }
