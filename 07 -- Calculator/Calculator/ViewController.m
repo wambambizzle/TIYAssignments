@@ -20,7 +20,7 @@
 
 -(IBAction)allClearButton:(UIButton *)sender;
 -(IBAction)decimalPointButton:(UIButton *)sender;
-//-(IBAction)percentConvertButton:(UIButton *)sender;
+-(IBAction)percentConvertButton:(UIButton *)sender;
 
 -(IBAction)additionTapped:(UIButton *)sender;
 -(IBAction)subtractionTapped:(UIButton *)sender;
@@ -32,13 +32,16 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.title = @"Calculator";
     self.displayLabel.text = @"0";
+    
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     
 }
@@ -83,7 +86,15 @@
 -(IBAction)equalTapped:(UIButton *)sender
 {
     float returnValue = [brain preformCalculation];
-    self.displayLabel.text = [NSString stringWithFormat:@"%.2f", returnValue];
+    
+    if ((brain.operatorType == OperatorTypeDivision) && (brain.operand2 == 0))
+    {
+        self.displayLabel.text = @"Error";
+    }
+    else
+    {
+        self.displayLabel.text = [NSString stringWithFormat:@"%.2f", returnValue];
+    }
     
 }
 
@@ -119,9 +130,12 @@
 
 // COME BACK LATER SUCKA! JNA - fix % calculations
 
-//-(IBAction)percentConvertButton:(UIButton *)sender
-//{
-//    
+-(IBAction)percentConvertButton:(UIButton *)sender
+{
+    
+    NSString *percent = [brain percentConversion];
+    self.displayLabel.text = percent;
+    
 //    if (brain)
 //    {
 //        
@@ -132,8 +146,8 @@
 //        }
 //        
 //    }
-//
-//}
+
+}
 
 
 

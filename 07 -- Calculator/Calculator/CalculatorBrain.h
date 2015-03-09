@@ -28,11 +28,13 @@ typedef enum
 @property (assign) float operand2;
 @property (assign) OperatorType operatorType;
 @property (assign) BOOL userIsTypingANumber;
-//@property (assign) DecimalPointLocal decimalPointLocal;
 
 - (NSString *) addOperandDigit:(NSString *)digit;
+- (NSString *) insertDecimalPoint;
+
 - (float) preformCalculation;
--(NSString *) insertDecimalPoint;
+- (NSString *) percentConversion;
+
 
 
 

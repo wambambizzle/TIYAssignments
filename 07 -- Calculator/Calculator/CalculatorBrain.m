@@ -25,7 +25,7 @@
         _operand2 = 0.0f;
         _operatorType = OperatorTypeNone;
         _userIsTypingANumber = NO;
-//        _decimalPointLocal = DecimalPointLocalNoObjCreated;
+
     }
     
     return self;
@@ -73,6 +73,7 @@
             self.operand1 = [self.operand1String floatValue];
             self.operand2 = [self.operand2String floatValue];
             returnValue = self.operand1 / self.operand2;
+            
             break;
             
         default:
@@ -112,53 +113,22 @@
         rc = self.operand2String;
         
     }
-    else if (![self.operand1String containsString:@"."] || ![self.operand2String containsString:@"."])
-    {
-        
-    }
-    
+
     return rc;
-    
-//    NSString *returnValue;
-//    
-//    switch (_decimalPointLocal)
-//    {
-//        case DecimalPointLocalNoObjCreated:
-//            self.operand1String = [@"0." mutableCopy];
-//            returnValue = self.operand1String;
-//            break;
-////        case DecimalPointLocalAlreadyExist:
-////            if (<#condition#>)
-////            {
-////                <#statements#>
-////            }
-////            break;
-//        case DecimalPointLocalOperandOne:
-//            if (_operatorType == OperatorTypeNone)
-//            {
-//              returnValue = [self.operand1String appendString:@"."];
-//            }
-//            break;
-//        case DecimalPointLocalOperandTwo:
-//            if (brain.operand2String)
-//            {
-//                [brain.operand2String appendString:@"."];
-//            }
-//            break;
-//            
-//        default:
-//            break;
-//    }
-//    
-//    return returnValue;
-//}
-
-
-
-
        
 }
 
+- (NSString *) percentConversion
+{
+    NSString *rc;
+        if (![self.operand1String isEqualToString:@""])
+        {
+            float opReturn = [self.operand1String floatValue];
+           rc = [NSString stringWithFormat:@"%.2f ",opReturn * .01];
+            NSLog(@"holaaa");
+        }
+    return rc;
+}
 
 
 
