@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *agentNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *agentPasswordTextField;
@@ -116,6 +116,33 @@
         
         self.view.backgroundColor = accessDeniedBackgroundColor; 
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    __block BOOL rc = NO;
+    if (![textField.text isEqualToString:@""])
+    {
+        if (textField == self.agentNameTextField)
+        {
+            NSError *error = nil;
+            NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeAddress error:&error];
+            
+            [detector enumerateMatchesInString:textField.text  // or you can use this -> self.agentNameTextField.text
+                                       options:kNilOptions
+                                         range:NSMakeRange(0, [textField.text length])
+                                    usingBlock:
+             ^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop)
+             {
+                 rc = YES;
+             }];
+        }
+    }
+    if (rc)
+    {
+        [textField resignFirstResponder];
+    }
+    return rc;
 }
 
 @end

@@ -17,15 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Agent name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8O7-tP-wex" userLabel="Agent Name Text Field">
-                                <rect key="frame" x="60" y="74" width="480" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7cm-88-qFf" userLabel="Agent Password Text Field">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7cm-88-qFf" userLabel="Agent Password Text Field">
                                 <rect key="frame" x="60" y="114" width="480" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kh9-bI-dsS" id="9eb-uC-7xM"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good evening agent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6s-Cc-dbR" userLabel="Greeting Label">
                                 <rect key="frame" x="221" y="200" width="156" height="21"/>
@@ -65,6 +63,14 @@
                                     <action selector="authenticateAgent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="50W-XK-FtM"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Agent Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8O7-tP-wex" userLabel="Agent Name Text Field">
+                                <rect key="frame" x="60" y="72" width="480" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kh9-bI-dsS" id="5p2-35-iET"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -117,8 +123,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="6V1-5v-Evt"/>
                     <connections>
-                        <outlet property="agentNameTextField" destination="8O7-tP-wex" id="hpw-zZ-vuQ"/>
-                        <outlet property="agentPasswordTextField" destination="7cm-88-qFf" id="gUn-Mx-eZn"/>
+                        <outlet property="agentNameTextField" destination="8O7-tP-wex" id="9DU-qh-HrC"/>
+                        <outlet property="agentPasswordTextField" destination="7cm-88-qFf" id="oJ7-9a-Q9u"/>
                         <outlet property="greetingLabel" destination="k6s-Cc-dbR" id="SZd-4B-dfS"/>
                         <outlet property="missionBriefingTextView" destination="qZC-WU-mTE" id="5sh-Nh-czG"/>
                     </connections>

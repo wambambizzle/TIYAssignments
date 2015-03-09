@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>301BD488-F61D-430E-8935-B5739C1DBBAD</string>
+	<string>893506B2-E7E1-41D5-AAF2-A4AFB2D8A559</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Mission Briefing</string>
+	<string>Form Validator</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>8857142BA431033B1E2C809D422317A36461A458</key>
 		<string>https://www.github.com/wambambizzle/TIYAssignments.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>01 -- Mission Briefing/Mission Briefing.xcodeproj</string>
+	<string>Form Validator/Form Validator.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>8857142BA431033B1E2C809D422317A36461A458</key>
