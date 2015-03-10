@@ -116,16 +116,8 @@
     if (!brain)
     {
         brain =[[CalculatorBrain alloc] init];
-        brain.operand1String = [@"0." mutableCopy];
-        self.displayLabel.text = brain.operand1String;
-        
     }
-    else
-    {
-        NSString *returnValue = [brain insertDecimalPoint];
-        self.displayLabel.text = returnValue;
-    }
-
+    self.displayLabel.text = [brain insertDecimalPoint];
 }
 
 // COME BACK LATER SUCKA! JNA - fix % calculations
