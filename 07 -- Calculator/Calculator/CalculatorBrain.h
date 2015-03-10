@@ -34,6 +34,8 @@ typedef enum
 
 - (float) preformCalculation;
 - (NSString *) percentConversion;
+- (float) changeToPositiveOrNegative;
+
 
 
 

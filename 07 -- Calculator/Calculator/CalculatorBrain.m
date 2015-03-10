@@ -31,6 +31,12 @@
     return self;
 }
 
+- (void) stringToFloat
+{
+    self.operand1 = [self.operand1String floatValue];
+    self.operand2 = [self.operand2String floatValue];
+}
+
 - (NSString *) addOperandDigit:(NSString *)digit
 {
     NSString *rc;
@@ -53,27 +59,21 @@
     float returnValue;
     switch (_operatorType)
     {
-        
         case OperatorTypeAddition:
-            self.operand1 = [self.operand1String floatValue];
-            self.operand2 = [self.operand2String floatValue];
+            [self stringToFloat];
             returnValue = self.operand1 + self.operand2;
             break;
         case OperatorTypeSubtraction:
-            self.operand1 = [self.operand1String floatValue];
-            self.operand2 = [self.operand2String floatValue];
+            [self stringToFloat];
             returnValue = self.operand1 - self.operand2;
             break;
         case OperatorTypeMultiplication:
-            self.operand1 = [self.operand1String floatValue];
-            self.operand2 = [self.operand2String floatValue];
+            [self stringToFloat];
             returnValue = self.operand1 * self.operand2;
             break;
         case OperatorTypeDivision:
-            self.operand1 = [self.operand1String floatValue];
-            self.operand2 = [self.operand2String floatValue];
+            [self stringToFloat];
             returnValue = self.operand1 / self.operand2;
-            
             break;
             
         default:
@@ -91,7 +91,7 @@
     {
         if (![self.operand1String containsString:@"."])
         {
-            [self.operand1String appendString:@"."];
+            [self.operand1String appendString:@"0."];
         }
         
         rc = self.operand1String;
@@ -120,13 +120,47 @@
 
 - (NSString *) percentConversion
 {
-    NSString *rc;
-        if (![self.operand1String isEqualToString:@""])
+     NSString *rc;
+    
+    
+        if (self.operatorType == OperatorTypeNone)
         {
-            float opReturn = [self.operand1String floatValue];
-           rc = [NSString stringWithFormat:@"%.2f ",opReturn * .01];
+           [self stringToFloat];
+            float percentAnswer = self.operand1 * .01;
+            rc = [NSMutableString stringWithFormat:@"%g",percentAnswer];
+            self.operand1String = [rc copy];
             NSLog(@"holaaa");
         }
+        else if(self.operatorType != OperatorTypeNone)
+        {
+            [self stringToFloat];
+            float percentAnswer = self.operand2 * .01;
+            rc = [NSMutableString stringWithFormat:@"%g", percentAnswer];
+            self.operand2String = [rc copy];
+            NSLog(@"youre dumb");
+        }
+    return rc;
+}
+
+- (float) changeToPositiveOrNegative
+{
+    float rc;
+    [self stringToFloat];
+   
+    if (self.operatorType == OperatorTypeNone)
+    {
+        float signChange = self.operand1 * -1;
+        self.operand1String = [NSMutableString stringWithFormat:@"%g", signChange];
+        rc = signChange;
+        
+    }
+    else if (self.operatorType != OperatorTypeNone)
+    {
+        float signChange = self.operand2 * -1;
+        self.operand2String = [NSMutableString stringWithFormat:@"%g", signChange];
+        rc = signChange;
+    }
+    
     return rc;
 }
 

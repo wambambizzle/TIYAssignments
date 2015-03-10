@@ -22,6 +22,9 @@
 -(IBAction)decimalPointButton:(UIButton *)sender;
 -(IBAction)percentConvertButton:(UIButton *)sender;
 
+- (IBAction)changeSignButton:(UIButton *)sender;
+
+
 -(IBAction)additionTapped:(UIButton *)sender;
 -(IBAction)subtractionTapped:(UIButton *)sender;
 -(IBAction)multiplicationTapped:(UIButton *)sender;
@@ -94,20 +97,16 @@
     else
     {
         self.displayLabel.text = [NSString stringWithFormat:@"%g", returnValue];
+        
     }
+    brain = nil;
     
 }
 
 -(IBAction)allClearButton:(UIButton *)sender
 {
-
- if (brain)
-
-   {
        brain = nil;
        self.displayLabel.text = @"0";
-      
-   }
     
 }
 
@@ -124,9 +123,7 @@
 
 -(IBAction)percentConvertButton:(UIButton *)sender
 {
-    
-    NSString *percent = [brain percentConversion];
-    self.displayLabel.text = percent;
+    self.displayLabel.text = [brain percentConversion];
     
 //    if (brain)
 //    {
@@ -139,6 +136,12 @@
 //        
 //    }
 
+}
+
+- (IBAction)changeSignButton:(UIButton *)sender
+{
+    
+    self.displayLabel.text = [NSString stringWithFormat:@"%g",[brain changeToPositiveOrNegative]];
 }
 
 
