@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "CalculatorBrain.h"
+#import "CalculatorBrain+Extras.h"
 
 @interface ViewController ()
 {
@@ -23,6 +23,8 @@
 -(IBAction)percentConvertButton:(UIButton *)sender;
 
 - (IBAction)changeSignButton:(UIButton *)sender;
+- (IBAction)sqaureRootButton:(UIButton *)sender;
+- (IBAction)squareANumber:(UIButton *)sender;
 
 
 -(IBAction)additionTapped:(UIButton *)sender;
@@ -142,6 +144,27 @@
 {
     
     self.displayLabel.text = [NSString stringWithFormat:@"%g",[brain changePositiveNegative]];
+}
+
+- (IBAction)sqaureRootButton:(UIButton *)sender
+
+{
+    if  ([brain.operand1String containsString:@"-"] || [brain.operand2String containsString:@"-"])
+    {
+        self.displayLabel.text = @"Error";
+    }
+    else
+    {
+      self.displayLabel.text = [NSString stringWithFormat:@"%g",[brain squareRootofNumb]];
+    }
+}
+
+- (IBAction)squareANumber:(UIButton *)sender
+{
+   
+    {
+       self.displayLabel.text = [NSString stringWithFormat:@"%g", [brain squaredNumber]];
+    }
 }
 
 

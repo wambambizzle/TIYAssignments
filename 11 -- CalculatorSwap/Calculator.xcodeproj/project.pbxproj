@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A84A846B1AB0923D007BACB7 /* libCalculatorBrain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A84A846A1AB0923D007BACB7 /* libCalculatorBrain.a */; };
 		A889B4E21AB0D9870022A616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A889B4E11AB0D9870022A616 /* Main.storyboard */; };
+		A889B4E51AB0E2780022A616 /* CalculatorBrain+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = A889B4E41AB0E2780022A616 /* CalculatorBrain+Extras.m */; };
 		A8DEBAA01AA8BCC400E0D21A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8DEBA9F1AA8BCC400E0D21A /* main.m */; };
 		A8DEBAA31AA8BCC400E0D21A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8DEBAA21AA8BCC400E0D21A /* AppDelegate.m */; };
 		A8DEBAA61AA8BCC400E0D21A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8DEBAA51AA8BCC400E0D21A /* ViewController.m */; };
@@ -31,6 +32,8 @@
 		A84A84691AB0922F007BACB7 /* CalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorBrain.h; sourceTree = "<group>"; };
 		A84A846A1AB0923D007BACB7 /* libCalculatorBrain.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCalculatorBrain.a; sourceTree = "<group>"; };
 		A889B4E11AB0D9870022A616 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A889B4E31AB0E2780022A616 /* CalculatorBrain+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CalculatorBrain+Extras.h"; sourceTree = "<group>"; };
+		A889B4E41AB0E2780022A616 /* CalculatorBrain+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CalculatorBrain+Extras.m"; sourceTree = "<group>"; };
 		A8DEBA9A1AA8BCC400E0D21A /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8DEBA9E1AA8BCC400E0D21A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8DEBA9F1AA8BCC400E0D21A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,9 +92,11 @@
 				A8DEBAA21AA8BCC400E0D21A /* AppDelegate.m */,
 				A8DEBAA41AA8BCC400E0D21A /* ViewController.h */,
 				A8DEBAA51AA8BCC400E0D21A /* ViewController.m */,
-				A889B4E11AB0D9870022A616 /* Main.storyboard */,
 				A84A84691AB0922F007BACB7 /* CalculatorBrain.h */,
 				A84A846A1AB0923D007BACB7 /* libCalculatorBrain.a */,
+				A889B4E31AB0E2780022A616 /* CalculatorBrain+Extras.h */,
+				A889B4E41AB0E2780022A616 /* CalculatorBrain+Extras.m */,
+				A889B4E11AB0D9870022A616 /* Main.storyboard */,
 				A8DEBAAA1AA8BCC400E0D21A /* Images.xcassets */,
 				A8DEBAAC1AA8BCC400E0D21A /* LaunchScreen.xib */,
 				A8DEBA9D1AA8BCC400E0D21A /* Supporting Files */,
@@ -228,6 +233,7 @@
 				A8DEBAA61AA8BCC400E0D21A /* ViewController.m in Sources */,
 				A8DEBAA31AA8BCC400E0D21A /* AppDelegate.m in Sources */,
 				A8DEBAA01AA8BCC400E0D21A /* main.m in Sources */,
+				A889B4E51AB0E2780022A616 /* CalculatorBrain+Extras.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
