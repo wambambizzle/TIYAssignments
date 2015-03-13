@@ -10,10 +10,10 @@
 
 @implementation PowerCalculator
 
-//+(NSArray *)allEnergyTypes
-//{
-//    return ;
-//}
++(NSArray *)allEnergyTypes
+{
+    return  @[@"Volts", @"Amps", @"Ohms", @"Watts"];
+}
 
 
 - (instancetype) init
@@ -21,7 +21,7 @@
     self = [super init];
     if (self)
     {
-        _engery = EngeryTypeNone; // only use _ in init
+        _energy = EngeryTypeNone; // only use _ in init
         
     }
     
@@ -31,6 +31,27 @@
 - (NSString *)engeryAsString
 {
     NSString *rc;
+    
+    switch (self.energy)
+    {
+        case EngeryTypeVolts:
+            rc = @"volt";
+            break;
+        case EngeryTypeAmps:
+            rc = @"amps";
+            break;
+        case EngeryTypeOhms:
+            rc = @"ohms";
+            break;
+        case EngeryTypeWatts:
+            rc = @"watts";
+            break;
+            
+        default:
+            
+            break;
+    }
+
     
     return rc;
 }

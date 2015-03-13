@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PowerCalculator.h"
 
 @interface PopUpCalculationsTableViewController : UITableViewController
+
 
 @end
