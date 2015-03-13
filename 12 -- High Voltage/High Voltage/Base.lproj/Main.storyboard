@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VoltsCell" id="P3t-IV-5qa">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ElectricPotentialCell" id="P3t-IV-5qa">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P3t-IV-5qa" id="hGc-zX-8IR">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -58,7 +58,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AmpsCell" id="YuQ-Jq-9jk">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrentCell" id="YuQ-Jq-9jk">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YuQ-Jq-9jk" id="fDq-dF-0Hb">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -94,15 +94,15 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="lXp-3q-puN"/>
-                                            <exclude reference="c8Z-LQ-hwr"/>
-                                            <exclude reference="MiQ-2j-FDC"/>
                                             <exclude reference="DBs-8h-MCE"/>
+                                            <exclude reference="MiQ-2j-FDC"/>
+                                            <exclude reference="c8Z-LQ-hwr"/>
+                                            <exclude reference="lXp-3q-puN"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OhmsCell" id="L7X-5r-SYh">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResistanceCell" id="L7X-5r-SYh">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L7X-5r-SYh" id="7W9-7W-1j8">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -139,14 +139,14 @@
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="T3n-MZ-G4H"/>
-                                            <exclude reference="zah-ki-G9K"/>
                                             <exclude reference="W3w-Lg-xcC"/>
                                             <exclude reference="cg1-H6-XeJ"/>
+                                            <exclude reference="zah-ki-G9K"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WattsCell" id="eEX-36-ZSE">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PowerCell" id="eEX-36-ZSE">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eEX-36-ZSE" id="BIn-8h-C1E">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -221,7 +221,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="E5U-h5-SFf" style="IBUITableViewCellStyleDefault" id="U9j-em-Cvc">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VoltsCell" textLabel="E5U-h5-SFf" style="IBUITableViewCellStyleDefault" id="U9j-em-Cvc">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U9j-em-Cvc" id="7IG-8b-hPs">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -235,7 +235,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="FIs-jR-sut" style="IBUITableViewCellStyleDefault" id="GPm-Jr-2Qo">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AmpsCell" textLabel="FIs-jR-sut" style="IBUITableViewCellStyleDefault" id="GPm-Jr-2Qo">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GPm-Jr-2Qo" id="1gK-oa-2sz">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -249,7 +249,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="R4H-0a-F7q" style="IBUITableViewCellStyleDefault" id="BwI-75-fzR">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OhmsCell" textLabel="R4H-0a-F7q" style="IBUITableViewCellStyleDefault" id="BwI-75-fzR">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BwI-75-fzR" id="rgH-rl-Xkk">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -263,7 +263,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="3Wy-t6-mSg" style="IBUITableViewCellStyleDefault" id="gsM-27-1aO">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WattsCell" textLabel="3Wy-t6-mSg" style="IBUITableViewCellStyleDefault" id="gsM-27-1aO">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gsM-27-1aO" id="dAh-yF-d4v">
                                     <autoresizingMask key="autoresizingMask"/>
