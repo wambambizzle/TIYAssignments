@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HighVoltageTableViewController : UITableViewController
+@protocol PopUpCalculationsTableVCDelegate
+
+- (void)engeryTypeWasSelected:(NSString *)energyStringSelected;
+
+@end
+
+@interface HighVoltageTableViewController : UITableViewController <PopUpCalculationsTableVCDelegate>
+
+
 
 @end

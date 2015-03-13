@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PowerCalculator.h"
+#import "HighVoltageTableViewController.h"
+//#import "PowerCalculator.h"
 
 @interface PopUpCalculationsTableViewController : UITableViewController
+
+@property (strong, nonatomic) id<PopUpCalculationsTableVCDelegate> delegate;
+
+@property (strong, nonatomic) NSMutableArray *energyArray;
 
 
 @end

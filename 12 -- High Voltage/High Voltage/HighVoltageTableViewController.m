@@ -12,7 +12,8 @@
 
 @interface HighVoltageTableViewController () <UITextFieldDelegate, UIPopoverPresentationControllerDelegate>
 {
-    NSArray *energyList;
+    NSMutableArray *energyList;
+    NSDictionary *stringWithCellIdentifierDic;
 }
 
 
@@ -23,14 +24,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    energyList = [[NSArray alloc] init];
+    energyList = [[NSMutableArray alloc] init];
  
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 #pragma mark - Table view data source
@@ -48,14 +49,13 @@
 }
 
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-//    
-//    // Configure the cell...
-//    
-//    return cell;
-//}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[energyList objectAtIndex:indexPath.row] forIndexPath:indexPath];
+    
+    return cell;
+}
 
 
 /*
@@ -102,12 +102,19 @@
     {
         PopUpCalculationsTableViewController *desPopupCalcVC = (PopUpCalculationsTableViewController *)[segue destinationViewController];
         desPopupCalcVC.popoverPresentationController.delegate = self; // must set our "self" as a delegate of
+        desPopupCalcVC.delegate = self;
         NSArray *energyTypes = [PowerCalculator allEnergyTypes]; // Calls our class method from PowerCalc and sets it in an Array
         float contentHeight = 44.0f * [energyTypes count]; // set the height of the modal to 44px * number of items in array
         desPopupCalcVC.preferredContentSize = CGSizeMake(100.0f, contentHeight); // giving a size to the pop over view width and height
     }
     
-    
+}
+
+#pragma mark - PopoverPresentationController delegate
+
+-(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller
+{
+    return UIModalPresentationNone;
 }
 
 
@@ -120,6 +127,20 @@
 //    [self.tableView reloadData]; // reload the table view aka update
 //    
 //}
+
+- (void)engeryTypeWasSelected:(NSString *)energyStringSelected
+{
+    
+    stringWithCellIdentifierDic = @{@"Volts":@"ElectricPotentialCell", @"Amps":@"CurrentCell",@"Ohms":@"ResistanceCell",@"Watts":@"PowerCell"};
+    
+    [energyList addObject:[stringWithCellIdentifierDic objectForKey:energyStringSelected]];
+    
+    [self.tableView reloadData];
+    
+    // after getting one take it out of the list
+    [self dismissViewControllerAnimated:YES completion:nil];
+        
+}
 
 
 @end
