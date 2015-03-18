@@ -88,28 +88,29 @@
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath 
  {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) 
  {
         // Delete the row from the data source
+        [counterList removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) 
  {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -200,6 +201,19 @@
 
 - (IBAction)clearAllButton:(UIBarButtonItem *)sender
 {
+    NSMutableArray *indexPathsToRemove = [[NSMutableArray alloc] init];
+    NSMutableArray *itemsToRemove = [[NSMutableArray alloc] init];
     
+    for (Count *anItem in counterList)
+    {
+        if (anItem)
+        {
+            [itemsToRemove addObject:anItem];
+            [indexPathsToRemove addObject:[NSIndexPath indexPathForRow:[counterList indexOfObject:anItem] inSection:0]];
+        }
+    }
+    
+    [counterList removeObjectsInArray:itemsToRemove];
+    [self.tableView deleteRowsAtIndexPaths:indexPathsToRemove withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 @end
