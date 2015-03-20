@@ -7,6 +7,7 @@
 //
 
 #import "ZipCodeViewController.h"
+#import "Weather.h"
 
 @interface ZipCodeViewController ()<UITextFieldDelegate, NSURLSessionDataDelegate>
 {
@@ -50,11 +51,8 @@
 - (IBAction)findCityButton:(UIButton *)sender
 {
     NSString *zipcode = self.zipCodeTextField.text;
-    NSLog(@"zipcode %@", zipcode);
     NSString *urlString = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?address=santa+cruz&components=postal_code:%@&sensor=false", zipcode];
-     NSLog(@"urlstring: %@", urlString);
     NSURL *url = [NSURL URLWithString:urlString];
-      NSLog(@"url: %@", url);
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration
                                                           delegate:self
@@ -88,11 +86,34 @@
 {
     if (!error)
     {
-        NSLog(@"Download successful.");
-       NSArray *weatherData = [NSJSONSerialization JSONObjectWithData:receivedData
+//        NSLog(@"Download successful.");
+        NSDictionary *weatherData = [NSJSONSerialization JSONObjectWithData:receivedData
                                                 options:0
                                                 error:nil];
-        [self.weatherInfo addObject:weatherData];
+        
+        Weather *weatherItem = [[Weather alloc] init];
+                
+        NSArray *results = [weatherData objectForKey:@"results"];
+        NSDictionary *locationInfo = results[0];
+        NSArray *addressComps = [locationInfo objectForKey:@"address_components"];
+        NSDictionary *city = addressComps[1];
+        NSString *cityName = [city objectForKey:@"long_name"];
+        
+        weatherItem.weatherCity = cityName;
+        
+        NSDictionary *geometry = [locationInfo objectForKey:@"geometry"];
+        NSDictionary *location = [geometry objectForKey:@"location"];
+        NSString *lat = [location objectForKey:@"lat"];
+        NSString *lng = [location objectForKey:@"lng"];
+        
+        weatherItem.weatherLat = lat;
+        weatherItem.weatherLng = lng;
+        
+//        [weatherItem updateWeather];
+        
+        [self.cities addObject:weatherItem];
+        
+        
         [self cancel];
     }
     else if (error)

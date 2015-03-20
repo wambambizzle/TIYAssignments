@@ -9,13 +9,15 @@
 #import "StormCasterTableViewController.h"
 
 #import "ZipCodeViewController.h"
+#import "CityWeatherViewController.h"
+
 #import "WeatherCell.h"
 
 #import "Weather.h"
 
 @interface StormCasterTableViewController () <UITextFieldDelegate>
 {
-    NSMutableArray *weatherInfo;
+    NSMutableArray *cities;
 }
 
 @end
@@ -25,7 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"City";
+    self.title = @"Where You At";
+    cities = [[NSMutableArray alloc] init];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -52,7 +55,7 @@
 {
 
     // Return the number of rows in the section.
-    return weatherInfo.count;
+    return cities.count;
 }
 
 
@@ -60,8 +63,14 @@
  {
     WeatherCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WeatherCell" forIndexPath:indexPath];
     
-    
-    
+     Weather *item = cities[indexPath.row];
+     
+     [item updateWeather];
+     
+     cell.cityLabel.text = item.weatherCity;
+     cell.tempLabel.text = item.weatherTemp;
+     
+   
     return cell;
 }
 
@@ -115,12 +124,18 @@
         UINavigationController *navController = [segue destinationViewController];
         ZipCodeViewController *zipCodeVC = [navController viewControllers ][0];
         //(WinningTicketViewController *)[segue destinationViewController];
-        zipCodeVC.weatherInfo = weatherInfo;
-        
-       
+        zipCodeVC.cities = cities;
     }
     
 }
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    NSMutableArray *aCity = [cities objectAtIndex:indexPath.row];
+//     CityWeatherViewController *cityWVC = [[CityWeatherViewController alloc] init];
+//       cityWVC = aCity;
+//    [self.navigationController pushViewController:friendDetailVC animated:YES];
+//}
 
 
 @end

@@ -17,6 +17,7 @@
 		A89E04301ABB4BA4000A0326 /* ZipCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E042F1ABB4BA4000A0326 /* ZipCodeViewController.m */; };
 		A89E04331ABB528A000A0326 /* WeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E04321ABB528A000A0326 /* WeatherCell.m */; };
 		A89E04361ABB56ED000A0326 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E04351ABB56ED000A0326 /* Weather.m */; };
+		A8B2492B1ABCC1F2007938A9 /* CityWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B2492A1ABCC1F2007938A9 /* CityWeatherViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		A89E04321ABB528A000A0326 /* WeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCell.m; sourceTree = "<group>"; };
 		A89E04341ABB56ED000A0326 /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
 		A89E04351ABB56ED000A0326 /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
+		A8B249291ABCC1F2007938A9 /* CityWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityWeatherViewController.h; sourceTree = "<group>"; };
+		A8B2492A1ABCC1F2007938A9 /* CityWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityWeatherViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +97,7 @@
 				A89E040A1ABB48B0000A0326 /* AppDelegate.m */,
 				A89E042B1ABB4957000A0326 /* StormCasterTableViewController.h */,
 				A89E042C1ABB4957000A0326 /* StormCasterTableViewController.m */,
-				A89E042E1ABB4BA4000A0326 /* ZipCodeViewController.h */,
-				A89E042F1ABB4BA4000A0326 /* ZipCodeViewController.m */,
+				A8B2492C1ABCC206007938A9 /* ViewControllers */,
 				A89E04341ABB56ED000A0326 /* Weather.h */,
 				A89E04351ABB56ED000A0326 /* Weather.m */,
 				A89E040F1ABB48B0000A0326 /* Main.storyboard */,
@@ -132,6 +134,17 @@
 				A89E04201ABB48B0000A0326 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A8B2492C1ABCC206007938A9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A89E042E1ABB4BA4000A0326 /* ZipCodeViewController.h */,
+				A89E042F1ABB4BA4000A0326 /* ZipCodeViewController.m */,
+				A8B249291ABCC1F2007938A9 /* CityWeatherViewController.h */,
+				A8B2492A1ABCC1F2007938A9 /* CityWeatherViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +249,7 @@
 			files = (
 				A89E04361ABB56ED000A0326 /* Weather.m in Sources */,
 				A89E040B1ABB48B0000A0326 /* AppDelegate.m in Sources */,
+				A8B2492B1ABCC1F2007938A9 /* CityWeatherViewController.m in Sources */,
 				A89E042D1ABB4957000A0326 /* StormCasterTableViewController.m in Sources */,
 				A89E04331ABB528A000A0326 /* WeatherCell.m in Sources */,
 				A89E04081ABB48B0000A0326 /* main.m in Sources */,

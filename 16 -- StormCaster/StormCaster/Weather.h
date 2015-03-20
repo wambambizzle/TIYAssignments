@@ -8,12 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Weather : NSObject
+@interface Weather : NSObject <NSURLSessionDataDelegate>
 
 @property (strong, nonatomic) NSString *weatherCity;
-@property (strong, nonatomic) NSString *weatherState;
+
+
 @property (strong, nonatomic) NSString *weatherLat;
-@property (strong, nonatomic) NSString *weatherLong;
+@property (strong, nonatomic) NSString *weatherLng;
+
 @property (strong, nonatomic) NSString *weatherTemp;
+@property (strong, nonatomic) NSString *weatherSummary;
+@property (strong, nonatomic) NSString *apparentTemp;
+
+
+-(void)updateWeather;
 
 @end

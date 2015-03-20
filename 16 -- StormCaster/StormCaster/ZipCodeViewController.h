@@ -10,6 +10,6 @@
 
 @interface ZipCodeViewController : UIViewController
 
-@property (nonatomic, weak) NSMutableArray *weatherInfo;
+@property (nonatomic, weak) NSMutableArray *cities;
 
 @end
