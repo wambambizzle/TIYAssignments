@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A81DAE001AC0830100685FF9 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A81DADFF1AC0830100685FF9 /* NetworkManager.m */; };
+		A81DAE041AC0849300685FF9 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = A81DAE031AC0849300685FF9 /* City.m */; };
+		A89E04081ABB48B0000A0326 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E04071ABB48B0000A0326 /* main.m */; };
+		A89E040B1ABB48B0000A0326 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E040A1ABB48B0000A0326 /* AppDelegate.m */; };
+		A89E04111ABB48B0000A0326 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A89E040F1ABB48B0000A0326 /* Main.storyboard */; };
+		A89E04131ABB48B0000A0326 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A89E04121ABB48B0000A0326 /* Images.xcassets */; };
+		A89E04161ABB48B0000A0326 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89E04141ABB48B0000A0326 /* LaunchScreen.xib */; };
+		A89E04221ABB48B0000A0326 /* StormCasterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E04211ABB48B0000A0326 /* StormCasterTests.m */; };
+		A89E042D1ABB4957000A0326 /* StormCasterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E042C1ABB4957000A0326 /* StormCasterTableViewController.m */; };
+		A89E04301ABB4BA4000A0326 /* ZipCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E042F1ABB4BA4000A0326 /* ZipCodeViewController.m */; };
+		A89E04331ABB528A000A0326 /* WeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E04321ABB528A000A0326 /* WeatherCell.m */; };
+		A89E04361ABB56ED000A0326 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E04351ABB56ED000A0326 /* Weather.m */; };
+		A8B2492B1ABCC1F2007938A9 /* CityWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B2492A1ABCC1F2007938A9 /* CityWeatherViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A89E041C1ABB48B0000A0326 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A89E03FA1ABB48B0000A0326 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A89E04011ABB48B0000A0326;
+			remoteInfo = StormCaster;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A81DADFD1AC0830100685FF9 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		A81DADFE1AC0830100685FF9 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		A81DADFF1AC0830100685FF9 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		A81DAE011AC0831A00685FF9 /* Weather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
+		A81DAE031AC0849300685FF9 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		A89E04021ABB48B0000A0326 /* StormCaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StormCaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A89E04061ABB48B0000A0326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A89E04071ABB48B0000A0326 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A89E04091ABB48B0000A0326 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A89E040A1ABB48B0000A0326 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A89E04101ABB48B0000A0326 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A89E04121ABB48B0000A0326 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A89E04151ABB48B0000A0326 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A89E041B1ABB48B0000A0326 /* StormCasterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StormCasterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A89E04201ABB48B0000A0326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A89E04211ABB48B0000A0326 /* StormCasterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StormCasterTests.m; sourceTree = "<group>"; };
+		A89E042B1ABB4957000A0326 /* StormCasterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StormCasterTableViewController.h; sourceTree = "<group>"; };
+		A89E042C1ABB4957000A0326 /* StormCasterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StormCasterTableViewController.m; sourceTree = "<group>"; };
+		A89E042E1ABB4BA4000A0326 /* ZipCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipCodeViewController.h; sourceTree = "<group>"; };
+		A89E042F1ABB4BA4000A0326 /* ZipCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipCodeViewController.m; sourceTree = "<group>"; };
+		A89E04311ABB528A000A0326 /* WeatherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCell.h; sourceTree = "<group>"; };
+		A89E04321ABB528A000A0326 /* WeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCell.m; sourceTree = "<group>"; };
+		A89E04351ABB56ED000A0326 /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
+		A8B249291ABCC1F2007938A9 /* CityWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityWeatherViewController.h; sourceTree = "<group>"; };
+		A8B2492A1ABCC1F2007938A9 /* CityWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityWeatherViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A89E03FF1ABB48B0000A0326 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A89E04181ABB48B0000A0326 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A81DAE021AC0832F00685FF9 /* Model Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A81DADFD1AC0830100685FF9 /* City.h */,
+				A81DAE031AC0849300685FF9 /* City.m */,
+				A81DAE011AC0831A00685FF9 /* Weather.h */,
+				A89E04351ABB56ED000A0326 /* Weather.m */,
+				A81DADFE1AC0830100685FF9 /* NetworkManager.h */,
+				A81DADFF1AC0830100685FF9 /* NetworkManager.m */,
+			);
+			name = "Model Classes";
+			sourceTree = "<group>";
+		};
+		A89E03F91ABB48B0000A0326 = {
+			isa = PBXGroup;
+			children = (
+				A89E04041ABB48B0000A0326 /* StormCaster */,
+				A89E041E1ABB48B0000A0326 /* StormCasterTests */,
+				A89E04031ABB48B0000A0326 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A89E04031ABB48B0000A0326 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A89E04021ABB48B0000A0326 /* StormCaster.app */,
+				A89E041B1ABB48B0000A0326 /* StormCasterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A89E04041ABB48B0000A0326 /* StormCaster */ = {
+			isa = PBXGroup;
+			children = (
+				A89E04091ABB48B0000A0326 /* AppDelegate.h */,
+				A89E040A1ABB48B0000A0326 /* AppDelegate.m */,
+				A89E042B1ABB4957000A0326 /* StormCasterTableViewController.h */,
+				A89E042C1ABB4957000A0326 /* StormCasterTableViewController.m */,
+				A8B2492C1ABCC206007938A9 /* ViewControllers */,
+				A81DAE021AC0832F00685FF9 /* Model Classes */,
+				A89E040F1ABB48B0000A0326 /* Main.storyboard */,
+				A89E04311ABB528A000A0326 /* WeatherCell.h */,
+				A89E04321ABB528A000A0326 /* WeatherCell.m */,
+				A89E04121ABB48B0000A0326 /* Images.xcassets */,
+				A89E04141ABB48B0000A0326 /* LaunchScreen.xib */,
+				A89E04051ABB48B0000A0326 /* Supporting Files */,
+			);
+			path = StormCaster;
+			sourceTree = "<group>";
+		};
+		A89E04051ABB48B0000A0326 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A89E04061ABB48B0000A0326 /* Info.plist */,
+				A89E04071ABB48B0000A0326 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A89E041E1ABB48B0000A0326 /* StormCasterTests */ = {
+			isa = PBXGroup;
+			children = (
+				A89E04211ABB48B0000A0326 /* StormCasterTests.m */,
+				A89E041F1ABB48B0000A0326 /* Supporting Files */,
+			);
+			path = StormCasterTests;
+			sourceTree = "<group>";
+		};
+		A89E041F1ABB48B0000A0326 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A89E04201ABB48B0000A0326 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A8B2492C1ABCC206007938A9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A89E042E1ABB4BA4000A0326 /* ZipCodeViewController.h */,
+				A89E042F1ABB4BA4000A0326 /* ZipCodeViewController.m */,
+				A8B249291ABCC1F2007938A9 /* CityWeatherViewController.h */,
+				A8B2492A1ABCC1F2007938A9 /* CityWeatherViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A89E04011ABB48B0000A0326 /* StormCaster */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A89E04251ABB48B0000A0326 /* Build configuration list for PBXNativeTarget "StormCaster" */;
+			buildPhases = (
+				A89E03FE1ABB48B0000A0326 /* Sources */,
+				A89E03FF1ABB48B0000A0326 /* Frameworks */,
+				A89E04001ABB48B0000A0326 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StormCaster;
+			productName = StormCaster;
+			productReference = A89E04021ABB48B0000A0326 /* StormCaster.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A89E041A1ABB48B0000A0326 /* StormCasterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A89E04281ABB48B0000A0326 /* Build configuration list for PBXNativeTarget "StormCasterTests" */;
+			buildPhases = (
+				A89E04171ABB48B0000A0326 /* Sources */,
+				A89E04181ABB48B0000A0326 /* Frameworks */,
+				A89E04191ABB48B0000A0326 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A89E041D1ABB48B0000A0326 /* PBXTargetDependency */,
+			);
+			name = StormCasterTests;
+			productName = StormCasterTests;
+			productReference = A89E041B1ABB48B0000A0326 /* StormCasterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A89E03FA1ABB48B0000A0326 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "The Iron Yard";
+				TargetAttributes = {
+					A89E04011ABB48B0000A0326 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					A89E041A1ABB48B0000A0326 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = A89E04011ABB48B0000A0326;
+					};
+				};
+			};
+			buildConfigurationList = A89E03FD1ABB48B0000A0326 /* Build configuration list for PBXProject "StormCaster" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A89E03F91ABB48B0000A0326;
+			productRefGroup = A89E04031ABB48B0000A0326 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A89E04011ABB48B0000A0326 /* StormCaster */,
+				A89E041A1ABB48B0000A0326 /* StormCasterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A89E04001ABB48B0000A0326 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A89E04111ABB48B0000A0326 /* Main.storyboard in Resources */,
+				A89E04161ABB48B0000A0326 /* LaunchScreen.xib in Resources */,
+				A89E04131ABB48B0000A0326 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A89E04191ABB48B0000A0326 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A89E03FE1ABB48B0000A0326 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A81DAE001AC0830100685FF9 /* NetworkManager.m in Sources */,
+				A89E04361ABB56ED000A0326 /* Weather.m in Sources */,
+				A89E040B1ABB48B0000A0326 /* AppDelegate.m in Sources */,
+				A8B2492B1ABCC1F2007938A9 /* CityWeatherViewController.m in Sources */,
+				A89E042D1ABB4957000A0326 /* StormCasterTableViewController.m in Sources */,
+				A89E04331ABB528A000A0326 /* WeatherCell.m in Sources */,
+				A89E04081ABB48B0000A0326 /* main.m in Sources */,
+				A89E04301ABB4BA4000A0326 /* ZipCodeViewController.m in Sources */,
+				A81DAE041AC0849300685FF9 /* City.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A89E04171ABB48B0000A0326 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A89E04221ABB48B0000A0326 /* StormCasterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A89E041D1ABB48B0000A0326 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A89E04011ABB48B0000A0326 /* StormCaster */;
+			targetProxy = A89E041C1ABB48B0000A0326 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A89E040F1ABB48B0000A0326 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A89E04101ABB48B0000A0326 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A89E04141ABB48B0000A0326 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A89E04151ABB48B0000A0326 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A89E04231ABB48B0000A0326 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A89E04241ABB48B0000A0326 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A89E04261ABB48B0000A0326 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StormCaster/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A89E04271ABB48B0000A0326 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StormCaster/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A89E04291ABB48B0000A0326 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StormCasterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StormCaster.app/StormCaster";
+			};
+			name = Debug;
+		};
+		A89E042A1ABB48B0000A0326 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StormCasterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StormCaster.app/StormCaster";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A89E03FD1ABB48B0000A0326 /* Build configuration list for PBXProject "StormCaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A89E04231ABB48B0000A0326 /* Debug */,
+				A89E04241ABB48B0000A0326 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A89E04251ABB48B0000A0326 /* Build configuration list for PBXNativeTarget "StormCaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A89E04261ABB48B0000A0326 /* Debug */,
+				A89E04271ABB48B0000A0326 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A89E04281ABB48B0000A0326 /* Build configuration list for PBXNativeTarget "StormCasterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A89E04291ABB48B0000A0326 /* Debug */,
+				A89E042A1ABB48B0000A0326 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A89E03FA1ABB48B0000A0326 /* Project object */;
+}
