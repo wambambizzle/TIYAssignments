@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Weather.h"
+
+#import "City.h"
+
+#import "StormCasterTableViewController.h"
 
 @interface CityWeatherViewController : UIViewController
 

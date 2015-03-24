@@ -25,9 +25,14 @@
         self.temperature = [[currently objectForKey:@"temperature"] doubleValue];
         self.apparentTemperature = [[currently objectForKey:@"apparentTemperature"] doubleValue];
         self.summary = [currently objectForKey:@"summary"];
+        self.humidity = [[currently objectForKey:@"humidity"] doubleValue];
+        self.precipProbability = [[currently objectForKey:@"precipProbability"] doubleValue];
+        self.windSpeed = [[currently objectForKey:@"windSpeed"] doubleValue];
         
         NSDictionary *minutely = [infoDictionary objectForKey:@"minutely"];
         self.icon = [minutely objectForKey:@"icon"];
+        
+        
         rc = YES;
     }
     
@@ -43,7 +48,7 @@
 
 - (NSString *)feelsLikeTemperature
 {
-    return [NSString stringWithFormat:@"%.0f℉", self.apparentTemperature];
+    return [NSString stringWithFormat:@"Feels like %.0f℉", self.apparentTemperature];
 }
 
 - (NSString *)dewPointTemperature
@@ -53,7 +58,7 @@
 
 - (NSString *)humidityPercentage
 {
-    return [NSString stringWithFormat:@"%.0f", self.humidity];
+    return [NSString stringWithFormat:@"%.0f", self.humidity * 100];
 }
 
 - (NSString *)chanceOfRain

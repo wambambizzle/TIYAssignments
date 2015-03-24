@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Where You At";
+    self.title = @"City";
     cities = [[NSMutableArray alloc] init];
     [NetworkManager sharedNetworkManager].delegate = self;
     
@@ -150,8 +150,6 @@
     [self.navigationController pushViewController:cityWVC animated:YES];
     
 }
-
-
 
 -(void)cityWasFound:(City *)aCity
 {
