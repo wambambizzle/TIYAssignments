@@ -11,16 +11,25 @@
 #import "City.h"
 #import "NetworkManager.h"
 
+@import CoreLocation; // coordinates
+@import MapKit;
+@import AddressBook;
 
-@interface ZipCodeViewController ()<UITextFieldDelegate, NSURLSessionDataDelegate>
+@interface ZipCodeViewController ()<UITextFieldDelegate, CLLocationManagerDelegate>
 {
     
-    NSMutableData *receivedData;
+//    NSMutableData *receivedData;
+    CLLocationManager *locationManager;
+    CLGeocoder *geocoder;
 }
 
 - (IBAction)findCityButton:(UIButton *)sender;
 
 - (IBAction)cancelButton:(UIBarButtonItem *)sender;
+
+- (IBAction)findCurrentLocation:(UIButton *)sender;
+
+@property (weak, nonatomic)IBOutlet UIButton *currentLocationButton;
 
 @property (weak, nonatomic) IBOutlet UITextField *zipCodeTextField;
 
@@ -33,12 +42,95 @@
     [super viewDidLoad];
 //    self.navigationItem.prompt = @"Please enter a zipcode to find the current weather conditions";
     self.title = @"Add a City";
+    geocoder = [[CLGeocoder alloc] init];
     
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - CLLocation related methods
+
+- (void)configureLocationManager
+{
+    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusRestricted)
+    {
+        if (!locationManager)
+        {
+            locationManager = [[CLLocationManager alloc] init];
+            locationManager.delegate = self;
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+            if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined)
+            {
+                [locationManager requestWhenInUseAuthorization];
+            }
+            else
+            {
+                [self enableLocationManager:YES];
+            }
+        }
+    }
+    else
+    {
+        [self.currentLocationButton setEnabled:NO];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if (status != kCLAuthorizationStatusAuthorizedWhenInUse)
+    {
+        [self.currentLocationButton setEnabled:NO];
+    }
+    else
+    {
+        [self enableLocationManager:YES];
+    }
+}
+
+-(void)enableLocationManager:(BOOL)enable
+{
+    if (locationManager)
+    {
+        if (enable)
+        {
+            [locationManager stopUpdatingLocation];
+            [locationManager startUpdatingLocation];
+        }
+        else
+        {
+            [locationManager stopUpdatingLocation];
+        }
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    if (error != kCLErrorLocationUnknown)
+    {
+        [self enableLocationManager:NO];
+        [self.currentLocationButton setEnabled:NO];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *location = [locations lastObject];
+    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error)
+    {
+        if ((placemarks != nil) && (placemarks.count > 0))
+        {
+            [self enableLocationManager:NO];
+            NSString *cityName = [placemarks[0] locality];
+            NSString *zipCode = [[placemarks[0] addressDictionary] objectForKey:(NSString *)kABPersonAddressZIPKey];
+            double lat = location.coordinate.latitude;
+            double lng = location.coordinate.longitude;
+            City *aCity = [[City alloc] initWithName:cityName latitude:lat longitude:lng andZipcode:zipCode];
+            [[NetworkManager sharedNetworkManager] cityFoundUsingCurrentLocation:aCity];
+        }
+    }];
 }
 
 /*
@@ -50,6 +142,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Action Handlers
 
 - (IBAction)findCityButton:(UIButton *)sender
 {
@@ -68,6 +162,11 @@
         }
     }
 
+}
+
+- (IBAction)findCurrentLocation:(UIButton *)sender
+{
+     [self configureLocationManager];
 }
 
 
