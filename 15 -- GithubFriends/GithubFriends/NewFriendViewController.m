@@ -8,9 +8,10 @@
 
 #import "NewFriendViewController.h"
 
-@interface NewFriendViewController ()
+@interface NewFriendViewController () <NSURLSessionDataDelegate>
 {
    UITextField *usernameTextField;
+    NSMutableData *receivedData;
 }
 
 @end
@@ -59,21 +60,73 @@
    NSString *urlString = [NSString stringWithFormat:@"https://api.github.com/users/%@", username];
    NSURL *url = [NSURL URLWithString:urlString];
    
-   NSURLRequest *request = [NSURLRequest requestWithURL:url];
+// NSURLRequest *request = [NSURLRequest requestWithURL:url];
    
-   NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+// NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
    
-   NSDictionary *userInfo = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
+// NSDictionary *userInfo = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
    
-   [self.friends addObject:userInfo];
+// [self.friends addObject:userInfo];
+    
+   NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+   NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration
+                                                          delegate:self
+                                                     delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url];
+    
+    [dataTask resume]; // have to tell data task to start cuz it begins in a paused state
    
-   [self cancel];
+//    [self cancel];
 }
 
 - (void)cancel
 {
    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark - NSURLSession delegate
+
+- (void) URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
+{
+    completionHandler(NSURLSessionResponseAllow);
+}
+
+
+- (void) URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data
+{
+    if (!receivedData)
+    {
+        receivedData = [[NSMutableData alloc] initWithData:data];
+    }
+    else
+    {
+        [receivedData appendData:data];
+    }
+}
+
+- (void) URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
+{
+    if (!error)
+    {
+        NSLog(@"Download Successful.");
+        NSDictionary *userInfo = [NSJSONSerialization JSONObjectWithData:receivedData options:0 error:nil];
+        [self.friends addObject:userInfo];
+        [self cancel];
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @end

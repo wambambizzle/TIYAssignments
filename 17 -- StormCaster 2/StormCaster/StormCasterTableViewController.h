@@ -19,4 +19,6 @@
 
 @interface StormCasterTableViewController : UITableViewController <CitiesTableViewControllerDelegate>
 
+- (void)saveCityData;
+
 @end

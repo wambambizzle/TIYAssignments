@@ -67,7 +67,7 @@
      
      [item updateWeather];
      
-     cell.cityLabel.text = item.weatherCity;
+     cell.cityLabel.text = item.city;
      cell.tempLabel.text = item.weatherTemp;
      
    
@@ -123,19 +123,36 @@
     {
         UINavigationController *navController = [segue destinationViewController];
         ZipCodeViewController *zipCodeVC = [navController viewControllers ][0];
-        //(WinningTicketViewController *)[segue destinationViewController];
         zipCodeVC.cities = cities;
     }
+//    if ([segue.identifier isEqualToString:@"ShowDetailCityWeatherSegue"])
+//    {
+//        UINavigationController *navController = [segue destinationViewController];
+//        CityWeatherViewController *cityWVC = [navController viewControllers ][0];
+//        
+//        
+//        NSLog(@"%@",cityWVC.cityDetails);
+//    }
+   
     
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    NSMutableArray *aCity = [cities objectAtIndex:indexPath.row];
-//     CityWeatherViewController *cityWVC = [[CityWeatherViewController alloc] init];
-//       cityWVC = aCity;
-//    [self.navigationController pushViewController:friendDetailVC animated:YES];
-//}
+#pragma mark - UITableView delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    Weather *selectedCity = cities[indexPath.row];
+    CityWeatherViewController *cityWVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CityWeather"];
+    cityWVC.aCity = selectedCity;
+    
+    [self.navigationController pushViewController:cityWVC animated:YES];
+    
+   
+
+}
+
+
 
 
 @end

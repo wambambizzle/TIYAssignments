@@ -20,9 +20,13 @@ EngeryType;
 
 @interface PowerCalculator : NSObject
 
-@property(assign) EngeryType energy;
+@property(assign) EngeryType energyType;
+@property (assign) float *volts;
+@property (assign) float *amps;
+@property (assign) float *ohms;
+@property (assign) float *watts;
 
-+(NSArray *)allEnergyTypes;
++(NSMutableArray *)allEnergyTypes;
 
 - (NSString *)engeryAsString;
 

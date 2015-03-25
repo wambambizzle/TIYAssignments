@@ -56,8 +56,8 @@
 - (BOOL)validateState:(NSString *)state
 {
     BOOL rc = NO;
-    
-    if ((state.length == 2)  && ([state uppercaseString]))
+    NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    if ((state.length == 2)  && ([state uppercaseString]) && ([state rangeOfCharacterFromSet:set].location == NSNotFound))
     {
         rc = YES;
     }

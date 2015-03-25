@@ -58,7 +58,7 @@
 
 - (NSString *)humidityPercentage
 {
-    return [NSString stringWithFormat:@"%.0f", self.humidity * 100];
+    return [NSString stringWithFormat:@"%.0f%%", self.humidity * 100];
 }
 
 - (NSString *)chanceOfRain

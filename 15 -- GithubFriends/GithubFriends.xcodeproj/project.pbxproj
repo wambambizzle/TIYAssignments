@@ -131,10 +131,10 @@
 		A89191D01ABA02F2004CA36C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A89191CA1AB9C415004CA36C /* NewFriendViewController.h */,
-				A89191CB1AB9C415004CA36C /* NewFriendViewController.m */,
 				A89191CD1ABA02BF004CA36C /* FriendDetailViewController.h */,
 				A89191CE1ABA02BF004CA36C /* FriendDetailViewController.m */,
+				A89191CA1AB9C415004CA36C /* NewFriendViewController.h */,
+				A89191CB1AB9C415004CA36C /* NewFriendViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

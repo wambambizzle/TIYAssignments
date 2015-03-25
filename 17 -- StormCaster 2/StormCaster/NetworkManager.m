@@ -16,13 +16,11 @@ typedef enum
 
 @interface NetworkManager () <NSURLSessionDataDelegate>
 {
-    id returnObject;
-    NSMutableData *receivedData;
     NSURLSessionConfiguration *configuration;
     NSURLSession *session;
+    NSMutableDictionary *citiesForActiveTasks;
+    NSMutableDictionary *receivedDataRepos;
 }
-
-@property (assign) DataFetchType dataFetchType;
 
 @end
 
@@ -32,7 +30,7 @@ static NSString *gMapsBaseURL = @"http://maps.googleapis.com/maps/api/geocode/js
 static NSString *forecastIoBaseURL = @"https://api.forecast.io/forecast/2098819493d38893c26eca401b88ecfe/%f,%f";
 
 
-+ (NetworkManager *)sharedNetworkManager
++ (NetworkManager *)sharedNetworkManager //Singleton Method
 {
     static NetworkManager *sharedNetworkManager = nil;
     if (sharedNetworkManager)
@@ -47,43 +45,50 @@ static NSString *forecastIoBaseURL = @"https://api.forecast.io/forecast/20988194
     return sharedNetworkManager;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+        citiesForActiveTasks = [[NSMutableDictionary alloc] init];
+        receivedDataRepos = [[NSMutableDictionary alloc] init];
+    }
+    
+    return self;
+}
+
 - (void)findCoordinatesForCity:(City *)aCity
 {
-    self.dataFetchType = DataFetchTypeCoordinates;
-    returnObject = nil;
-    returnObject = aCity;
-    
     NSString *googleMapsUrlString = [NSString stringWithFormat:gMapsBaseURL, aCity.zipCode];
     NSURL *url = [NSURL URLWithString:googleMapsUrlString];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url];
+    [self startDataTask:dataTask forCity:aCity];
 
-    [self launchUrlSessionWithUrl:url];
 }
 
 - (void)fetchCurrentWeatherForCity:(City *)aCity
 {
-    self.dataFetchType = DataFetchTypeWeather;
-    returnObject = nil;
-    returnObject = aCity;
-    
     NSString *forecastIoUrlString = [NSString stringWithFormat:forecastIoBaseURL, aCity.latitude, aCity.longitude];
     NSURL *url = [NSURL URLWithString:forecastIoUrlString];
-    [self launchUrlSessionWithUrl:url];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url];
+    [self startDataTask:dataTask forCity:aCity];
 }
 
-- (void)launchUrlSessionWithUrl:(NSURL *)url
+- (void)startDataTask:(NSURLSessionDataTask *)dataTask forCity:(City *)aCity
 {
-    if (!configuration)
-    {
-        configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    }
-    if (!session)
-    {
-        session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:[NSOperationQueue mainQueue]];
-    }
-    
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url];
-    receivedData = nil;
+    [citiesForActiveTasks setObject:aCity forKey:[NSNumber numberWithInteger:dataTask.taskIdentifier]];
+    [receivedDataRepos setObject:[[NSMutableData alloc] init] forKey:[NSNumber numberWithInteger:dataTask.taskIdentifier]];
     [dataTask resume];
+}
+
+- (void)fetchCurrentWeatherForCities:(NSArray *)cities
+{
+    for (City *aCity in cities)
+    {
+        [self fetchCurrentWeatherForCity:aCity];
+    }
 }
 
 #pragma mark - NSURLSession delegate
@@ -95,32 +100,34 @@ static NSString *forecastIoBaseURL = @"https://api.forecast.io/forecast/20988194
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data
 {
-    if (!receivedData)
-    {
-        receivedData = [[NSMutableData alloc] initWithData:data];
-    }
-    else
-    {
-        [receivedData appendData:data];
-    }
+    NSMutableData *receivedData = receivedDataRepos[[NSNumber numberWithInteger:dataTask.taskIdentifier]]; // <- like saying object for key
+    [receivedData appendData:data];
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
 {
     if (!error)
     {
+        NSMutableData *receivedData = receivedDataRepos[[NSNumber numberWithInteger:task.taskIdentifier]];
         NSDictionary *aDictionary = [NSJSONSerialization JSONObjectWithData:receivedData options:0 error:nil];
-        City *aCity;
+        City *aCity = citiesForActiveTasks[[NSNumber numberWithInteger:task.taskIdentifier]];
+        DataFetchType fetchType;
+        if ([aDictionary objectForKey:@"results"])
+        {
+            fetchType = DataFetchTypeCoordinates;
+        }
+        else
+        {
+            fetchType = DataFetchTypeWeather;
+        }
         BOOL coordinatesSuccess = NO;
         BOOL weatherSuccess = NO;
-        switch (self.dataFetchType)
+        switch (fetchType)
         {
             case DataFetchTypeCoordinates:
-                aCity = returnObject;
                 coordinatesSuccess = [aCity parseCoordinateInfo:aDictionary];
                 break;
             case DataFetchTypeWeather:
-                aCity = returnObject;
                 weatherSuccess = [aCity.currentWeather parseWeatherInfo:aDictionary];
                 break;
                 
@@ -130,11 +137,11 @@ static NSString *forecastIoBaseURL = @"https://api.forecast.io/forecast/20988194
         
         if (coordinatesSuccess)
         {
-            [self.delegate cityWasFound:returnObject];
+            [self.delegate cityWasFound:aCity];
         }
         if (weatherSuccess)
         {
-            [self.delegate weatherWasFoundForCity:returnObject];
+            [self.delegate weatherWasFoundForCity:aCity];
         }
     }
 }

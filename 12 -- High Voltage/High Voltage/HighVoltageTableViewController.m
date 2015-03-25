@@ -10,12 +10,24 @@
 #import "PopUpCalculationsTableViewController.h"
 #import "PowerCalculator.h"
 
+
+
 @interface HighVoltageTableViewController () <UITextFieldDelegate, UIPopoverPresentationControllerDelegate>
 {
     NSMutableArray *energyList;
     NSDictionary *stringWithCellIdentifierDic;
+    NSMutableArray  *allEnergyTypes;
+    PowerCalculator *powerBrain;
+    PopUpCalculationsTableViewController *popUpVC;
 }
 
+- (IBAction)clearPowerCalcAllButton:(id)sender;
+
+
+- (IBAction)voltsTextField:(UITextField *)sender;
+- (IBAction)ampsTextField:(UITextField *)sender;
+- (IBAction)ohmsTextField:(UITextField *)sender;
+- (IBAction)wattsTextField:(UITextField *)sender;
 
 @end
 
@@ -25,6 +37,7 @@
 {
     [super viewDidLoad];
     energyList = [[NSMutableArray alloc] init];
+    allEnergyTypes = [[NSMutableArray alloc] initWithObjects:@"Volts", @"Amps", @"Ohms", @"Watts", nil];
  
 }
 
@@ -103,8 +116,10 @@
         PopUpCalculationsTableViewController *desPopupCalcVC = (PopUpCalculationsTableViewController *)[segue destinationViewController];
         desPopupCalcVC.popoverPresentationController.delegate = self; // must set our "self" as a delegate of
         desPopupCalcVC.delegate = self;
-        NSArray *energyTypes = [PowerCalculator allEnergyTypes]; // Calls our class method from PowerCalc and sets it in an Array
-        float contentHeight = 44.0f * [energyTypes count]; // set the height of the modal to 44px * number of items in array
+//    popUpVC.recieveAllEnergyTypes = allEnergyTypes;
+//        NSLog(@"%@", popUpVC.recieveAllEnergyTypes);
+              // Calls our class method from PowerCalc and sets it in an Array
+        float contentHeight = 44.0f * [allEnergyTypes count]; // set the height of the modal to 44px * number of items in array
         desPopupCalcVC.preferredContentSize = CGSizeMake(100.0f, contentHeight); // giving a size to the pop over view width and height
     }
     
@@ -114,7 +129,7 @@
 
 -(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller
 {
-    return UIModalPresentationNone;
+    return UIModalPresentationNone; // tells the presentation style for the modal when shown
 }
 
 
@@ -128,7 +143,7 @@
 //    
 //}
 
-- (void)engeryTypeWasSelected:(NSString *)energyStringSelected
+- (void)energyTypeWasSelected:(NSString *)energyStringSelected
 {
     
     stringWithCellIdentifierDic = @{@"Volts":@"ElectricPotentialCell", @"Amps":@"CurrentCell",@"Ohms":@"ResistanceCell",@"Watts":@"PowerCell"};
@@ -141,6 +156,41 @@
     [self dismissViewControllerAnimated:YES completion:nil];
         
 }
+
+
+- (IBAction)clearPowerCalcAllButton:(id)sender
+{
+    powerBrain = nil;
+    [self.tableView reloadData];
+}
+
+- (IBAction)voltsTextField:(UITextField *)sender
+{
+    powerBrain.energyType = EngeryTypeVolts;
+   
+}
+
+- (IBAction)ampsTextField:(UITextField *)sender
+{
+    powerBrain.energyType = EngeryTypeAmps;
+   
+}
+
+- (IBAction)ohmsTextField:(UITextField *)sender
+{
+    powerBrain.energyType = EngeryTypeOhms;
+ 
+}
+
+- (IBAction)wattsTextField:(UITextField *)sender
+{
+    powerBrain.energyType = EngeryTypeWatts;
+    
+}
+
+
+
+
 
 
 @end

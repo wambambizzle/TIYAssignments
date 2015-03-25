@@ -10,9 +10,9 @@
 
 
 @implementation CalculatorBrain
-{
-    CalculatorBrain *brain;
-}
+//{
+//    CalculatorBrain *brain;
+//}
 
 - (instancetype) init
 {
@@ -129,7 +129,6 @@
             float percentAnswer = self.operand1 * .01;
             rc = [NSMutableString stringWithFormat:@"%g",percentAnswer];
             self.operand1String = [rc copy];
-            NSLog(@"holaaa");
         }
         else if(self.operatorType != OperatorTypeNone)
         {
@@ -137,7 +136,6 @@
             float percentAnswer = self.operand2 * .01;
             rc = [NSMutableString stringWithFormat:@"%g", percentAnswer];
             self.operand2String = [rc copy];
-            NSLog(@"youre dumb");
         }
     return rc;
 }

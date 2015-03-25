@@ -20,7 +20,7 @@
     self = [super init];
     if (self)
     {
-        _weatherCity = nil;
+        _city = nil;
         _weatherSummary = nil;
         _weatherLat = nil;
         _weatherLng = nil;
@@ -78,9 +78,15 @@
         NSDictionary *userInfo = [NSJSONSerialization JSONObjectWithData:receivedData options:0 error:nil];
         
         NSDictionary *currently = [userInfo objectForKey:@"currently"];
-        self.weatherSummary = [currently objectForKey:@"temperature"];
+        self.weatherTemp = [currently objectForKey:@"temperature"];
         self.apparentTemp = [currently objectForKey:@"apparentTemperature"];
+        self.weatherSummary = [currently objectForKey:@"summary"];
         
+        NSLog(@"temp:%@ , apparentTemp: %@, summary: %@", self.weatherTemp, self.apparentTemp, self.weatherSummary);
+        
+        NSDictionary *minutely = [userInfo objectForKey:@"minutely"];
+        self.icon = [minutely objectForKey:@"icon"];
+
         
     }
 }

@@ -24,4 +24,6 @@
 // Called with a full city object, returns a city object with an attached weather object using the above delegate
 - (void)fetchCurrentWeatherForCity:(City *)aCity;
 
+- (void)fetchCurrentWeatherForCities:(NSArray *)cities;
+
 @end

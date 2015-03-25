@@ -78,7 +78,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A81DAE021AC0832F00685FF9 /* Model Classes */ = {
+		A81DAE021AC0832F00685FF9 /* Model Objects */ = {
 			isa = PBXGroup;
 			children = (
 				A81DADFD1AC0830100685FF9 /* City.h */,
@@ -88,7 +88,7 @@
 				A81DADFE1AC0830100685FF9 /* NetworkManager.h */,
 				A81DADFF1AC0830100685FF9 /* NetworkManager.m */,
 			);
-			name = "Model Classes";
+			name = "Model Objects";
 			sourceTree = "<group>";
 		};
 		A89E03F91ABB48B0000A0326 = {
@@ -117,7 +117,7 @@
 				A89E042B1ABB4957000A0326 /* StormCasterTableViewController.h */,
 				A89E042C1ABB4957000A0326 /* StormCasterTableViewController.m */,
 				A8B2492C1ABCC206007938A9 /* ViewControllers */,
-				A81DAE021AC0832F00685FF9 /* Model Classes */,
+				A81DAE021AC0832F00685FF9 /* Model Objects */,
 				A89E040F1ABB48B0000A0326 /* Main.storyboard */,
 				A89E04311ABB528A000A0326 /* WeatherCell.h */,
 				A89E04321ABB528A000A0326 /* WeatherCell.m */,

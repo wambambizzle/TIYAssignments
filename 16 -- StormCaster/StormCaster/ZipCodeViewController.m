@@ -28,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.prompt = @"Please enter a zipcode to find the weather of the current weather conditions";
+//    self.navigationItem.prompt = @"Please enter a zipcode to find the current weather conditions";
     self.title = @"Add a City";
     
 }
@@ -99,7 +99,7 @@
         NSDictionary *city = addressComps[1];
         NSString *cityName = [city objectForKey:@"long_name"];
         
-        weatherItem.weatherCity = cityName;
+        weatherItem.city = cityName;
         
         NSDictionary *geometry = [locationInfo objectForKey:@"geometry"];
         NSDictionary *location = [geometry objectForKey:@"location"];

@@ -17,6 +17,8 @@
 #import "Weather.h"
 #import "NetworkManager.h"
 
+#define kCitiesKey @"cities"
+
 @interface StormCasterTableViewController () <UITextFieldDelegate>
 {
     NSMutableArray *cities;
@@ -29,15 +31,45 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self loadCityData];
+    
+    if ([cities count] > 0)
+    {
+        for (City *aCity in cities)
+        {
+            aCity.currentWeather = [[Weather alloc] init];
+        }
+        [[NetworkManager sharedNetworkManager] fetchCurrentWeatherForCities:cities];
+    }
+    
     self.title = @"City";
-    cities = [[NSMutableArray alloc] init];
     [NetworkManager sharedNetworkManager].delegate = self;
+   // self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)loadCityData
+{
+    NSData *cityData = [[NSUserDefaults standardUserDefaults] objectForKey:kCitiesKey];
+    if (cityData)
+    {
+        cities = [NSKeyedUnarchiver unarchiveObjectWithData:cityData];
+    }
+    else
+    {
+        cities = [[NSMutableArray alloc] init];
+    }
+}
+
+- (void)saveCityData
+{
+    NSData *cityData = [NSKeyedArchiver archivedDataWithRootObject:cities];
+    [[NSUserDefaults standardUserDefaults] setObject:cityData forKey:kCitiesKey];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,27 +108,30 @@
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath 
  {
     // Return NO if you do not want the specified item to be editable.
+     City *item = cities[indexPath.row];
+     
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) 
  {
         // Delete the row from the data source
+        [cities removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -172,6 +207,25 @@
     
     cell.tempLabel.text = [aCity.currentWeather currentTemperature]; 
     cell.descriptionLabel.text = aCity.currentWeather.summary;
+    
+}
+
+- (IBAction)clearAllCities:(id)sender
+{
+    NSMutableArray *indexPathsToRemove = [[NSMutableArray alloc] init];
+    NSMutableArray *itemsToRemove = [[NSMutableArray alloc] init];
+    
+    for (City *aCity in cities)
+    {
+        if (aCity)
+        {
+            [itemsToRemove addObject:aCity];
+            [indexPathsToRemove addObject:[NSIndexPath indexPathForRow:[cities indexOfObject:aCity] inSection:0]];
+        }
+    }
+    
+    [cities removeObjectsInArray:itemsToRemove];
+    [self.tableView deleteRowsAtIndexPaths:indexPathsToRemove withRowAnimation:UITableViewRowAnimationAutomatic];
     
 }
 

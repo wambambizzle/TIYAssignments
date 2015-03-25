@@ -34,7 +34,10 @@
                                                 <constraint firstAttribute="width" constant="120" id="DMO-ME-kfs"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                            <connections>
+                                                <action selector="voltsTextField:" destination="QuR-z5-Mrg" eventType="editingDidEnd" id="w7s-Jj-qOJ"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <constraints>
@@ -78,7 +81,10 @@
                                                 <constraint firstAttribute="width" constant="120" id="0Pa-gh-B0D"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                            <connections>
+                                                <action selector="ampsTextField:" destination="QuR-z5-Mrg" eventType="editingDidEnd" id="1td-6U-anE"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <constraints>
@@ -113,7 +119,10 @@
                                                 <constraint firstAttribute="width" constant="120" id="XJx-HD-Ydg"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                            <connections>
+                                                <action selector="ohmsTextField:" destination="QuR-z5-Mrg" eventType="editingDidEnd" id="A8Y-bU-G2x"/>
+                                            </connections>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESISTANCE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rh-58-HFd">
                                             <rect key="frame" x="10" y="11" width="150" height="19"/>
@@ -166,7 +175,10 @@
                                                 <constraint firstAttribute="width" constant="120" id="ZbH-bT-BO4"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                            <connections>
+                                                <action selector="wattsTextField:" destination="QuR-z5-Mrg" eventType="editingDidEnd" id="ULI-Ef-fpo"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <constraints>
@@ -199,7 +211,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="2DJ-Ra-8vU">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Clear " id="Tv6-F2-mWH"/>
+                        <barButtonItem key="leftBarButtonItem" title="Clear " id="Tv6-F2-mWH">
+                            <connections>
+                                <action selector="clearPowerCalcAllButton:" destination="QuR-z5-Mrg" id="nis-Rw-b77"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="90n-2R-hX4">
                             <connections>
                                 <segue destination="GKX-LJ-7BE" kind="popoverPresentation" identifier="ShowPopUpCalcSegue" popoverAnchorBarButtonItem="90n-2R-hX4" id="TVP-O3-z9V">

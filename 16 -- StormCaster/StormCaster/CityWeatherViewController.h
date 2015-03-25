@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Weather.h"
 
 @interface CityWeatherViewController : UIViewController
+
+@property (nonatomic, strong) Weather *aCity;
 
 @end

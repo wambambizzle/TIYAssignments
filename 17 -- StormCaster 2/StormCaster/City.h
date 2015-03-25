@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Weather.h"
 
-@interface City : NSObject
+@import MapKit;
+
+@interface City : NSObject <MKAnnotation, NSCoding> //act like a Map Kit Annotation Object
 
 @property (strong, nonatomic) Weather *currentWeather;
 @property (strong, nonatomic) NSArray *forecastedWeather;
@@ -21,5 +23,6 @@
 
 - (instancetype)initWithZipCode:(NSString *)zip;
 - (BOOL)parseCoordinateInfo:(NSDictionary *)mapsDictionary;
+- (CLLocationCoordinate2D)coordinate;
 
 @end

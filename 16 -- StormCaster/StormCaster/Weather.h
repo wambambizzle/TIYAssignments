@@ -10,17 +10,21 @@
 
 @interface Weather : NSObject <NSURLSessionDataDelegate>
 
-@property (strong, nonatomic) NSString *weatherCity;
+@property (assign) NSString *city;
 
 
-@property (strong, nonatomic) NSString *weatherLat;
-@property (strong, nonatomic) NSString *weatherLng;
+@property (assign) NSString *weatherLat;
+@property (assign) NSString *weatherLng;
 
-@property (strong, nonatomic) NSString *weatherTemp;
+@property (assign) NSString *weatherTemp; //@property (assign) double temperature;
+@property (assign) NSString *apparentTemp;
 @property (strong, nonatomic) NSString *weatherSummary;
-@property (strong, nonatomic) NSString *apparentTemp;
+@property (strong, nonatomic) NSString *icon;
 
+//- (NSString *)weatherTemp;
 
--(void)updateWeather;
+//-(BOOL)parseCoordinateInfo:(NSDictionary *)mapsDictionary;
+
+- (void)updateWeather;
 
 @end

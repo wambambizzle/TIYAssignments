@@ -10,9 +10,11 @@
 
 @implementation PowerCalculator
 
-+(NSArray *)allEnergyTypes
++(NSMutableArray *)allEnergyTypes
 {
-    return  @[@"Volts", @"Amps", @"Ohms", @"Watts"];
+    
+    return  [[NSMutableArray alloc] initWithObjects:@"Volts", @"Amps", @"Ohms", @"Watts", nil];
+   
 }
 
 
@@ -21,8 +23,11 @@
     self = [super init];
     if (self)
     {
-        _energy = EngeryTypeNone; // only use _ in init
-        
+        _energyType = EngeryTypeNone; // only use _ in init
+        _volts = 0;
+        _amps = 0;
+        _ohms = 0;
+        _watts = 0;
     }
     
     return self;
@@ -32,9 +37,13 @@
 {
     NSString *rc;
     
-    switch (self.energy)
+    switch (self.energyType)
     {
         case EngeryTypeVolts:
+            if (self.amps && self.ohms)
+            {
+                
+            }
             rc = @"volt";
             break;
         case EngeryTypeAmps:

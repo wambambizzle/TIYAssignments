@@ -10,7 +10,7 @@
 
 @protocol PopUpCalculationsTableVCDelegate
 
-- (void)engeryTypeWasSelected:(NSString *)energyStringSelected;
+- (void)energyTypeWasSelected:(NSString *)energyStringSelected;
 
 @end
 

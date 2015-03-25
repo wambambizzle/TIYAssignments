@@ -8,8 +8,8 @@
 
 #import "PopUpCalculationsTableViewController.h"
 
-@interface PopUpCalculationsTableViewController ()
 
+@interface PopUpCalculationsTableViewController ()
 
 @end
 
@@ -19,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.energyArray = [[NSMutableArray alloc] initWithObjects:@"Volts", @"Amps", @"Ohms", @"Watts", nil];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,8 +45,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PopUpModalCell" forIndexPath:indexPath];
     
-    
-    cell.textLabel.text = [self.energyArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[PowerCalculator allEnergyTypes] objectAtIndex:indexPath.row];/*[self.recieveAllEnergyTypes */
     
     return cell;
 
@@ -54,10 +53,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath // tells comp which row (aka button) was selected 
 {
-    NSString *aString = self.energyArray[indexPath.row];
-   [self.delegate engeryTypeWasSelected:aString];
+    NSString *aString = [PowerCalculator allEnergyTypes][indexPath.row];  /*self.recieveAllEnergyTypes */
+   [self.delegate energyTypeWasSelected:aString];
     
 }
+
+
+
 
 
 /*

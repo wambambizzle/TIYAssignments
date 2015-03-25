@@ -178,8 +178,7 @@
     
     [taskList removeObjectsInArray:itemsToRemove];
     [self.tableView deleteRowsAtIndexPaths:indexPathsToRemove withRowAnimation:UITableViewRowAnimationAutomatic];
-//    [taskList removeAllObjects];
-//    [self.tableView reloadData];
+
     
 }
 

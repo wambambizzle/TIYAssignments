@@ -8,6 +8,9 @@
 
 #import "CityWeatherViewController.h"
 
+@import MapKit;
+
+#define MAP_DISPLAY_SCALE 0.5 * 1609.344
 
 
 @interface CityWeatherViewController ()
@@ -21,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *precepProbabilityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *windSpeedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
@@ -40,6 +44,8 @@
     self.windSpeedLabel.text = [self.aCity.currentWeather windSpeedMPH];
     self.humidityLabel.text = [self.aCity.currentWeather humidityPercentage];
     self.iconImage.image = [UIImage imageNamed:[self.aCity.currentWeather icon]];
+    
+    [self configureMapView];
 
 }
 
@@ -47,6 +53,35 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)configureMapView
+{
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance([self.aCity coordinate], MAP_DISPLAY_SCALE, MAP_DISPLAY_SCALE);
+    [self.mapView setRegion:viewRegion]; //where the map goes
+    [self.mapView addAnnotation:self.aCity];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[City class]])
+    {
+        static NSString * const identifier = @"CityAnnotation";
+        MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        
+        if (annotationView)
+        {
+            annotationView.annotation = annotation;
+        }
+        else
+        {
+            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        }
+    
+        annotationView.canShowCallout = YES;
+        return annotationView;
+    }
+    return nil;
 }
 
 /*
@@ -58,5 +93,43 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end

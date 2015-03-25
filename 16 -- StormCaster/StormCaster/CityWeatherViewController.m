@@ -8,7 +8,15 @@
 
 #import "CityWeatherViewController.h"
 
+#import "Weather.h"
+
 @interface CityWeatherViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *cityDetailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *weatherIcon;
+@property (weak, nonatomic) IBOutlet UILabel *weatherSummaryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *apparentTempLabel;
 
 @end
 
@@ -17,7 +25,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+//    Weather *item = self.cityDetails;
+//    
+//
+//    cell.cityLabel.text = item.weatherCity;
+//    cell.tempLabel.text = item.weatherTemp;
+//
+//
+//    self.cityDetailLabel.text = self.cityDetails;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
