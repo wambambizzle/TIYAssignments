@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PinDrop.h"
+
 @interface ViewController : UIViewController
 
 

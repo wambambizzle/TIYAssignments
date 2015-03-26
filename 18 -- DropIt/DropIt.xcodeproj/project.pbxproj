@@ -14,6 +14,7 @@
 		A86702F71AC34CB500E1F214 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A86702F61AC34CB500E1F214 /* Images.xcassets */; };
 		A86702FA1AC34CB500E1F214 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86702F81AC34CB500E1F214 /* LaunchScreen.xib */; };
 		A86703061AC34CB500E1F214 /* DropItTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A86703051AC34CB500E1F214 /* DropItTests.m */; };
+		A86703111AC34F9000E1F214 /* PinDrop.m in Sources */ = {isa = PBXBuildFile; fileRef = A86703101AC34F9000E1F214 /* PinDrop.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		A86702FF1AC34CB500E1F214 /* DropItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DropItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A86703041AC34CB500E1F214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A86703051AC34CB500E1F214 /* DropItTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropItTests.m; sourceTree = "<group>"; };
+		A867030F1AC34F9000E1F214 /* PinDrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinDrop.h; sourceTree = "<group>"; };
+		A86703101AC34F9000E1F214 /* PinDrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinDrop.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				A86702EE1AC34CB500E1F214 /* AppDelegate.m */,
 				A86702F01AC34CB500E1F214 /* ViewController.h */,
 				A86702F11AC34CB500E1F214 /* ViewController.m */,
+				A867030F1AC34F9000E1F214 /* PinDrop.h */,
+				A86703101AC34F9000E1F214 /* PinDrop.m */,
 				A86702F31AC34CB500E1F214 /* Main.storyboard */,
 				A86702F61AC34CB500E1F214 /* Images.xcassets */,
 				A86702F81AC34CB500E1F214 /* LaunchScreen.xib */,
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A86703111AC34F9000E1F214 /* PinDrop.m in Sources */,
 				A86702F21AC34CB500E1F214 /* ViewController.m in Sources */,
 				A86702EF1AC34CB500E1F214 /* AppDelegate.m in Sources */,
 				A86702EC1AC34CB500E1F214 /* main.m in Sources */,
@@ -412,6 +418,7 @@
 				A867030B1AC34CB500E1F214 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A867030C1AC34CB500E1F214 /* Build configuration list for PBXNativeTarget "DropItTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +427,7 @@
 				A867030E1AC34CB500E1F214 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
