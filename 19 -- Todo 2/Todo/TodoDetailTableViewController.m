@@ -11,6 +11,16 @@
 #import "TodoTableViewController.h"
 
 @interface TodoDetailTableViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *taskTitleTextField;
+
+@property (weak, nonatomic) IBOutlet UILabel *datePickerLabel;
+
+- (IBAction)localSearchTextFieldA:(UITextField *)sender;
+@property (weak, nonatomic) IBOutlet UITextField *localSearchTextFieldO;
+
+
+@property (weak, nonatomic) IBOutlet UITextView *notesTextView;
+- (IBAction)deleteTaskButton:(UIButton *)sender;
 
 @end
 
@@ -47,6 +57,7 @@
     // Return the number of rows in the section.
     return 5;
 }
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
@@ -109,4 +120,8 @@
 }
 */
 
+- (IBAction)deleteTaskButton:(UIButton *)sender {
+}
+- (IBAction)localSearchTextFieldA:(UITextField *)sender {
+}
 @end

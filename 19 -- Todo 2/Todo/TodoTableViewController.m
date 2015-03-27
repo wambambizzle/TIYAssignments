@@ -20,8 +20,8 @@
 }
 - (IBAction)createTodoItem:(UIButton *)sender;
 - (IBAction)clearAllTaskItems:(UIButton *)sender;
-
 - (IBAction)checkMarkButton:(UIButton *)sender;
+
 
 @end
 
@@ -190,7 +190,6 @@
     TodoItem *anItem = taskList[path.row];
     anItem.taskIsComplete = !anItem.taskIsComplete;
     [sender setSelected:anItem.taskIsComplete];
-
 }
 
 
