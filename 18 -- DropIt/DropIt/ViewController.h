@@ -12,6 +12,7 @@
 
 @interface ViewController : UIViewController
 
+- (void)savePinData;
 
 @end
 

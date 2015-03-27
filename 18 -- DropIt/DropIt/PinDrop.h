@@ -11,12 +11,14 @@
 @import MapKit;
 
 
-@interface PinDrop : NSObject <MKAnnotation>
+@interface PinDrop : NSObject <MKAnnotation, NSCoding>
 
+@property (strong, nonatomic) NSString *name;
 @property (nonatomic) double latitude;
 @property (nonatomic) double longitude;
 
-- (instancetype)initWithCoorindate:(CLLocationCoordinate2D)coordinate;
+
+- (instancetype)initWithCoordinate:(CLLocationCoordinate2D)coordinate name:(NSString *)name;
 
 - (CLLocationCoordinate2D)coordinate;
 

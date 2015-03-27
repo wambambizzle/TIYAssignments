@@ -17,15 +17,17 @@
 @implementation PinDrop
 
 
-- (instancetype)initWithCoorindate:(CLLocationCoordinate2D)coordinate
+- (instancetype)initWithCoordinate:(CLLocationCoordinate2D)coordinate name:(NSString *)name
 {
     if (self)
     {
         self = [super init];
         _coordinate = coordinate;
+        _name = name;
     }
     return self;
 }
+
 
 - (CLLocationCoordinate2D)coordinate
 {
@@ -41,20 +43,33 @@
     return mapItem;
 }
 
-//- (void)encodeWithCoder:(NSCoder *)aCoder //aka saving the data
-//{
-//
-//}
-//
-//
-//
-//- (id)initWithCoder:(NSCoder *)aDecoder
-//{
-//   
-//}
 
+- (NSString *)title
+{
+    return self.name;
+}
 
+#pragma mark - NSCoding
 
+#define kNameKey @"name"
+#define klatitudeKey @"latitude"
+#define klongitudeKey @"longitude"
 
+- (void)encodeWithCoder:(NSCoder *)aCoder //aka saving the data
+{
+    [aCoder encodeObject:self.name forKey:kNameKey];
+    [aCoder encodeDouble:self.coordinate.latitude forKey:klatitudeKey];
+    [aCoder encodeDouble:self.coordinate.longitude forKey:klongitudeKey];
+
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    NSString *name = [aDecoder decodeObjectForKey:kNameKey];
+    double lat = [aDecoder decodeDoubleForKey:klatitudeKey];
+    double lng = [aDecoder decodeDoubleForKey:klongitudeKey];
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(lat, lng);
+    return [self initWithCoordinate:coordinate name:name];
+}
 
 @end

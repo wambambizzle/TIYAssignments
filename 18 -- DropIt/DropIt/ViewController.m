@@ -10,21 +10,23 @@
 
 #import "PinDrop.h"
 
+#define kPinKey @"pin"
+
 @import CoreLocation; // coordinates
 @import MapKit;
-@import AddressBook;
+//@import AddressBook;
 
 #define MAP_DISPLAY_SCALE 0.5 * 1609.344
 
-@interface ViewController () <CLLocationManagerDelegate>
+@interface ViewController () <CLLocationManagerDelegate, UITextFieldDelegate>
 {
-    
-    NSMutableArray *pin;
     CLLocationManager *locationManager;
-    CLGeocoder *geocoder;
+
 }
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 
 @property (strong, nonatomic) PinDrop *currentLocation;
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addPinButton;
@@ -41,9 +43,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    geocoder = [[CLGeocoder alloc] init];
-    [self configureLocationManager];
-   
+
+    [self loadPinData];
+    
+    self.navigationItem.prompt = @"Enter a description and drop a pin at your car!";
+    
+    if (!self.currentLocation)
+    {
+        [self configureLocationManager];
+    }
+    else
+    {
+        [self configureMapView];
+        [self addAnnotationMap];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,21 +65,42 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Load and Save data
+
+- (void)loadPinData
+{
+    NSData *pinData = [[NSUserDefaults standardUserDefaults] objectForKey:kPinKey];
+    if (pinData)
+    {
+         self.currentLocation = [NSKeyedUnarchiver unarchiveObjectWithData:pinData];
+    }
+    else
+    {
+         self.currentLocation = nil;
+    }
+}
+
+- (void)savePinData
+{
+    NSData *pinData = [NSKeyedArchiver archivedDataWithRootObject:self.currentLocation];
+    [[NSUserDefaults standardUserDefaults] setObject:pinData forKey:kPinKey];
+}
 
 
 #pragma mark - Action Handlers
 
 - (IBAction)addNewPinButton:(UIBarButtonItem *)sender
 {
-//    [self enableLocationManager:YES];
-   
     [self addAnnotationMap];
-    
+    self.currentLocation.name = self.titleTextField.text;
 }
 
 - (IBAction)clearPinsButton:(UIBarButtonItem *)sender
 {
+    [self.mapView removeAnnotation:self.currentLocation];
+    self.currentLocation = nil;
     
+    [self configureLocationManager];
 }
 
 #pragma mark - Configure map view
@@ -80,7 +114,7 @@
 
 - (void)addAnnotationMap
 {
-    [self.mapView addAnnotation:self.currentLocation];
+    [self.mapView addAnnotation:self.currentLocation]; //add the Pin to the Map
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -173,18 +207,35 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    [self enableLocationManager:NO];
     CLLocation *location = [locations lastObject];
-    
+    [self enableLocationManager:NO];
+    self.currentLocation = [[PinDrop alloc] initWithCoordinate:location.coordinate name:self.titleTextField.text];
 
-    self.currentLocation = [[PinDrop alloc] initWithCoorindate:location.coordinate];
-    
-     [self configureMapView];
+    [self configureMapView];
 
 }
 
 
+#pragma mark - UITextField delegate w/ Validation
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    BOOL rc = NO;
+    
+    if ([textField.text isEqualToString:@""])
+    {
+        
+        [textField becomeFirstResponder];
+        rc = NO;
+    }
+    else if (![textField.text isEqualToString:@""])
+    {
+        [textField resignFirstResponder];
+        rc = YES;
+    }
+    
+    return rc;
+}
 
 
 

@@ -21,6 +21,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="600" id="TFl-Es-2xk"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="2y6-PD-8sB"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -39,11 +42,21 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="VNT-C8-a53">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="trash" id="FnW-zf-WEk">
                             <connections>
                                 <action selector="clearPinsButton:" destination="vXZ-lx-hvc" id="8gy-Z7-1ce"/>
                             </connections>
                         </barButtonItem>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="VPI-mv-9fa">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="vXZ-lx-hvc" id="OxG-8x-q64"/>
+                            </connections>
+                        </textField>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FYc-CY-3hM">
                             <connections>
                                 <action selector="addNewPinButton:" destination="vXZ-lx-hvc" id="Q1b-gH-WRg"/>
@@ -53,6 +66,7 @@
                     <connections>
                         <outlet property="addPinButton" destination="FYc-CY-3hM" id="9Oo-gi-PtB"/>
                         <outlet property="mapView" destination="1Sk-ah-zlW" id="rmZ-90-F0I"/>
+                        <outlet property="titleTextField" destination="VPI-mv-9fa" id="Lty-tD-f0o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
