@@ -144,13 +144,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Due Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXD-0r-qxh">
-                                                    <rect key="frame" x="15" y="13" width="101" height="29"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                                    <rect key="frame" x="15" y="18" width="63" height="18"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tap to set" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUq-5D-zer">
-                                                    <rect key="frame" x="124" y="14" width="468" height="26"/>
+                                                    <rect key="frame" x="86" y="14" width="506" height="26"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -180,6 +180,9 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="vyZ-zf-71E" kind="presentation" identifier="DueDatePickerSegue" id="9mi-0L-fFY"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="55" id="AAL-vP-oxF">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -187,15 +190,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local Search:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J24-jA-ldy">
-                                                    <rect key="frame" x="15" y="13" width="138" height="29"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                                    <rect key="frame" x="15" y="18" width="86" height="18"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Omk-Dz-Bsv">
-                                                    <rect key="frame" x="161" y="13" width="424" height="30"/>
+                                                    <rect key="frame" x="109" y="12" width="476" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <segue destination="vCz-Yv-zWP" kind="show" id="kxL-25-5Li"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -286,12 +292,31 @@
                     <view key="view" contentMode="scaleToFill" id="nWh-Cv-tqV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="XWM-fz-sLN">
+                                <rect key="frame" x="0.0" y="187" width="600" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="0n3-R3-v2y"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="449183562.92167097">
+                                    <!--2015-03-27 21:12:42 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="XWM-fz-sLN" secondAttribute="centerX" id="IWT-qm-rA8"/>
+                            <constraint firstAttribute="centerY" secondItem="XWM-fz-sLN" secondAttribute="centerY" constant="32" id="gB9-Zq-Os3"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="TO7-ea-gcu">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kuk-gz-XF0"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="EOp-sm-Kvp"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="snd-9h-Sst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2740" y="79"/>
+            <point key="canvasLocation" x="3437" y="76"/>
         </scene>
         <!--Results Table View Controller-->
         <scene sceneID="EEV-wV-tVu">
@@ -314,10 +339,11 @@
                             <outlet property="delegate" destination="Eak-6E-QhN" id="ybN-y1-tGS"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Mjd-cT-RYO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SVo-ld-BGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2740" y="743"/>
+            <point key="canvasLocation" x="3678" y="799"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="66O-NF-6C3">
@@ -336,6 +362,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gvs-S1-wfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="529" y="450"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XiG-43-bak">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vyZ-zf-71E" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ugs-3O-ma5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qyn-xj-jGn" kind="relationship" relationship="rootViewController" id="yAZ-Xu-dXI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hkn-LB-hQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2768" y="76"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sPF-qw-nkQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vCz-Yv-zWP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cHP-1f-QmX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Eak-6E-QhN" kind="relationship" relationship="rootViewController" id="w6u-tH-4GM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="anX-ft-ClP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2866" y="799"/>
         </scene>
     </scenes>
     <resources>

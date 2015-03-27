@@ -45,7 +45,7 @@
 {
 
     // Return the number of rows in the section.
-    return 6;
+    return 5;
 }
 
 /*
