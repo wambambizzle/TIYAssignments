@@ -35,6 +35,12 @@
     taskList = [[NSMutableArray alloc] init];
 }
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -119,17 +125,21 @@
 }
 */
 
-//#pragma mark - Navigation
-//
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([segue.identifier isEqualToString:@"detailButtonCellSegue"])
-//    {
-//        UINavigationController *navController = [segue destinationViewController];
-//        TodoDetailTableViewController *todoDetailVC = [navController viewControllers ][0];
-////        todoDetailVC.aTask = taskList sel;
-//    }
-//}
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"detailButtonCellSegue"])
+    {
+        TodoDetailTableViewController *todoDetailVC = [segue destinationViewController];
+        TodoTableViewCell *senderCell = (TodoTableViewCell *)sender;
+        NSIndexPath *path = [self.tableView indexPathForCell:senderCell];
+        TodoItem *anItem = taskList[path.row];
+        anItem.taskName = senderCell.descriptionTextField.text;
+//        item.taskIsComplete = senderCell.checkboxButton.selected;
+        todoDetailVC.aTask = anItem;
+    }
+}
 
 //
 //#pragma mark - UITableView delegate

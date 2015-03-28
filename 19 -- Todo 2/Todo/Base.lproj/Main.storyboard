@@ -281,6 +281,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="checkMarkButton" destination="i9h-xL-4tx" id="Bvb-gf-XlZ"/>
                         <outlet property="datePickerLabel" destination="kUq-5D-zer" id="Our-Ic-MPt"/>
                         <outlet property="localSearchTextFieldO" destination="Omk-Dz-Bsv" id="ZBz-gv-oJI"/>
                         <outlet property="notesTextView" destination="lc3-nH-NO8" id="yeq-oV-8LP"/>

@@ -14,11 +14,14 @@
 
 @interface TodoDetailTableViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *checkMarkButton;
+
 @property (weak, nonatomic) IBOutlet UITextField *taskTitleTextField;
 
 @property (weak, nonatomic) IBOutlet UILabel *datePickerLabel;
 
 - (IBAction)localSearchTextFieldA:(UITextField *)sender;
+
 @property (weak, nonatomic) IBOutlet UITextField *localSearchTextFieldO;
 
 
@@ -34,6 +37,9 @@
     [super viewDidLoad];
     
     self.taskTitleTextField.text = self.aTask.taskName;
+    
+    self.checkMarkButton.selected = self.aTask.taskIsComplete;
+    
     NSLog(@"title name: %@", self.aTask.taskName);
     
     // Uncomment the following line to preserve selection between presentations.
@@ -64,6 +70,37 @@
     return 5;
 }
 
+- (IBAction)deleteTaskButton:(UIButton *)sender
+{
+    
+}
+
+- (IBAction)localSearchTextFieldA:(UITextField *)sender
+{
+    
+}
+
+
+#pragma mark - UITextField delegate w/ Validation
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    BOOL rc = NO;
+    
+    if (![textField.text isEqualToString:@""])
+    {
+        NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+        
+        if ([textField.text length] == 5 && [textField.text rangeOfCharacterFromSet:set].location != NSNotFound)
+        {
+            [textField resignFirstResponder];
+            
+            rc = YES;
+        }
+    }
+    
+    return rc;
+}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
@@ -126,8 +163,5 @@
 }
 */
 
-- (IBAction)deleteTaskButton:(UIButton *)sender {
-}
-- (IBAction)localSearchTextFieldA:(UITextField *)sender {
-}
+
 @end

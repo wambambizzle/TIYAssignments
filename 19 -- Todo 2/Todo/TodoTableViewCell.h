@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TodoTableViewCell : UITableViewCell
+#import "TodoItem.h"
+
+@interface TodoTableViewCell : UITableViewCell 
 
 @property (weak, nonatomic) IBOutlet UIButton *checkboxButton;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
