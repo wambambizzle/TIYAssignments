@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "TodoItem.h"
+
 @interface TodoDetailTableViewController : UITableViewController
+
+@property (nonatomic, strong) TodoItem *aTask;
+
 
 @end

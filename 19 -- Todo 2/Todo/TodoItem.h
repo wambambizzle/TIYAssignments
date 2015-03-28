@@ -8,10 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+@import MapKit;
+
 @interface TodoItem : NSObject
 
 @property(strong, nonatomic) NSString *taskName;
+@property(strong, nonatomic) NSDate *dueDate;
+@property(strong, nonatomic) NSString *notes;
+@property(strong, nonatomic) MKLocalSearch *localSearch;
 @property (assign) BOOL taskIsComplete;
+
+- (instancetype)init;
+
+- (instancetype)initWithTaskName:(NSString *)taskName dueDate:(NSDate *)dueDate notes:(NSString *)notes localSearch:(MKLocalSearch *)localSearch taskIsComplete:(BOOL)taskIsComplete;
 
 
 @end

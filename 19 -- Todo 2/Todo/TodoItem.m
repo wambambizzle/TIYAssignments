@@ -10,12 +10,26 @@
 
 @implementation TodoItem
 
-
-- (instancetype) init
+- (instancetype)init
 {
     self = [super init];
     if (self)
     {
+        _taskIsComplete = NO;
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithTaskName:(NSString *)taskName dueDate:(NSDate *)dueDate notes:(NSString *)notes localSearch:(MKLocalSearch *)localSearch taskIsComplete:(BOOL)taskIsComplete;
+{
+    self = [super init];
+    if (self)
+    {
+        _taskName = nil;
+        _dueDate = nil;
+        _notes = nil;
+        _localSearch = nil;
         _taskIsComplete = NO;
     }
     

@@ -10,7 +10,10 @@
 
 #import "TodoTableViewController.h"
 
+#import "TodoItem.h"
+
 @interface TodoDetailTableViewController ()
+
 @property (weak, nonatomic) IBOutlet UITextField *taskTitleTextField;
 
 @property (weak, nonatomic) IBOutlet UILabel *datePickerLabel;
@@ -29,6 +32,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.taskTitleTextField.text = self.aTask.taskName;
+    NSLog(@"title name: %@", self.aTask.taskName);
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

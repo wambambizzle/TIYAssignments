@@ -7,6 +7,7 @@
 //
 
 #import "TodoTableViewController.h"
+#import "TodoDetailTableViewController.h"
 
 #import "TodoTableViewCell.h"
 
@@ -118,16 +119,34 @@
 }
 */
 
-/*
-#pragma mark - Navigation
+//#pragma mark - Navigation
+//
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([segue.identifier isEqualToString:@"detailButtonCellSegue"])
+//    {
+//        UINavigationController *navController = [segue destinationViewController];
+//        TodoDetailTableViewController *todoDetailVC = [navController viewControllers ][0];
+////        todoDetailVC.aTask = taskList sel;
+//    }
+//}
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender 
- {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+//
+//#pragma mark - UITableView delegate
+//
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    TodoItem *selectedTask = taskList[indexPath.row];
+//    TodoDetailTableViewController *todoDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TodoDetails"];
+//    todoDetailVC.aTask = selectedTask;
+//    
+//    [self.navigationController pushViewController:todoDetailVC animated:YES];
+//    
+//    
+//    
+//}
+
 
 #pragma mark - UITextField delegates
 
