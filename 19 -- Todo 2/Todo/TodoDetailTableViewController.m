@@ -9,10 +9,23 @@
 #import "TodoDetailTableViewController.h"
 
 #import "TodoTableViewController.h"
+#import "DueDatePickerViewController.h"
 
 #import "TodoItem.h"
 
-@interface TodoDetailTableViewController ()
+@import MapKit;
+@import CoreLocation;
+
+@interface TodoDetailTableViewController () <UITextFieldDelegate, CLLocationManagerDelegate>
+{
+    NSDateFormatter *formatDate;
+    NSDate *selectedDueDate;
+    
+    CLLocationManager *locationManager;
+    MKLocalSearch *localSearch;
+    MKLocalSearchResponse *results;
+    
+}
 
 @property (weak, nonatomic) IBOutlet UIButton *checkMarkButton;
 
@@ -20,12 +33,12 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *datePickerLabel;
 
-- (IBAction)localSearchTextFieldA:(UITextField *)sender;
+@property (weak, nonatomic) IBOutlet UITextField *localSearchTextField;
 
-@property (weak, nonatomic) IBOutlet UITextField *localSearchTextFieldO;
-
+- (IBAction)localSearchTextfieldAction:(UITextField *)sender;
 
 @property (weak, nonatomic) IBOutlet UITextView *notesTextView;
+
 - (IBAction)deleteTaskButton:(UIButton *)sender;
 
 @end
@@ -40,13 +53,18 @@
     
     self.checkMarkButton.selected = self.aTask.taskIsComplete;
     
-    NSLog(@"title name: %@", self.aTask.taskName);
+    self.aTask.notes = self.notesTextView.text;
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    formatDate = [[NSDateFormatter alloc] init];
+    NSString *formatString = [NSDateFormatter dateFormatFromTemplate:@"MMMddyyyy"
+                                                             options:0
+                                                              locale:[NSLocale currentLocale]];
+
+    [formatDate setDateFormat:formatString];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.aTask.notes = self.notesTextView.text;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,13 +93,39 @@
     
 }
 
-- (IBAction)localSearchTextFieldA:(UITextField *)sender
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue 
+{
+    if ([segue.identifier isEqualToString:@"DueDatePickerSegue"])
+    {
+        DueDatePickerViewController *dueDateVC = [segue destinationViewController];
+        dueDateVC.selectedDueDate = selectedDueDate;
+        self.aTask.dueDate = selectedDueDate;
+       
+    }
+}
+
+- (IBAction)localSearchTextfieldAction:(UITextField *)sender
 {
     
 }
 
+#pragma mark - Local Search
+- (instancetype)initWithRequest:(MKLocalSearchRequest *)request
+{
+    MKLocalSearchRequest *searchRequest = [[MKLocalSearchRequest alloc] init];
+    searchRequest.naturalLanguageQuery = @"Restaurants";
+    
+    
+    return self;
+}
 
-#pragma mark - UITextField delegate w/ Validation
+
+
+#pragma mark - UITextField delegates w/ Local Search
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -89,12 +133,9 @@
     
     if (![textField.text isEqualToString:@""])
     {
-        NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
-        
-        if ([textField.text length] == 5 && [textField.text rangeOfCharacterFromSet:set].location != NSNotFound)
+        if (textField == self.localSearchTextField  && ![textField.text isEqualToString:@""])
         {
-            [textField resignFirstResponder];
-            
+           
             rc = YES;
         }
     }
@@ -102,6 +143,143 @@
     return rc;
 }
 
+//#pragma mark - Configure map view
+//
+//- (void)configureMapView
+//{
+//    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance([self.currentLocation coordinate], MAP_DISPLAY_SCALE, MAP_DISPLAY_SCALE);
+//    [self.mapView setRegion:viewRegion]; //where the map goes
+//    
+//}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if (textField == self.localSearchTextField)
+    {
+        [self configureLocationManager];
+    }
+}
+
+
+#pragma mark - CLLocation related methods
+
+- (void)configureLocationManager
+{
+    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusRestricted)
+    {
+        if (!locationManager)
+        {
+            locationManager = [[CLLocationManager alloc] init];
+            locationManager.delegate = self;
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+            if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined)
+            {
+                [locationManager requestWhenInUseAuthorization];
+            }
+            else
+            {
+                [self enableLocationManager:YES];
+            }
+        }
+    }
+
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if (status != kCLAuthorizationStatusAuthorizedWhenInUse)
+    {
+        //        [self.addPinButton setEnabled:NO];
+    }
+    else
+    {
+        [self enableLocationManager:YES];
+    }
+}
+
+-(void)enableLocationManager:(BOOL)enable
+{
+    if (locationManager)
+    {
+        if (enable)
+        {
+            [locationManager stopUpdatingLocation];
+            [locationManager startUpdatingLocation];
+        }
+        else
+        {
+            [locationManager stopUpdatingLocation];
+        }
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    if (error != kCLErrorLocationUnknown)
+    {
+        [self enableLocationManager:NO];
+        //      [self.addPinButton setEnabled:NO];
+    }
+}
+
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *newLocation = [locations lastObject];
+    MKCoordinateRegion userLocation = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 1500.00, 1500.00);
+    [self performSearch:userLocation];
+    
+}
+
+-(void)performSearch:(MKCoordinateRegion)aRegion
+{
+    // Cancel any previous searches.
+    [localSearch cancel];
+    
+    [locationManager stopUpdatingLocation];
+    
+    // Perform a new search.
+    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
+    request.naturalLanguageQuery = self.localSearchTextField.text;
+    request.region = aRegion;
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    localSearch = [[MKLocalSearch alloc] initWithRequest:request];
+    
+    [localSearch startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error){
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
+        if (error != nil) {
+            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Map Error",nil)
+                                        message:[error localizedDescription]
+                                       delegate:nil
+                              cancelButtonTitle:NSLocalizedString(@"OK",nil) otherButtonTitles:nil] show];
+            return;
+        }
+        
+        if ([response.mapItems count] == 0) {
+            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"No Results",nil)
+                                        message:nil
+                                       delegate:nil
+                              cancelButtonTitle:NSLocalizedString(@"OK",nil) otherButtonTitles:nil] show];
+            return;
+        }
+        
+        results = response;
+        
+        [self.searchDisplayController.searchResultsTableView reloadData];
+    }];
+    
+    NSLog(@"DEBUG");
+    
+    
+}
+
+
+
+ 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
  {
@@ -113,55 +291,8 @@
 }
 */
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath 
- {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath 
- {
-    if (editingStyle == UITableViewCellEditingStyleDelete) 
- {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath 
- {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath 
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender 
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 
 @end

@@ -112,12 +112,9 @@
 				A859FC951AB7491B00FE63DC /* AppDelegate.h */,
 				A859FC961AB7491B00FE63DC /* AppDelegate.m */,
 				A825C3371AC5A8AB008A2C00 /* Tableview Controllers */,
-				A825C3381AC5A901008A2C00 /* DueDatePickerViewController.h */,
-				A825C3391AC5A901008A2C00 /* DueDatePickerViewController.m */,
-				A859FCBA1AB7590000FE63DC /* TodoItem.h */,
-				A859FCBB1AB7590000FE63DC /* TodoItem.m */,
-				A8CA74591AB8640400148414 /* TodoTableViewCell.h */,
-				A8CA745A1AB8640400148414 /* TodoTableViewCell.m */,
+				A8E4E04B1AC8B571003E3E10 /* View Controllerrs */,
+				A8E4E04C1AC8B58B003E3E10 /* Model Objects */,
+				A8E4E04D1AC8B596003E3E10 /* Custom Cells */,
 				A859FC9B1AB7491B00FE63DC /* Main.storyboard */,
 				A859FC9E1AB7491B00FE63DC /* Images.xcassets */,
 				A859FCA01AB7491B00FE63DC /* LaunchScreen.xib */,
@@ -150,6 +147,33 @@
 				A859FCAC1AB7491B00FE63DC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A8E4E04B1AC8B571003E3E10 /* View Controllerrs */ = {
+			isa = PBXGroup;
+			children = (
+				A825C3381AC5A901008A2C00 /* DueDatePickerViewController.h */,
+				A825C3391AC5A901008A2C00 /* DueDatePickerViewController.m */,
+			);
+			name = "View Controllerrs";
+			sourceTree = "<group>";
+		};
+		A8E4E04C1AC8B58B003E3E10 /* Model Objects */ = {
+			isa = PBXGroup;
+			children = (
+				A859FCBA1AB7590000FE63DC /* TodoItem.h */,
+				A859FCBB1AB7590000FE63DC /* TodoItem.m */,
+			);
+			name = "Model Objects";
+			sourceTree = "<group>";
+		};
+		A8E4E04D1AC8B596003E3E10 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A8CA74591AB8640400148414 /* TodoTableViewCell.h */,
+				A8CA745A1AB8640400148414 /* TodoTableViewCell.m */,
+			);
+			name = "Custom Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

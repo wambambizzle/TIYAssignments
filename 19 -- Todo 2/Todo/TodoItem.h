@@ -20,6 +20,8 @@
 
 - (instancetype)init;
 
+- (instancetype)initWithDueDate:(NSDate *)duedate;
+
 - (instancetype)initWithTaskName:(NSString *)taskName dueDate:(NSDate *)dueDate notes:(NSString *)notes localSearch:(MKLocalSearch *)localSearch taskIsComplete:(BOOL)taskIsComplete;
 
 

@@ -10,4 +10,6 @@
 
 @interface DueDatePickerViewController : UIViewController
 
+@property (nonatomic, weak) NSDate *selectedDueDate;
+
 @end

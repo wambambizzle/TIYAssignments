@@ -118,7 +118,7 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ugd-wb-jEM">
                                                     <rect key="frame" x="70" y="12" width="515" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Copperplate-Light" family="Copperplate" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9h-xL-4tx">
@@ -200,7 +200,8 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="localSearchTextFieldA:" destination="rl6-ZK-q8B" eventType="editingDidEnd" id="aWt-Ac-D1F"/>
+                                                        <action selector="localSearchTextfieldAction:" destination="rl6-ZK-q8B" eventType="editingDidEnd" id="fKS-Vo-S79"/>
+                                                        <outlet property="delegate" destination="rl6-ZK-q8B" id="KON-Fd-rbe"/>
                                                         <segue destination="vCz-Yv-zWP" kind="show" id="kxL-25-5Li"/>
                                                     </connections>
                                                 </textField>
@@ -228,9 +229,8 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lc3-nH-NO8">
                                                     <rect key="frame" x="73" y="8" width="512" height="93"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
@@ -283,8 +283,8 @@
                     <connections>
                         <outlet property="checkMarkButton" destination="i9h-xL-4tx" id="Bvb-gf-XlZ"/>
                         <outlet property="datePickerLabel" destination="kUq-5D-zer" id="Our-Ic-MPt"/>
-                        <outlet property="localSearchTextFieldO" destination="Omk-Dz-Bsv" id="ZBz-gv-oJI"/>
-                        <outlet property="notesTextView" destination="lc3-nH-NO8" id="yeq-oV-8LP"/>
+                        <outlet property="localSearchTextField" destination="Omk-Dz-Bsv" id="x2r-hY-dyi"/>
+                        <outlet property="notesTextView" destination="lc3-nH-NO8" id="D78-5m-2sX"/>
                         <outlet property="taskTitleTextField" destination="ugd-wb-jEM" id="0J4-12-DbT"/>
                     </connections>
                 </tableViewController>
@@ -304,13 +304,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="XWM-fz-sLN">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="XWM-fz-sLN">
                                 <rect key="frame" x="0.0" y="187" width="600" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="600" id="0n3-R3-v2y"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="449183562.92167097">
                                     <!--2015-03-27 21:12:42 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                    <!--2037-12-31 11:00:00 +0000-->
                                 </date>
                             </datePicker>
                         </subviews>
@@ -321,9 +324,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TO7-ea-gcu">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kuk-gz-XF0"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="EOp-sm-Kvp"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kuk-gz-XF0">
+                            <connections>
+                                <action selector="cancelButton:" destination="qyn-xj-jGn" id="AHg-6S-ecG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="EOp-sm-Kvp">
+                            <connections>
+                                <action selector="donePickDateButton:" destination="qyn-xj-jGn" id="ftO-JD-zJB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="XWM-fz-sLN" id="8br-Ip-dbD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="snd-9h-Sst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -332,7 +346,7 @@
         <!--Results Table View Controller-->
         <scene sceneID="EEV-wV-tVu">
             <objects>
-                <tableViewController id="Eak-6E-QhN" customClass="POIResultsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="POIResults" id="Eak-6E-QhN" customClass="POIResultsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="38w-Dj-QoZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

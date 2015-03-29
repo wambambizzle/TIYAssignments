@@ -136,27 +136,10 @@
         NSIndexPath *path = [self.tableView indexPathForCell:senderCell];
         TodoItem *anItem = taskList[path.row];
         anItem.taskName = senderCell.descriptionTextField.text;
-//        item.taskIsComplete = senderCell.checkboxButton.selected;
+        anItem.taskIsComplete = senderCell.checkboxButton.selected;
         todoDetailVC.aTask = anItem;
     }
 }
-
-//
-//#pragma mark - UITableView delegate
-//
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    TodoItem *selectedTask = taskList[indexPath.row];
-//    TodoDetailTableViewController *todoDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TodoDetails"];
-//    todoDetailVC.aTask = selectedTask;
-//    
-//    [self.navigationController pushViewController:todoDetailVC animated:YES];
-//    
-//    
-//    
-//}
-
 
 #pragma mark - UITextField delegates
 

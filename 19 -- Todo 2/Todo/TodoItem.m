@@ -21,6 +21,17 @@
     return self;
 }
 
+- (instancetype)initWithDueDate:(NSDate *)duedate
+{
+    self = [super init];
+    if (self)
+    {
+        _dueDate = duedate;
+    }
+    
+    return self;
+}
+
 - (instancetype)initWithTaskName:(NSString *)taskName dueDate:(NSDate *)dueDate notes:(NSString *)notes localSearch:(MKLocalSearch *)localSearch taskIsComplete:(BOOL)taskIsComplete;
 {
     self = [super init];

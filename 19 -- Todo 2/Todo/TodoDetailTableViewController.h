@@ -10,9 +10,12 @@
 
 #import "TodoItem.h"
 
-@interface TodoDetailTableViewController : UITableViewController <UITextFieldDelegate>
+
+@interface TodoDetailTableViewController : UITableViewController 
 
 @property (nonatomic, strong) TodoItem *aTask;
 
 
 @end
+
+
