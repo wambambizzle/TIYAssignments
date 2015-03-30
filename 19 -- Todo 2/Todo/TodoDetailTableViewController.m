@@ -7,6 +7,7 @@
 //
 
 #import "TodoDetailTableViewController.h"
+#import "POIResultsTableViewController.h"
 
 #import "TodoTableViewController.h"
 #import "DueDatePickerViewController.h"
@@ -113,17 +114,6 @@
     
 }
 
-#pragma mark - Local Search
-- (instancetype)initWithRequest:(MKLocalSearchRequest *)request
-{
-    MKLocalSearchRequest *searchRequest = [[MKLocalSearchRequest alloc] init];
-    searchRequest.naturalLanguageQuery = @"Restaurants";
-    
-    
-    return self;
-}
-
-
 
 #pragma mark - UITextField delegates w/ Local Search
 
@@ -135,9 +125,11 @@
     {
         if (textField == self.localSearchTextField  && ![textField.text isEqualToString:@""])
         {
-           
+           [self configureLocationManager];
             rc = YES;
         }
+        
+        // need to add logic for if they change the aTask.name
     }
     
     return rc;
@@ -152,13 +144,13 @@
 //    
 //}
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    if (textField == self.localSearchTextField)
-    {
-        [self configureLocationManager];
-    }
-}
+//- (void)textFieldDidBeginEditing:(UITextField *)textField
+//{
+//    if (textField == self.localSearchTextField)
+//    {
+//        
+//    }
+//}
 
 
 #pragma mark - CLLocation related methods
@@ -226,6 +218,8 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
+    [self enableLocationManager:NO];
+    
     CLLocation *newLocation = [locations lastObject];
     MKCoordinateRegion userLocation = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 1500.00, 1500.00);
     [self performSearch:userLocation];
@@ -252,24 +246,35 @@
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
         if (error != nil) {
-            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Map Error",nil)
+            [[[UIAlertView alloc] initWithTitle:@"Map Error"
                                         message:[error localizedDescription]
                                        delegate:nil
-                              cancelButtonTitle:NSLocalizedString(@"OK",nil) otherButtonTitles:nil] show];
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil] show];
             return;
         }
         
         if ([response.mapItems count] == 0) {
-            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"No Results",nil)
+            [[[UIAlertView alloc] initWithTitle:@"No Results"
                                         message:nil
                                        delegate:nil
-                              cancelButtonTitle:NSLocalizedString(@"OK",nil) otherButtonTitles:nil] show];
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil] show];
             return;
         }
         
         results = response;
+                
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UINavigationController *navC = [storyboard instantiateViewControllerWithIdentifier:@"LocationNavController"];
+        POIResultsTableViewController *poiTVC = [navC viewControllers][0]; // <- [0] same as object at index to get a spot of an array
         
-        [self.searchDisplayController.searchResultsTableView reloadData];
+        [poiTVC setModalPresentationStyle:UIModalPresentationFullScreen];
+        
+        poiTVC.locationsArray = response.mapItems;
+        
+        [self presentViewController:navC animated:YES completion:nil];
+        
     }];
     
     NSLog(@"DEBUG");
@@ -283,7 +288,7 @@
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
  {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: forIndexPath:indexPath];
     
     // Configure the cell...
     

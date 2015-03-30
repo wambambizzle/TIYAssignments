@@ -37,26 +37,43 @@
 {
 
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 
     // Return the number of rows in the section.
-    return 0;
+    return self.locationsArray.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
  {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"POICell" forIndexPath:indexPath];
     
-    // Configure the cell...
+     MKMapItem *mapItem= self.locationsArray[indexPath.row];
+     
+     cell.textLabel.text = mapItem.name;
+     cell.detailTextLabel.text = mapItem.placemark.addressDictionary[@"Street"];
     
     return cell;
 }
-*/
+
+#pragma mark - UITableView delegate
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+////{
+////    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+////    City *selectedCity = cities[indexPath.row];
+////    CityWeatherViewController *cityWVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CityWeather"];
+////    cityWVC.aCity = selectedCity;
+////    
+////    [self.navigationController pushViewController:cityWVC animated:YES];
+////    
+////}
+
+
 
 /*
 // Override to support conditional editing of the table view.

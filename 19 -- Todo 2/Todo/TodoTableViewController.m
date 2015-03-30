@@ -158,6 +158,8 @@
         anItem.taskName = textField.text;
         
         rc = YES;
+    
+        //add code to save checkbox state as well
     }
     
     return rc;
