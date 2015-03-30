@@ -200,9 +200,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="localSearchTextfieldAction:" destination="rl6-ZK-q8B" eventType="editingDidEnd" id="fKS-Vo-S79"/>
                                                         <outlet property="delegate" destination="rl6-ZK-q8B" id="KON-Fd-rbe"/>
-                                                        <segue destination="vCz-Yv-zWP" kind="show" id="kxL-25-5Li"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>

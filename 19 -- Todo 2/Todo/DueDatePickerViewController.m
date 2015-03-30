@@ -52,7 +52,7 @@
 
 - (IBAction)donePickDateButton:(UIBarButtonItem *)sender
 {
-    self.selectedDueDate = self.datePicker.date;
+    [self.delegate taskDueDateWasChosen:self.datePicker.date];
     
 
     [self cancel];

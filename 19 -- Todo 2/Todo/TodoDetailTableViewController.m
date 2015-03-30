@@ -20,7 +20,7 @@
 @interface TodoDetailTableViewController () <UITextFieldDelegate, CLLocationManagerDelegate>
 {
     NSDateFormatter *formatDate;
-    NSDate *selectedDueDate;
+    NSString *selectedDueDate;
     
     CLLocationManager *locationManager;
     MKLocalSearch *localSearch;
@@ -30,13 +30,13 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *checkMarkButton;
 
+@property (weak, nonatomic) IBOutlet UITextField *localSearchTextField;
+
+
 @property (weak, nonatomic) IBOutlet UITextField *taskTitleTextField;
 
 @property (weak, nonatomic) IBOutlet UILabel *datePickerLabel;
 
-@property (weak, nonatomic) IBOutlet UITextField *localSearchTextField;
-
-- (IBAction)localSearchTextfieldAction:(UITextField *)sender;
 
 @property (weak, nonatomic) IBOutlet UITextView *notesTextView;
 
@@ -68,6 +68,16 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+        self.localSearchTextField.text = self.aTask.addressName;
+   
+    
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -94,25 +104,21 @@
     
 }
 
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender   
 {
     if ([segue.identifier isEqualToString:@"DueDatePickerSegue"])
     {
-        DueDatePickerViewController *dueDateVC = [segue destinationViewController];
-        dueDateVC.selectedDueDate = selectedDueDate;
-        self.aTask.dueDate = selectedDueDate;
+
+        UINavigationController *navC = [segue destinationViewController];
+        DueDatePickerViewController *dueDateVC = [navC viewControllers][0];
+        dueDateVC.delegate = self;
        
     }
 }
 
-- (IBAction)localSearchTextfieldAction:(UITextField *)sender
-{
-    
-}
 
 
 #pragma mark - UITextField delegates w/ Local Search
@@ -264,6 +270,7 @@
         }
         
         results = response;
+    
                 
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UINavigationController *navC = [storyboard instantiateViewControllerWithIdentifier:@"LocationNavController"];
@@ -272,32 +279,20 @@
         [poiTVC setModalPresentationStyle:UIModalPresentationFullScreen];
         
         poiTVC.locationsArray = response.mapItems;
+        poiTVC.aTask = self.aTask;
         
         [self presentViewController:navC animated:YES completion:nil];
         
     }];
     
-    NSLog(@"DEBUG");
-    
+//    NSLog(@"DEBUG");
     
 }
 
-
-
- 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
- {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+- (void)taskDueDateWasChosen:(NSDate *)dueDate
+{
+    self.datePickerLabel.text = [formatDate stringFromDate:dueDate];
+    self.aTask.dueDate = dueDate;
 }
-*/
-
-
-
-
 
 @end

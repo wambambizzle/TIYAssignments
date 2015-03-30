@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TodoDetailTableViewController.h"
+
 
 @interface DueDatePickerViewController : UIViewController
 
-@property (nonatomic, weak) NSDate *selectedDueDate;
+@property(strong, nonatomic) id<DueDatePickerDelegate>delegate;
+
+@property (nonatomic, strong) NSDate *selectedDueDate;
 
 @end

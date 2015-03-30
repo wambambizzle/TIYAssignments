@@ -7,6 +7,7 @@
 //
 
 #import "POIResultsTableViewController.h"
+#import "TodoDetailTableViewController.h"
 
 @interface POIResultsTableViewController ()
 
@@ -55,6 +56,7 @@
      MKMapItem *mapItem= self.locationsArray[indexPath.row];
      
      cell.textLabel.text = mapItem.name;
+    
      cell.detailTextLabel.text = mapItem.placemark.addressDictionary[@"Street"];
     
     return cell;
@@ -62,16 +64,21 @@
 
 #pragma mark - UITableView delegate
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-////{
-////    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-////    City *selectedCity = cities[indexPath.row];
-////    CityWeatherViewController *cityWVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CityWeather"];
-////    cityWVC.aCity = selectedCity;
-////    
-////    [self.navigationController pushViewController:cityWVC animated:YES];
-////    
-////}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    MKMapItem *mapItem= self.locationsArray[indexPath.row];
+    
+    NSString *name = mapItem.name;
+    self.aTask.addressName = name;
+    
+    NSString *address = mapItem.placemark.addressDictionary[@"Street"];
+    self.aTask.addressStreet = address;
+   
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+
+}
 
 
 

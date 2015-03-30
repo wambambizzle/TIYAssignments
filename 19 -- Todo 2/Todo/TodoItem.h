@@ -17,7 +17,9 @@
 @property(strong, nonatomic) NSString *notes;
 @property(strong, nonatomic) MKLocalSearch *localSearch;
 @property (assign) BOOL taskIsComplete;
-@property(strong, nonatomic)MKMapItem *mapItem;
+@property(strong, nonatomic) MKMapItem *mapItem;
+@property(strong, nonatomic) NSString *addressName;
+@property(strong, nonatomic) NSString *addressStreet;
 
 - (instancetype)init;
 

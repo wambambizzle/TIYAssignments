@@ -13,4 +13,5 @@
 
 @property (nonatomic, strong) NSArray *locationsArray;
 @property (nonatomic, strong) TodoItem *aTask;
+
 @end

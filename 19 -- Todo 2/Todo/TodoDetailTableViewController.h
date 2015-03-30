@@ -10,11 +10,15 @@
 
 #import "TodoItem.h"
 
+@protocol DueDatePickerDelegate
 
-@interface TodoDetailTableViewController : UITableViewController 
+- (void)taskDueDateWasChosen:(NSDate *)dueDate;
+
+@end
+
+@interface TodoDetailTableViewController : UITableViewController <DueDatePickerDelegate>
 
 @property (nonatomic, strong) TodoItem *aTask;
-
 
 @end
 
