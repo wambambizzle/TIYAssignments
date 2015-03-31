@@ -156,7 +156,7 @@
         NSIndexPath *path = [self.tableView indexPathForCell:cell];
         TodoItem *anItem = taskList[path.row];
         anItem.taskName = textField.text;
-        
+        anItem.taskIsComplete = 
         rc = YES;
     
         //add code to save checkbox state as well

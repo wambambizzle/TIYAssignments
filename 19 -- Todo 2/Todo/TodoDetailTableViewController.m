@@ -25,18 +25,15 @@
     CLLocationManager *locationManager;
     MKLocalSearch *localSearch;
     MKLocalSearchResponse *results;
-    
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *checkMarkButton;
 
 @property (weak, nonatomic) IBOutlet UITextField *localSearchTextField;
 
-
 @property (weak, nonatomic) IBOutlet UITextField *taskTitleTextField;
 
 @property (weak, nonatomic) IBOutlet UILabel *datePickerLabel;
-
 
 @property (weak, nonatomic) IBOutlet UITextView *notesTextView;
 
@@ -54,8 +51,6 @@
     
     self.checkMarkButton.selected = self.aTask.taskIsComplete;
     
-    self.aTask.notes = self.notesTextView.text;
-    
     formatDate = [[NSDateFormatter alloc] init];
     NSString *formatString = [NSDateFormatter dateFormatFromTemplate:@"MMMddyyyy"
                                                              options:0
@@ -63,18 +58,23 @@
 
     [formatDate setDateFormat:formatString];
     
-    
     self.aTask.notes = self.notesTextView.text;
-    
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
 
-        self.localSearchTextField.text = self.aTask.addressName;
-   
+    self.localSearchTextField.text = self.aTask.addressName;
     
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    self.notesTextView.text = self.aTask.notes;
     
 }
 
@@ -94,7 +94,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     // Return the number of rows in the section.
     return 5;
 }
@@ -115,7 +114,6 @@
         UINavigationController *navC = [segue destinationViewController];
         DueDatePickerViewController *dueDateVC = [navC viewControllers][0];
         dueDateVC.delegate = self;
-       
     }
 }
 
@@ -293,6 +291,7 @@
 {
     self.datePickerLabel.text = [formatDate stringFromDate:dueDate];
     self.aTask.dueDate = dueDate;
+    NSLog(@"%@", self.aTask.dueDate);
 }
 
 @end
