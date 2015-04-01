@@ -58,7 +58,7 @@
     else if (![textField.text isEqualToString:@""])
     {
         [self createNewItem];
-        [self saveCoreDataUpdates];
+//        [self saveCoreDataUpdates];
         [self.addTaskTextField resignFirstResponder];
     }
     

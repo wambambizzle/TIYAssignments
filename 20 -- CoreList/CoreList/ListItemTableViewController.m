@@ -19,6 +19,7 @@
     NSMutableArray *listItemsArray;
     CoreDataStack *cdStack;
 }
+- (IBAction)deleteAllListItemButton:(UIBarButtonItem *)sender;
 
 @end
 
@@ -130,6 +131,21 @@
 }
 
 
+- (IBAction)deleteAllListItemButton:(UIBarButtonItem *)sender
+{
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Delete all List Items?"
+                                                                   message:@"Please confirm."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"YES"  style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath 
@@ -156,5 +172,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

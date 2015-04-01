@@ -34,6 +34,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="HKj-3C-8Hi">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="wAG-hH-qAB">
+                            <connections>
+                                <action selector="deleteAllListItemButton:" destination="2D2-Pc-0DR" id="fTy-BJ-Ofw"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Bfo-0Y-y61">
                             <connections>
                                 <segue destination="vXZ-lx-hvc" kind="presentation" identifier="AddItemSegue" id="ig8-VR-onC"/>
