@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ListItem.h"
+
+#import "CoreDataStack.h"
+
 @interface ViewController : UIViewController
 
+@property(strong, nonatomic) CoreDataStack *cdStack;
 
 @end
 

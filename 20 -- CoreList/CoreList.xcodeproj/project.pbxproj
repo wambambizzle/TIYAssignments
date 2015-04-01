@@ -32,6 +32,7 @@
 		A8CA255D1ACB2AFD0027DE01 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CA255C1ACB2AFD0027DE01 /* ListItem.m */; };
 		A8CA25601ACB2B150027DE01 /* _ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CA255F1ACB2B150027DE01 /* _ListItem.m */; };
 		A8CA25651ACB2BDA0027DE01 /* ListItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CA25641ACB2BDA0027DE01 /* ListItemTableViewController.m */; };
+		A8CA25681ACB33760027DE01 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CA25671ACB33760027DE01 /* CoreDataStack.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		A8CA255F1ACB2B150027DE01 /* _ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _ListItem.m; path = MOGenerated/_ListItem.m; sourceTree = "<group>"; };
 		A8CA25631ACB2BDA0027DE01 /* ListItemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListItemTableViewController.h; sourceTree = "<group>"; };
 		A8CA25641ACB2BDA0027DE01 /* ListItemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListItemTableViewController.m; sourceTree = "<group>"; };
+		A8CA25661ACB33760027DE01 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		A8CA25671ACB33760027DE01 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 		A8CA252C1ACB238D0027DE01 /* CoreList */ = {
 			isa = PBXGroup;
 			children = (
+				A8CA25691ACB337E0027DE01 /* Libraries */,
 				A8CA25611ACB2B330027DE01 /* Core Data Model Classes */,
 				A8CA25311ACB238D0027DE01 /* AppDelegate.h */,
 				A8CA25321ACB238D0027DE01 /* AppDelegate.m */,
@@ -165,6 +169,15 @@
 				A8CA255F1ACB2B150027DE01 /* _ListItem.m */,
 			);
 			name = "Generated - DO NOT TOUCH";
+			sourceTree = "<group>";
+		};
+		A8CA25691ACB337E0027DE01 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				A8CA25661ACB33760027DE01 /* CoreDataStack.h */,
+				A8CA25671ACB33760027DE01 /* CoreDataStack.m */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +303,7 @@
 				A8CA25601ACB2B150027DE01 /* _ListItem.m in Sources */,
 				A8CA255A1ACB25080027DE01 /* CoreListModel.xcdatamodeld in Sources */,
 				A8CA25361ACB238D0027DE01 /* ViewController.m in Sources */,
+				A8CA25681ACB33760027DE01 /* CoreDataStack.m in Sources */,
 				A8CA25331ACB238D0027DE01 /* AppDelegate.m in Sources */,
 				A8CA255D1ACB2AFD0027DE01 /* ListItem.m in Sources */,
 				A8CA25301ACB238D0027DE01 /* main.m in Sources */,
@@ -498,6 +512,7 @@
 				A8CA254F1ACB238D0027DE01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8CA25501ACB238D0027DE01 /* Build configuration list for PBXNativeTarget "CoreListTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +521,7 @@
 				A8CA25521ACB238D0027DE01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8CA25541ACB23F70027DE01 /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +530,7 @@
 				A8CA25561ACB23F70027DE01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
