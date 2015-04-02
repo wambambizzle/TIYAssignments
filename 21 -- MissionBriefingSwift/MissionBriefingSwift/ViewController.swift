@@ -18,9 +18,9 @@ class ViewController: UIViewController, UITextFieldDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.agentNameTextField.text = ""
-        self.greetingLabel.text = ""
-        self.missionBriefingTextView.text = ""
+        agentNameTextField.text = ""
+        greetingLabel.text = ""
+        missionBriefingTextView.text = ""
         
         agentNameTextField.delegate = self
         agentPasswordTextField.delegate = self
@@ -48,7 +48,7 @@ class ViewController: UIViewController, UITextFieldDelegate
             }
             else if textField == agentPasswordTextField
             {
-              agentPasswordTextField.resignFirstResponder()
+             agentPasswordTextField.resignFirstResponder()
              authenticateUser()
             }
         
@@ -64,6 +64,10 @@ class ViewController: UIViewController, UITextFieldDelegate
             if nameParts.count == 2
             {
                 agentName = nameParts[1]
+            }
+            else if nameParts.count == 3
+            {
+                agentName = nameParts[2]
             }
             
             let greetingMessage = "Good evening, Agent \(agentName)"
