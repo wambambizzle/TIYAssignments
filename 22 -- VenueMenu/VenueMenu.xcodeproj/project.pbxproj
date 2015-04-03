@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		A88638591ACDDF1700960D84 /* Mogenerator */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A886385A1ACDDF1700960D84 /* Build configuration list for PBXAggregateTarget "Mogenerator" */;
+			buildPhases = (
+				A886385D1ACDDF4100960D84 /* Run Script */,
+			);
+			dependencies = (
+			);
+			name = Mogenerator;
+			productName = Mogenerator;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		A85126721ACF046D0015BC91 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85126711ACF046D0015BC91 /* SearchResultsViewController.m */; };
+		A886382F1ACDD96300960D84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A886382E1ACDD96300960D84 /* main.m */; };
+		A88638321ACDD96300960D84 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A88638311ACDD96300960D84 /* AppDelegate.m */; };
+		A88638381ACDD96300960D84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A88638361ACDD96300960D84 /* Main.storyboard */; };
+		A886383A1ACDD96300960D84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A88638391ACDD96300960D84 /* Images.xcassets */; };
+		A886383D1ACDD96300960D84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A886383B1ACDD96300960D84 /* LaunchScreen.xib */; };
+		A88638491ACDD96300960D84 /* VenueMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A88638481ACDD96300960D84 /* VenueMenuTests.m */; };
+		A88638541ACDD99600960D84 /* VenueMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88638531ACDD99600960D84 /* VenueMenuTableViewController.m */; };
+		A88638571ACDDA7C00960D84 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88638561ACDDA7C00960D84 /* SearchResultsTableViewController.m */; };
+		A88638601ACDE0C800960D84 /* VenueMenuModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A886385E1ACDE0C800960D84 /* VenueMenuModel.xcdatamodeld */; };
+		A88638631ACE256B00960D84 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = A88638621ACE256B00960D84 /* CoreDataStack.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A88638431ACDD96300960D84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A88638211ACDD96300960D84 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A88638281ACDD96300960D84;
+			remoteInfo = VenueMenu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A85126701ACF046D0015BC91 /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
+		A85126711ACF046D0015BC91 /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
+		A88638291ACDD96300960D84 /* VenueMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenueMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A886382D1ACDD96300960D84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A886382E1ACDD96300960D84 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A88638301ACDD96300960D84 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A88638311ACDD96300960D84 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A88638371ACDD96300960D84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A88638391ACDD96300960D84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A886383C1ACDD96300960D84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A88638421ACDD96300960D84 /* VenueMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VenueMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A88638471ACDD96300960D84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A88638481ACDD96300960D84 /* VenueMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenueMenuTests.m; sourceTree = "<group>"; };
+		A88638521ACDD99600960D84 /* VenueMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueMenuTableViewController.h; sourceTree = SOURCE_ROOT; };
+		A88638531ACDD99600960D84 /* VenueMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueMenuTableViewController.m; sourceTree = SOURCE_ROOT; };
+		A88638551ACDDA7C00960D84 /* SearchResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsTableViewController.h; sourceTree = "<group>"; };
+		A88638561ACDDA7C00960D84 /* SearchResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTableViewController.m; sourceTree = "<group>"; };
+		A886385F1ACDE0C800960D84 /* VenueMenuModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VenueMenuModel.xcdatamodel; sourceTree = "<group>"; };
+		A88638611ACE256B00960D84 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		A88638621ACE256B00960D84 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A88638261ACDD96300960D84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A886383F1ACDD96300960D84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A88638201ACDD96300960D84 = {
+			isa = PBXGroup;
+			children = (
+				A886382B1ACDD96300960D84 /* VenueMenu */,
+				A88638451ACDD96300960D84 /* VenueMenuTests */,
+				A886382A1ACDD96300960D84 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A886382A1ACDD96300960D84 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A88638291ACDD96300960D84 /* VenueMenu.app */,
+				A88638421ACDD96300960D84 /* VenueMenuTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A886382B1ACDD96300960D84 /* VenueMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A88638641ACE257A00960D84 /* Libraries */,
+				A88638301ACDD96300960D84 /* AppDelegate.h */,
+				A88638311ACDD96300960D84 /* AppDelegate.m */,
+				A88638581ACDDA8800960D84 /* Tableview Controllers */,
+				A85126701ACF046D0015BC91 /* SearchResultsViewController.h */,
+				A85126711ACF046D0015BC91 /* SearchResultsViewController.m */,
+				A88638361ACDD96300960D84 /* Main.storyboard */,
+				A88638391ACDD96300960D84 /* Images.xcassets */,
+				A886383B1ACDD96300960D84 /* LaunchScreen.xib */,
+				A886382C1ACDD96300960D84 /* Supporting Files */,
+				A886385E1ACDE0C800960D84 /* VenueMenuModel.xcdatamodeld */,
+			);
+			path = VenueMenu;
+			sourceTree = "<group>";
+		};
+		A886382C1ACDD96300960D84 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A886382D1ACDD96300960D84 /* Info.plist */,
+				A886382E1ACDD96300960D84 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A88638451ACDD96300960D84 /* VenueMenuTests */ = {
+			isa = PBXGroup;
+			children = (
+				A88638481ACDD96300960D84 /* VenueMenuTests.m */,
+				A88638461ACDD96300960D84 /* Supporting Files */,
+			);
+			path = VenueMenuTests;
+			sourceTree = "<group>";
+		};
+		A88638461ACDD96300960D84 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A88638471ACDD96300960D84 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A88638581ACDDA8800960D84 /* Tableview Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A88638521ACDD99600960D84 /* VenueMenuTableViewController.h */,
+				A88638531ACDD99600960D84 /* VenueMenuTableViewController.m */,
+				A88638551ACDDA7C00960D84 /* SearchResultsTableViewController.h */,
+				A88638561ACDDA7C00960D84 /* SearchResultsTableViewController.m */,
+			);
+			name = "Tableview Controllers";
+			sourceTree = "<group>";
+		};
+		A88638641ACE257A00960D84 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				A88638611ACE256B00960D84 /* CoreDataStack.h */,
+				A88638621ACE256B00960D84 /* CoreDataStack.m */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A88638281ACDD96300960D84 /* VenueMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A886384C1ACDD96300960D84 /* Build configuration list for PBXNativeTarget "VenueMenu" */;
+			buildPhases = (
+				A88638251ACDD96300960D84 /* Sources */,
+				A88638261ACDD96300960D84 /* Frameworks */,
+				A88638271ACDD96300960D84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VenueMenu;
+			productName = VenueMenu;
+			productReference = A88638291ACDD96300960D84 /* VenueMenu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A88638411ACDD96300960D84 /* VenueMenuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A886384F1ACDD96300960D84 /* Build configuration list for PBXNativeTarget "VenueMenuTests" */;
+			buildPhases = (
+				A886383E1ACDD96300960D84 /* Sources */,
+				A886383F1ACDD96300960D84 /* Frameworks */,
+				A88638401ACDD96300960D84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A88638441ACDD96300960D84 /* PBXTargetDependency */,
+			);
+			name = VenueMenuTests;
+			productName = VenueMenuTests;
+			productReference = A88638421ACDD96300960D84 /* VenueMenuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A88638211ACDD96300960D84 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "The Iron Yard";
+				TargetAttributes = {
+					A88638281ACDD96300960D84 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					A88638411ACDD96300960D84 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = A88638281ACDD96300960D84;
+					};
+					A88638591ACDDF1700960D84 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = A88638241ACDD96300960D84 /* Build configuration list for PBXProject "VenueMenu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A88638201ACDD96300960D84;
+			productRefGroup = A886382A1ACDD96300960D84 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A88638281ACDD96300960D84 /* VenueMenu */,
+				A88638411ACDD96300960D84 /* VenueMenuTests */,
+				A88638591ACDDF1700960D84 /* Mogenerator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A88638271ACDD96300960D84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A88638381ACDD96300960D84 /* Main.storyboard in Resources */,
+				A886383D1ACDD96300960D84 /* LaunchScreen.xib in Resources */,
+				A886383A1ACDD96300960D84 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A88638401ACDD96300960D84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A886385D1ACDDF4100960D84 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PATH=${PATH}:/usr/local/bin\ncd \"${PROJECT_DIR}/VenueMenu\"\nmogenerator --human-dir Classes --machine-dir MOGenerated --model VenueMenuModel.xcdatamodeld/VenueMenuModel.xcdatamodel --template-var arc=true";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A88638251ACDD96300960D84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A88638601ACDE0C800960D84 /* VenueMenuModel.xcdatamodeld in Sources */,
+				A88638571ACDDA7C00960D84 /* SearchResultsTableViewController.m in Sources */,
+				A85126721ACF046D0015BC91 /* SearchResultsViewController.m in Sources */,
+				A88638321ACDD96300960D84 /* AppDelegate.m in Sources */,
+				A886382F1ACDD96300960D84 /* main.m in Sources */,
+				A88638541ACDD99600960D84 /* VenueMenuTableViewController.m in Sources */,
+				A88638631ACE256B00960D84 /* CoreDataStack.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A886383E1ACDD96300960D84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A88638491ACDD96300960D84 /* VenueMenuTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A88638441ACDD96300960D84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A88638281ACDD96300960D84 /* VenueMenu */;
+			targetProxy = A88638431ACDD96300960D84 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A88638361ACDD96300960D84 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A88638371ACDD96300960D84 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A886383B1ACDD96300960D84 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A886383C1ACDD96300960D84 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A886384A1ACDD96300960D84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A886384B1ACDD96300960D84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A886384D1ACDD96300960D84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VenueMenu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A886384E1ACDD96300960D84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VenueMenu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A88638501ACDD96300960D84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = VenueMenuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VenueMenu.app/VenueMenu";
+			};
+			name = Debug;
+		};
+		A88638511ACDD96300960D84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = VenueMenuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VenueMenu.app/VenueMenu";
+			};
+			name = Release;
+		};
+		A886385B1ACDDF1700960D84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A886385C1ACDDF1700960D84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A88638241ACDD96300960D84 /* Build configuration list for PBXProject "VenueMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A886384A1ACDD96300960D84 /* Debug */,
+				A886384B1ACDD96300960D84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A886384C1ACDD96300960D84 /* Build configuration list for PBXNativeTarget "VenueMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A886384D1ACDD96300960D84 /* Debug */,
+				A886384E1ACDD96300960D84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A886384F1ACDD96300960D84 /* Build configuration list for PBXNativeTarget "VenueMenuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A88638501ACDD96300960D84 /* Debug */,
+				A88638511ACDD96300960D84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A886385A1ACDDF1700960D84 /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A886385B1ACDDF1700960D84 /* Debug */,
+				A886385C1ACDDF1700960D84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A886385E1ACDE0C800960D84 /* VenueMenuModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A886385F1ACDE0C800960D84 /* VenueMenuModel.xcdatamodel */,
+			);
+			currentVersion = A886385F1ACDE0C800960D84 /* VenueMenuModel.xcdatamodel */;
+			path = VenueMenuModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A88638211ACDD96300960D84 /* Project object */;
+}
