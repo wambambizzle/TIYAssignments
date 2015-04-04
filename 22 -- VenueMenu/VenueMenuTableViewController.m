@@ -12,12 +12,15 @@
 
 #import "CoreDataStack.h"
 
-@interface VenueMenuTableViewController () <UITextFieldDelegate>
+@import MapKit;
+@import CoreLocation;
+
+@interface VenueMenuTableViewController () 
 {
     NSMutableArray *venuesArray;
-    CoreDataStack *cdStack;
+
 }
-@property (weak, nonatomic) IBOutlet UITextField *venueSearchTextField;
+
 
 @end
 
@@ -26,11 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    cdStack = [CoreDataStack coreDataStackWithModelName:@"VenueMenuModel"];
-    cdStack.coreDataStoreType = CDSStoreTypeSQL;
+     self.title =@"Venue Menu";
+    
     
     venuesArray = [[NSMutableArray alloc] init];
-    self.venueSearchTextField.delegate = self;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -75,39 +78,19 @@
     return cell;
 }
 
+//#pragma mark - Navigation
+//
+//
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([segue.identifier isEqualToString:@"AddVenueSegue"])
+//    {
+//        UINavigationController *navC = [segue destinationViewController];
+//        SearchResultsTableViewController *resultsTVC = [navC viewControllers][0];
+//
+//    }
+//}
 
-#pragma mark - UITextField delegates
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    BOOL rc = NO;
-    
-    if (![textField.text isEqualToString:@""] )
-    {
-        [textField resignFirstResponder];
-        rc = YES;
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UINavigationController *navC = [storyboard instantiateViewControllerWithIdentifier:@"SearchNavController"];
-        SearchResultsTableViewController *searchTVC = [navC viewControllers][0]; // <- [0] same as object at index to get a spot of an array
-        
-        searchTVC.cdStack = cdStack;
-        
-        
-        
-        [searchTVC setModalPresentationStyle:UIModalPresentationFullScreen];
-        
-        [self presentViewController:navC animated:YES completion:nil];
-        
-        
-    }
-    else if ([textField.text isEqualToString:@""])
-    {
-        [textField becomeFirstResponder];
-
-    }
-    
-    return rc;
-}
 
 /*
 // Override to support conditional editing of the table view.
@@ -147,15 +130,8 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender 
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+
 
 @end

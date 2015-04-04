@@ -12,12 +12,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                        <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search for a venue" textAlignment="center" minimumFontSize="17" id="kBi-zx-WrD">
-                            <rect key="frame" x="0.0" y="64" width="600" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VenueCell" textLabel="wkj-tC-Xi1" detailTextLabel="uFa-fC-lxB" style="IBUITableViewCellStyleSubtitle" id="wEF-IE-Hz9">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -47,14 +41,16 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Uzt-ci-2aB">
                         <nil key="title"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1k7-JV-0H7">
+                            <connections>
+                                <segue destination="ITC-y1-Djy" kind="presentation" identifier="AddVenueSegue" id="tnR-JJ-8L0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="venueSearchTextField" destination="kBi-zx-WrD" id="9Xv-nk-LUy"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYd-hk-nvq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1007" y="260"/>
+            <point key="canvasLocation" x="512" y="277"/>
         </scene>
         <!--Search Results Table View Controller-->
         <scene sceneID="3Pu-sa-HoB">
@@ -91,16 +87,32 @@
                             <outlet property="delegate" destination="Wk1-hp-flj" id="OZF-98-hMz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Trh-bX-YmZ"/>
+                    <navigationItem key="navigationItem" id="Trh-bX-YmZ">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="IDW-vH-z9l">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="PTB-6D-Whm">
+                            <connections>
+                                <action selector="cancelItemButton:" destination="Wk1-hp-flj" id="tgh-jz-gje"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="venueSearchTextField" destination="IDW-vH-z9l" id="Afg-WN-u5P"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VzL-7J-Ghu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1722" y="260"/>
+            <point key="canvasLocation" x="1836" y="260"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Results View Controller-->
         <scene sceneID="w1z-du-nRt">
             <objects>
-                <viewController id="QfN-zS-Twy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchDetails" id="QfN-zS-Twy" customClass="SearchResultsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x6B-7g-HMD"/>
                         <viewControllerLayoutGuide type="bottom" id="BX0-CB-bdz"/>
@@ -114,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4BE-fR-jbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2470" y="260"/>
+            <point key="canvasLocation" x="1844" y="961"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VHh-Bd-g0T">
@@ -132,7 +144,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38J-Og-EvV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="668"/>
+            <point key="canvasLocation" x="-193" y="285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PdB-Va-l0l">
@@ -150,12 +162,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2K-34-mgO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1390" y="928"/>
+            <point key="canvasLocation" x="1170" y="260"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PY3-dV-PXG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xQK-3e-ahN" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ResultsDetailNavC" automaticallyAdjustsScrollViewInsets="NO" id="xQK-3e-ahN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7A3-gt-hQm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -168,7 +180,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRQ-lA-7Es" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2248" y="953"/>
+            <point key="canvasLocation" x="1120" y="961"/>
         </scene>
     </scenes>
 </document>

@@ -22,6 +22,11 @@
 
 /* Begin PBXBuildFile section */
 		A85126721ACF046D0015BC91 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85126711ACF046D0015BC91 /* SearchResultsViewController.m */; };
+		A85126771ACF11640015BC91 /* _Location.m in Sources */ = {isa = PBXBuildFile; fileRef = A85126741ACF11640015BC91 /* _Location.m */; };
+		A85126781ACF11640015BC91 /* _Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = A85126761ACF11640015BC91 /* _Venue.m */; };
+		A851267D1ACF118A0015BC91 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = A851267A1ACF118A0015BC91 /* Location.m */; };
+		A851267E1ACF118A0015BC91 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = A851267C1ACF118A0015BC91 /* Venue.m */; };
+		A85126831AD05BBF0015BC91 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A85126821AD05BBF0015BC91 /* NetworkManager.m */; };
 		A886382F1ACDD96300960D84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A886382E1ACDD96300960D84 /* main.m */; };
 		A88638321ACDD96300960D84 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A88638311ACDD96300960D84 /* AppDelegate.m */; };
 		A88638381ACDD96300960D84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A88638361ACDD96300960D84 /* Main.storyboard */; };
@@ -47,6 +52,16 @@
 /* Begin PBXFileReference section */
 		A85126701ACF046D0015BC91 /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
 		A85126711ACF046D0015BC91 /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
+		A85126731ACF11640015BC91 /* _Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Location.h; path = MOGenerated/_Location.h; sourceTree = "<group>"; };
+		A85126741ACF11640015BC91 /* _Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _Location.m; path = MOGenerated/_Location.m; sourceTree = "<group>"; };
+		A85126751ACF11640015BC91 /* _Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Venue.h; path = MOGenerated/_Venue.h; sourceTree = "<group>"; };
+		A85126761ACF11640015BC91 /* _Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _Venue.m; path = MOGenerated/_Venue.m; sourceTree = "<group>"; };
+		A85126791ACF118A0015BC91 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Classes/Location.h; sourceTree = "<group>"; };
+		A851267A1ACF118A0015BC91 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Classes/Location.m; sourceTree = "<group>"; };
+		A851267B1ACF118A0015BC91 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Venue.h; path = Classes/Venue.h; sourceTree = "<group>"; };
+		A851267C1ACF118A0015BC91 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Venue.m; path = Classes/Venue.m; sourceTree = "<group>"; };
+		A85126811AD05BBF0015BC91 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		A85126821AD05BBF0015BC91 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		A88638291ACDD96300960D84 /* VenueMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenueMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A886382D1ACDD96300960D84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A886382E1ACDD96300960D84 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +100,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A851267F1ACF11910015BC91 /* Core Data Model Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A85126791ACF118A0015BC91 /* Location.h */,
+				A851267A1ACF118A0015BC91 /* Location.m */,
+				A851267B1ACF118A0015BC91 /* Venue.h */,
+				A851267C1ACF118A0015BC91 /* Venue.m */,
+				A85126801ACF11A00015BC91 /* Generated - DO NOT TOUCH */,
+			);
+			name = "Core Data Model Classes";
+			sourceTree = "<group>";
+		};
+		A85126801ACF11A00015BC91 /* Generated - DO NOT TOUCH */ = {
+			isa = PBXGroup;
+			children = (
+				A85126731ACF11640015BC91 /* _Location.h */,
+				A85126741ACF11640015BC91 /* _Location.m */,
+				A85126751ACF11640015BC91 /* _Venue.h */,
+				A85126761ACF11640015BC91 /* _Venue.m */,
+			);
+			name = "Generated - DO NOT TOUCH";
+			sourceTree = "<group>";
+		};
+		A85126841AD05BE60015BC91 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A85126811AD05BBF0015BC91 /* NetworkManager.h */,
+				A85126821AD05BBF0015BC91 /* NetworkManager.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		A88638201ACDD96300960D84 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +153,7 @@
 		A886382B1ACDD96300960D84 /* VenueMenu */ = {
 			isa = PBXGroup;
 			children = (
+				A851267F1ACF11910015BC91 /* Core Data Model Classes */,
 				A88638641ACE257A00960D84 /* Libraries */,
 				A88638301ACDD96300960D84 /* AppDelegate.h */,
 				A88638311ACDD96300960D84 /* AppDelegate.m */,
@@ -113,6 +161,7 @@
 				A85126701ACF046D0015BC91 /* SearchResultsViewController.h */,
 				A85126711ACF046D0015BC91 /* SearchResultsViewController.m */,
 				A88638361ACDD96300960D84 /* Main.storyboard */,
+				A85126841AD05BE60015BC91 /* Network */,
 				A88638391ACDD96300960D84 /* Images.xcassets */,
 				A886383B1ACDD96300960D84 /* LaunchScreen.xib */,
 				A886382C1ACDD96300960D84 /* Supporting Files */,
@@ -288,12 +337,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A851267E1ACF118A0015BC91 /* Venue.m in Sources */,
 				A88638601ACDE0C800960D84 /* VenueMenuModel.xcdatamodeld in Sources */,
 				A88638571ACDDA7C00960D84 /* SearchResultsTableViewController.m in Sources */,
 				A85126721ACF046D0015BC91 /* SearchResultsViewController.m in Sources */,
+				A85126831AD05BBF0015BC91 /* NetworkManager.m in Sources */,
 				A88638321ACDD96300960D84 /* AppDelegate.m in Sources */,
 				A886382F1ACDD96300960D84 /* main.m in Sources */,
+				A85126781ACF11640015BC91 /* _Venue.m in Sources */,
+				A851267D1ACF118A0015BC91 /* Location.m in Sources */,
 				A88638541ACDD99600960D84 /* VenueMenuTableViewController.m in Sources */,
+				A85126771ACF11640015BC91 /* _Location.m in Sources */,
 				A88638631ACE256B00960D84 /* CoreDataStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
