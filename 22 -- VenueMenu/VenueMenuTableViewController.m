@@ -18,6 +18,7 @@
 @interface VenueMenuTableViewController () 
 {
     NSMutableArray *venuesArray;
+     CoreDataStack *cdStack;
 
 }
 
@@ -30,6 +31,9 @@
 {
     [super viewDidLoad];
      self.title =@"Venue Menu";
+    
+    cdStack = [CoreDataStack coreDataStackWithModelName:@"VenueMenuModel"];
+    cdStack.coreDataStoreType = CDSStoreTypeSQL;
     
     
     venuesArray = [[NSMutableArray alloc] init];

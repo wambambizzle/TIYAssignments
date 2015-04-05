@@ -7,6 +7,7 @@
 //
 
 #import "SearchResultsTableViewController.h"
+#import "SearchResultsVenue.h"
 
 #import "Location.h"
 #import "Venue.h"
@@ -25,6 +26,9 @@
     NSMutableArray *resultsArray;
     CLLocationManager *locationManager;
     NSMutableData *receivedData;
+    
+    NSMutableArray *venueArray;
+    
     double userLat;
     double userLng;
     Venue *aVenue;
@@ -32,6 +36,9 @@
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *venueSearchTextField;
+
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *addy;
 
 @end
 
@@ -41,6 +48,7 @@
 {
     [super viewDidLoad];
     resultsArray = [[NSMutableArray alloc] init];
+    venueArray = [[NSMutableArray alloc] init];
     self.venueSearchTextField.delegate = self;
 
 }
@@ -79,7 +87,9 @@
  {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ResultsCell" forIndexPath:indexPath];
     
-//     cell.textLabel.text = aVenue.name;
+     NSString *name = venueArray[indexPath.row];
+     
+     cell.textLabel.text = name;
     
     return cell;
 }
@@ -104,7 +114,8 @@
         [textField resignFirstResponder];
         rc = YES;
         
-        [self configureLocationManager];
+
+        [self foursquareURLSession];
         
     }
     else if ([textField.text isEqualToString:@""])
@@ -116,6 +127,14 @@
     return rc;
 }
 
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    [self configureLocationManager];
+    
+    return YES;
+    
+}
+
 #pragma mark - API call
 
 
@@ -124,7 +143,7 @@
 {
     NSString *querySearch = self.venueSearchTextField.text;
 //    NSLog(@"querySearch used: %@", querySearch);
-    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?client_id=%@&client_secret=%@&v=20130815&ll=%f,%f&query=%@&radius=800",kClientID,kClientSecret,userLat,userLng,querySearch];
+    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?client_id=%@&client_secret=%@&v=20130815&ll=%f,%f&query=%@&radius=800",kClientID,kClientSecret,40.69755,-73.9935,querySearch];
 //    NSLog(@"urlstring:%@",urlString);
     NSURL *url = [NSURL URLWithString:urlString];
 //    NSLog(@"url: %@",url);
@@ -163,18 +182,51 @@
 {
     if (!error)
     {
-        NSLog(@"Download Successful.");
-        NSDictionary *venueInfo = [NSJSONSerialization JSONObjectWithData:receivedData options:0 error:nil];
-        [resultsArray addObject:venueInfo];
         
-//        NSDictionary *response = [venueInfo objectForKey:@"response"];
-//        NSArray *venues = [response objectForKey:@"venues"];
-//        NSDictionary *firstLocation = [venues objectAtIndex:0];
-//        aVenue.name = [firstLocation objectForKey:@"name"];
-//        
-//        NSLog(@"%@",aVenue.name);
+        NSLog(@"Download Successful."); //RCL: take out in production
+        NSDictionary *venueInfo = [NSJSONSerialization JSONObjectWithData:receivedData
+                                                                 options:0
+                                                                   error:nil]; // grab user info as dictionary
+//        NSLog(@"%@", venueInfo);
+        NSDictionary *response = [venueInfo objectForKey:@"response"];
+        
+         NSArray *venues = [response objectForKey:@"venues"];
+        
+        NSDictionary *firstLocation = 0;
         
         
+        for (int i = 0; i < [venues count]; i++)
+        {
+            SearchResultsVenue *aSearchResult = [[SearchResultsVenue alloc] init];
+            
+            firstLocation = [venues objectAtIndex:i];
+            
+            
+            venueArray[i] = [firstLocation objectForKey:@"name"];
+            aSearchResult.venueName = [firstLocation objectForKey:@"name"];
+    
+    
+            NSDictionary *location = [firstLocation objectForKey:@"location"];
+                        aSearchResult.lat = [[location objectForKey:@"lat"] doubleValue];
+            
+                       aSearchResult.lng = [[location objectForKey:@"lng"] doubleValue];
+            
+            aSearchResult.venueAddress = [location objectForKey:@"address"];
+            aSearchResult.venueCity = [location objectForKey:@"city"];
+            aSearchResult.state = [location objectForKey:@"state"];
+            
+//            NSLog(@"didCompleteSearch - venueName %@",aSearchResult.venueName);
+//            NSLog(@"didCompleteSearch - cityName %@",aSearchResult.venueCity);
+            
+            [resultsArray addObject:aSearchResult];
+            
+//            NSLog(@"after addObject");
+            
+        }
+        
+        
+        [self.tableView reloadData];
+    
         
     }
 }
@@ -251,13 +303,23 @@
     userLat = newLocation.coordinate.latitude;
     userLng = newLocation.coordinate.longitude;
     
-//    NSLog(@"lat:%f, lng:%f", userLat, userLng);
     
-        [self foursquareURLSession];
     
 //    MKCoordinateRegion userLocation = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 1500.00, 1500.00);
     
 }
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    Venue *aVenue = [NSEntityDescription insertNewObjectForEntityForName:@"Venue" inManagedObjectContext:self.cdStack.managedObjectContext]; // using core data / database to create a student object for us
+//    
+////    aItem.name = self.addTaskTextField.text;
+//    
+//    NSDictionary *aFriend = [friends objectAtIndex:indexPath.row];
+//    FriendDetailViewController *friendDetailVC = [[FriendDetailViewController alloc] init];
+//    friendDetailVC.friendInfo = aFriend;
+//    [self.navigationController pushViewController:friendDetailVC animated:YES];
+//}
 
 
 

@@ -13,7 +13,7 @@
 @interface SearchResultsViewController ()
 {
 
- CoreDataStack *cdStack;
+
     
 }
 @end
@@ -23,8 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    cdStack = [CoreDataStack coreDataStackWithModelName:@"VenueMenuModel"];
-    cdStack.coreDataStoreType = CDSStoreTypeSQL;
+    
 
 }
 
