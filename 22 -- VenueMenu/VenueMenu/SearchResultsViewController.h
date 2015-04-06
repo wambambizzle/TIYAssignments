@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface SearchResultsViewController : UIViewController
+
+@property (strong, nonatomic) NSDictionary *aVenue;
+
 
 @end

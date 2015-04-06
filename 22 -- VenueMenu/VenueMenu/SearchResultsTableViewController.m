@@ -7,7 +7,7 @@
 //
 
 #import "SearchResultsTableViewController.h"
-#import "SearchResultsVenue.h"
+#import "SearchResultsViewController.h"
 
 #import "Location.h"
 #import "Venue.h"
@@ -21,24 +21,20 @@
 @import MapKit;
 @import CoreLocation;
 
-@interface SearchResultsTableViewController () <UITextFieldDelegate, CLLocationManagerDelegate, NSURLSessionDataDelegate>
+@interface SearchResultsTableViewController () <CLLocationManagerDelegate,UISearchBarDelegate,NSURLSessionDataDelegate>
 {
-    NSMutableArray *resultsArray;
     CLLocationManager *locationManager;
     NSMutableData *receivedData;
     
-    NSMutableArray *venueArray;
+    NSArray *venues;
     
     double userLat;
     double userLng;
-    Venue *aVenue;
     
 }
 
-@property (weak, nonatomic) IBOutlet UITextField *venueSearchTextField;
+@property (weak, nonatomic) IBOutlet UISearchBar *venueSearchBar;
 
-@property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *addy;
 
 @end
 
@@ -47,9 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    resultsArray = [[NSMutableArray alloc] init];
-    venueArray = [[NSMutableArray alloc] init];
-    self.venueSearchTextField.delegate = self;
+    self.venueSearchBar.delegate = self;
 
 }
 
@@ -68,7 +62,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return resultsArray.count;
+    return venues.count;
 }
 
 
@@ -84,11 +78,13 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
- {
+{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ResultsCell" forIndexPath:indexPath];
     
-     NSString *name = venueArray[indexPath.row];
-     
+    NSDictionary *aVenue = venues[indexPath.row];
+    
+    NSString *name = [aVenue objectForKey:@"name"];
+    
      cell.textLabel.text = name;
     
     return cell;
@@ -99,51 +95,50 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    NSDictionary *aVenue = [venues objectAtIndex:indexPath.row];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    SearchResultsViewController *searchRVC = [storyboard instantiateViewControllerWithIdentifier:@"SearchDetails"];
+    searchRVC.aVenue = aVenue;
+    [self showViewController:searchRVC sender:nil];
+    NSLog(@"%@", searchRVC.aVenue);
 }
 
+#pragma mark - Navigation
 
-#pragma mark - UITextField delegates
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([segue.identifier isEqualToString:@"DetailFromSearchSegue"])
+//    {
+//        SearchResultsViewController *searchRVC = (SearchResultsViewController *)[segue destinationViewController];
+//        NSIndexPath *indexPath = [[self tableView]indexPathForCell:sender];
+//        SearchResultsVenue *aVenue = resultsArray[indexPath.row];
+//        NSLog(@"%@",aVenue);
+//        searchRVC.aVenue = aVenue;
+//        NSLog(@"venue:%@", searchRVC.aVenue);
+//    }
+//
+//}
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    BOOL rc = NO;
+    [searchBar resignFirstResponder];
     
-    if (![textField.text isEqualToString:@""] )
-    {
-        [textField resignFirstResponder];
-        rc = YES;
-        
-
-        [self foursquareURLSession];
-        
-    }
-    else if ([textField.text isEqualToString:@""])
-    {
-        [textField becomeFirstResponder];
-        
-    }
-    
-    return rc;
-}
-
--(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-{
     [self configureLocationManager];
-    
-    return YES;
+
     
 }
+
 
 #pragma mark - API call
 
-
-
 -(void)foursquareURLSession
 {
-    NSString *querySearch = self.venueSearchTextField.text;
+    NSString *querySearch = self.venueSearchBar.text;
 //    NSLog(@"querySearch used: %@", querySearch);
-    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?client_id=%@&client_secret=%@&v=20130815&ll=%f,%f&query=%@&radius=800",kClientID,kClientSecret,40.69755,-73.9935,querySearch];
+    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?client_id=%@&client_secret=%@&v=20130815&ll=%f,%f&query=%@&radius=800",kClientID,kClientSecret,userLat,userLng,querySearch];
+//     NSLog(@"%f, %f", userLat, userLng);
 //    NSLog(@"urlstring:%@",urlString);
     NSURL *url = [NSURL URLWithString:urlString];
 //    NSLog(@"url: %@",url);
@@ -187,47 +182,27 @@
         NSDictionary *venueInfo = [NSJSONSerialization JSONObjectWithData:receivedData
                                                                  options:0
                                                                    error:nil]; // grab user info as dictionary
-//        NSLog(@"%@", venueInfo);
         NSDictionary *response = [venueInfo objectForKey:@"response"];
         
-         NSArray *venues = [response objectForKey:@"venues"];
-        
-        NSDictionary *firstLocation = 0;
-        
-        
-        for (int i = 0; i < [venues count]; i++)
-        {
-            SearchResultsVenue *aSearchResult = [[SearchResultsVenue alloc] init];
-            
-            firstLocation = [venues objectAtIndex:i];
-            
-            
-            venueArray[i] = [firstLocation objectForKey:@"name"];
-            aSearchResult.venueName = [firstLocation objectForKey:@"name"];
+         venues = [response objectForKey:@"venues"];
     
-    
-            NSDictionary *location = [firstLocation objectForKey:@"location"];
-                        aSearchResult.lat = [[location objectForKey:@"lat"] doubleValue];
-            
-                       aSearchResult.lng = [[location objectForKey:@"lng"] doubleValue];
-            
-            aSearchResult.venueAddress = [location objectForKey:@"address"];
-            aSearchResult.venueCity = [location objectForKey:@"city"];
-            aSearchResult.state = [location objectForKey:@"state"];
-            
-//            NSLog(@"didCompleteSearch - venueName %@",aSearchResult.venueName);
-//            NSLog(@"didCompleteSearch - cityName %@",aSearchResult.venueCity);
-            
-            [resultsArray addObject:aSearchResult];
-            
-//            NSLog(@"after addObject");
-            
-        }
         
+//            venueArray = [firstLocation objectForKey:@"name"];
+//            aSearchResult.venueName = [firstLocation objectForKey:@"name"];
+//    
+//    
+//            NSDictionary *location = [firstLocation objectForKey:@"location"];
+//                        aSearchResult.lat = [[location objectForKey:@"lat"] doubleValue];
+//            
+//                       aSearchResult.lng = [[location objectForKey:@"lng"] doubleValue];
+//            
+//            aSearchResult.venueAddress = [location objectForKey:@"address"];
+//            aSearchResult.venueCity = [location objectForKey:@"city"];
+//            aSearchResult.state = [location objectForKey:@"state"];
+
+      
         
         [self.tableView reloadData];
-    
-        
     }
 }
 
@@ -303,23 +278,13 @@
     userLat = newLocation.coordinate.latitude;
     userLng = newLocation.coordinate.longitude;
     
+      [self foursquareURLSession];
+    
     
     
 //    MKCoordinateRegion userLocation = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 1500.00, 1500.00);
     
 }
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    Venue *aVenue = [NSEntityDescription insertNewObjectForEntityForName:@"Venue" inManagedObjectContext:self.cdStack.managedObjectContext]; // using core data / database to create a student object for us
-//    
-////    aItem.name = self.addTaskTextField.text;
-//    
-//    NSDictionary *aFriend = [friends objectAtIndex:indexPath.row];
-//    FriendDetailViewController *friendDetailVC = [[FriendDetailViewController alloc] init];
-//    friendDetailVC.friendInfo = aFriend;
-//    [self.navigationController pushViewController:friendDetailVC animated:YES];
-//}
 
 
 
@@ -362,15 +327,8 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender 
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+
 
 @end

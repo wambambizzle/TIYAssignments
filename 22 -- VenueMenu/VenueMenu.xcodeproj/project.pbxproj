@@ -21,7 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		A83676641AD1BB9900398A7E /* SearchResultsVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = A83676631AD1BB9900398A7E /* SearchResultsVenue.m */; };
 		A85126721ACF046D0015BC91 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85126711ACF046D0015BC91 /* SearchResultsViewController.m */; };
 		A85126771ACF11640015BC91 /* _Location.m in Sources */ = {isa = PBXBuildFile; fileRef = A85126741ACF11640015BC91 /* _Location.m */; };
 		A85126781ACF11640015BC91 /* _Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = A85126761ACF11640015BC91 /* _Venue.m */; };
@@ -51,8 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A83676621AD1BB9900398A7E /* SearchResultsVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsVenue.h; sourceTree = "<group>"; };
-		A83676631AD1BB9900398A7E /* SearchResultsVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsVenue.m; sourceTree = "<group>"; };
 		A85126701ACF046D0015BC91 /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
 		A85126711ACF046D0015BC91 /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
 		A85126731ACF11640015BC91 /* _Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Location.h; path = MOGenerated/_Location.h; sourceTree = "<group>"; };
@@ -108,8 +105,6 @@
 			children = (
 				A85126811AD05BBF0015BC91 /* NetworkManager.h */,
 				A85126821AD05BBF0015BC91 /* NetworkManager.m */,
-				A83676621AD1BB9900398A7E /* SearchResultsVenue.h */,
-				A83676631AD1BB9900398A7E /* SearchResultsVenue.m */,
 			);
 			name = "Model Class";
 			sourceTree = "<group>";
@@ -349,7 +344,6 @@
 				A85126831AD05BBF0015BC91 /* NetworkManager.m in Sources */,
 				A88638321ACDD96300960D84 /* AppDelegate.m in Sources */,
 				A886382F1ACDD96300960D84 /* main.m in Sources */,
-				A83676641AD1BB9900398A7E /* SearchResultsVenue.m in Sources */,
 				A85126781ACF11640015BC91 /* _Venue.m in Sources */,
 				A851267D1ACF118A0015BC91 /* Location.m in Sources */,
 				A88638541ACDD99600960D84 /* VenueMenuTableViewController.m in Sources */,
