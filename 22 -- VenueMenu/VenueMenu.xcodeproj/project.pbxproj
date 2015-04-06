@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		A83A301C1AD313260073348D /* MapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A83A301B1AD313260073348D /* MapObject.m */; };
 		A85126721ACF046D0015BC91 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85126711ACF046D0015BC91 /* SearchResultsViewController.m */; };
 		A85126771ACF11640015BC91 /* _Location.m in Sources */ = {isa = PBXBuildFile; fileRef = A85126741ACF11640015BC91 /* _Location.m */; };
 		A85126781ACF11640015BC91 /* _Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = A85126761ACF11640015BC91 /* _Venue.m */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A83A301A1AD313260073348D /* MapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapObject.h; sourceTree = "<group>"; };
+		A83A301B1AD313260073348D /* MapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapObject.m; sourceTree = "<group>"; };
 		A85126701ACF046D0015BC91 /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
 		A85126711ACF046D0015BC91 /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
 		A85126731ACF11640015BC91 /* _Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Location.h; path = MOGenerated/_Location.h; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 		A83676651AD1BC1900398A7E /* Model Class */ = {
 			isa = PBXGroup;
 			children = (
+				A83A301A1AD313260073348D /* MapObject.h */,
+				A83A301B1AD313260073348D /* MapObject.m */,
 				A85126811AD05BBF0015BC91 /* NetworkManager.h */,
 				A85126821AD05BBF0015BC91 /* NetworkManager.m */,
 			);
@@ -157,9 +162,7 @@
 				A88638641ACE257A00960D84 /* Libraries */,
 				A88638301ACDD96300960D84 /* AppDelegate.h */,
 				A88638311ACDD96300960D84 /* AppDelegate.m */,
-				A88638581ACDDA8800960D84 /* Tableview Controllers */,
-				A85126701ACF046D0015BC91 /* SearchResultsViewController.h */,
-				A85126711ACF046D0015BC91 /* SearchResultsViewController.m */,
+				A88638581ACDDA8800960D84 /* View Controllers */,
 				A88638361ACDD96300960D84 /* Main.storyboard */,
 				A83676651AD1BC1900398A7E /* Model Class */,
 				A88638391ACDD96300960D84 /* Images.xcassets */,
@@ -196,15 +199,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A88638581ACDDA8800960D84 /* Tableview Controllers */ = {
+		A88638581ACDDA8800960D84 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				A88638521ACDD99600960D84 /* VenueMenuTableViewController.h */,
 				A88638531ACDD99600960D84 /* VenueMenuTableViewController.m */,
 				A88638551ACDDA7C00960D84 /* SearchResultsTableViewController.h */,
 				A88638561ACDDA7C00960D84 /* SearchResultsTableViewController.m */,
+				A85126701ACF046D0015BC91 /* SearchResultsViewController.h */,
+				A85126711ACF046D0015BC91 /* SearchResultsViewController.m */,
 			);
-			name = "Tableview Controllers";
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		A88638641ACE257A00960D84 /* Libraries */ = {
@@ -344,6 +349,7 @@
 				A85126831AD05BBF0015BC91 /* NetworkManager.m in Sources */,
 				A88638321ACDD96300960D84 /* AppDelegate.m in Sources */,
 				A886382F1ACDD96300960D84 /* main.m in Sources */,
+				A83A301C1AD313260073348D /* MapObject.m in Sources */,
 				A85126781ACF11640015BC91 /* _Venue.m in Sources */,
 				A851267D1ACF118A0015BC91 /* Location.m in Sources */,
 				A88638541ACDD99600960D84 /* VenueMenuTableViewController.m in Sources */,

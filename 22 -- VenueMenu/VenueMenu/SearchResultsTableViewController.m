@@ -87,6 +87,13 @@
     
      cell.textLabel.text = name;
     
+    NSDictionary *location = [aVenue objectForKey:@"location"];
+    NSArray *addy = [location objectForKey:@"formattedAddress"];
+    NSString *streetAddy = [addy objectAtIndex:0];
+    NSString *citySate = [addy objectAtIndex:1];
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ | %@",streetAddy,citySate];
+        
     return cell;
 }
 
@@ -100,25 +107,10 @@
     SearchResultsViewController *searchRVC = [storyboard instantiateViewControllerWithIdentifier:@"SearchDetails"];
     searchRVC.aVenue = aVenue;
     [self showViewController:searchRVC sender:nil];
-    NSLog(@"%@", searchRVC.aVenue);
+   
 }
 
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([segue.identifier isEqualToString:@"DetailFromSearchSegue"])
-//    {
-//        SearchResultsViewController *searchRVC = (SearchResultsViewController *)[segue destinationViewController];
-//        NSIndexPath *indexPath = [[self tableView]indexPathForCell:sender];
-//        SearchResultsVenue *aVenue = resultsArray[indexPath.row];
-//        NSLog(@"%@",aVenue);
-//        searchRVC.aVenue = aVenue;
-//        NSLog(@"venue:%@", searchRVC.aVenue);
-//    }
-//
-//}
+#pragma mark - SearchBar delegate
 
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -126,8 +118,6 @@
     [searchBar resignFirstResponder];
     
     [self configureLocationManager];
-
-    
 }
 
 
@@ -186,21 +176,6 @@
         
          venues = [response objectForKey:@"venues"];
     
-        
-//            venueArray = [firstLocation objectForKey:@"name"];
-//            aSearchResult.venueName = [firstLocation objectForKey:@"name"];
-//    
-//    
-//            NSDictionary *location = [firstLocation objectForKey:@"location"];
-//                        aSearchResult.lat = [[location objectForKey:@"lat"] doubleValue];
-//            
-//                       aSearchResult.lng = [[location objectForKey:@"lng"] doubleValue];
-//            
-//            aSearchResult.venueAddress = [location objectForKey:@"address"];
-//            aSearchResult.venueCity = [location objectForKey:@"city"];
-//            aSearchResult.state = [location objectForKey:@"state"];
-
-      
         
         [self.tableView reloadData];
     }
