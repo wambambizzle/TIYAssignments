@@ -6,7 +6,6 @@
 const struct LocationAttributes LocationAttributes = {
 	.lat = @"lat",
 	.lng = @"lng",
-	.streetAddress = @"streetAddress",
 };
 
 const struct LocationRelationships LocationRelationships = {
@@ -92,8 +91,6 @@ const struct LocationRelationships LocationRelationships = {
 - (void)setPrimitiveLngValue:(double)value_ {
 	[self setPrimitiveLng:[NSNumber numberWithDouble:value_]];
 }
-
-@dynamic streetAddress;
 
 @dynamic venue;
 

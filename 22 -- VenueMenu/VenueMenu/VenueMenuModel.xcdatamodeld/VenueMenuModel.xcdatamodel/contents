@@ -3,19 +3,21 @@
     <entity name="Location" representedClassName="Location" syncable="YES">
         <attribute name="lat" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="lng" attributeType="Double" defaultValueString="0" syncable="YES"/>
-        <attribute name="streetAddress" attributeType="String" syncable="YES"/>
         <relationship name="venue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="location" inverseEntity="Venue" syncable="YES"/>
     </entity>
     <entity name="Venue" representedClassName="Venue" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="city" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postalCode" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="state" attributeType="String" syncable="YES"/>
+        <attribute name="streeAddress" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userRating" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="venue" inverseEntity="Location" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Venue" positionX="-63" positionY="9" width="128" height="133"/>
-        <element name="Location" positionX="99" positionY="50" width="128" height="103"/>
+        <element name="Location" positionX="99" positionY="50" width="128" height="88"/>
+        <element name="Venue" positionX="-63" positionY="9" width="128" height="178"/>
     </elements>
 </model>

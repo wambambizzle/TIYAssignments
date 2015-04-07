@@ -1,5 +1,4 @@
 #import "Location.h"
-#import "Venue.h"
 
 @interface Location ()
 
@@ -10,15 +9,5 @@
 @implementation Location
 
 // Custom logic goes here.
-
-- (void)venueCoordinate
-{
-    self.coordinate = CLLocationCoordinate2DMake(self.latValue, self.lngValue);
-}
-
-- (NSString *)title
-{
-    return self.venue.name;
-}
 
 @end

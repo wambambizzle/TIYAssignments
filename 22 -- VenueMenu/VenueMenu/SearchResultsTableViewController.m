@@ -106,6 +106,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     SearchResultsViewController *searchRVC = [storyboard instantiateViewControllerWithIdentifier:@"SearchDetails"];
     searchRVC.aVenue = aVenue;
+    searchRVC.cdStack = self.cdStack;
     [self showViewController:searchRVC sender:nil];
    
 }
@@ -168,7 +169,7 @@
     if (!error)
     {
         
-        NSLog(@"Download Successful."); //RCL: take out in production
+//        NSLog(@"Download Successful."); //RCL: take out in production
         NSDictionary *venueInfo = [NSJSONSerialization JSONObjectWithData:receivedData
                                                                  options:0
                                                                    error:nil]; // grab user info as dictionary

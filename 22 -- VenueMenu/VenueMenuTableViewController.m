@@ -42,16 +42,16 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-//    [super viewWillAppear:animated];
-//    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ListItem" inManagedObjectContext:cdStack.managedObjectContext];
-//    
-//    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
-//    fetch.entity = entity;
-//    
-//    venuesArray = nil;
-//    venuesArray = [[cdStack.managedObjectContext executeFetchRequest:fetch error:nil] mutableCopy];
-//    
-//    [self.tableView reloadData];
+    [super viewWillAppear:animated];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Venue" inManagedObjectContext:cdStack.managedObjectContext];
+    
+    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
+    fetch.entity = entity;
+    
+    venuesArray = nil;
+    venuesArray = [[cdStack.managedObjectContext executeFetchRequest:fetch error:nil] mutableCopy];
+    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,18 +82,18 @@
     return cell;
 }
 
-//#pragma mark - Navigation
-//
-//
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([segue.identifier isEqualToString:@"AddVenueSegue"])
-//    {
-//        UINavigationController *navC = [segue destinationViewController];
-//        SearchResultsTableViewController *resultsTVC = [navC viewControllers][0];
-//
-//    }
-//}
+#pragma mark - Navigation
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"AddVenueSearchSegue"])
+    {
+        UINavigationController *navC = [segue destinationViewController];
+        SearchResultsTableViewController *searchTVC = [navC viewControllers][0];
+        searchTVC.cdStack = cdStack;
+    }
+}
 
 
 /*

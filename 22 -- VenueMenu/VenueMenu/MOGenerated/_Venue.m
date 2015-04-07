@@ -4,10 +4,13 @@
 #import "_Venue.h"
 
 const struct VenueAttributes VenueAttributes = {
+	.category = @"category",
 	.city = @"city",
 	.name = @"name",
+	.phone = @"phone",
 	.postalCode = @"postalCode",
 	.state = @"state",
+	.streeAddress = @"streeAddress",
 	.userRating = @"userRating",
 };
 
@@ -55,9 +58,13 @@ const struct VenueRelationships VenueRelationships = {
 	return keyPaths;
 }
 
+@dynamic category;
+
 @dynamic city;
 
 @dynamic name;
+
+@dynamic phone;
 
 @dynamic postalCode;
 
@@ -80,6 +87,8 @@ const struct VenueRelationships VenueRelationships = {
 }
 
 @dynamic state;
+
+@dynamic streeAddress;
 
 @dynamic userRating;
 

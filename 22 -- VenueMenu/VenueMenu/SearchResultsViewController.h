@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CoreDataStack.h"
+
 
 @interface SearchResultsViewController : UIViewController
+
+@property(strong, nonatomic) CoreDataStack *cdStack;
+
 
 @property (strong, nonatomic) NSDictionary *aVenue;
 

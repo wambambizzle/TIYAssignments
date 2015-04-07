@@ -8,9 +8,10 @@
 
 #import "SearchResultsViewController.h"
 
-#import "MapObject.h"
+#import "Venue.h"
+#import "Location.h"
 
-#import "CoreDataStack.h"
+#import "MapObject.h"
 
 @import MapKit;
 
@@ -18,13 +19,16 @@
 
 @interface SearchResultsViewController () <MKAnnotation>
 {
-    
+    double lat;
+    double lng;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *category;
 @property (weak, nonatomic) IBOutlet UILabel *streetAddy;
-@property (weak, nonatomic) IBOutlet UILabel *cityStateZip;
+@property (weak, nonatomic) IBOutlet UILabel *city;
+@property (weak, nonatomic) IBOutlet UILabel *state;
+@property (weak, nonatomic) IBOutlet UILabel *zipCode;
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumber;
 
 - (IBAction)addFavVenueButton:(UIButton *)sender;
@@ -41,29 +45,25 @@
     [super viewDidLoad];
     [self configureMapView];
     
-    NSString *name = [self.aVenue objectForKey:@"name"];
-    self.name.text = name;
+    self.name.text = [self.aVenue objectForKey:@"name"];
     
     NSDictionary *location = [self.aVenue objectForKey:@"location"];
+    self.city.text = [location objectForKey:@"city"];
+    
+    self.state.text = [location objectForKey:@"state"];
+    
+    self.zipCode.text = [location objectForKey:@"postalCode"];
+    
     NSArray *addy = [location objectForKey:@"formattedAddress"];
-    NSString *streetAddress = [addy objectAtIndex:0];
-    self.streetAddy.text = streetAddress;
-    
-    NSString *citySate = [addy objectAtIndex:1];
-    self.cityStateZip.text = citySate;
-    
+    self.streetAddy.text = [addy objectAtIndex:0];
+
     NSArray *categories = [self.aVenue objectForKey:@"categories"];
     NSDictionary *aCategory = [categories objectAtIndex:0];
-    NSString *theCat = [aCategory objectForKey:@"name"];
-    
-    self.category.text = theCat;
+    self.category.text = [aCategory objectForKey:@"name"];
     
     NSDictionary *contact = [self.aVenue objectForKey:@"contact"];
-    NSString *phoneNumb = [contact objectForKey:@"formattedPhone"];
-    
-    self.phoneNumber.text = phoneNumb;
-    
-    
+    self.phoneNumber.text = [contact objectForKey:@"formattedPhone"];
+
     
 }
 
@@ -87,8 +87,8 @@
 - (void)configureMapView
 {
     NSDictionary *location = [self.aVenue objectForKey:@"location"];
-    double lat = [[location objectForKey:@"lat"] doubleValue];
-    double lng = [[location objectForKey:@"lng"] doubleValue];
+     lat = [[location objectForKey:@"lat"] doubleValue];
+     lng = [[location objectForKey:@"lng"] doubleValue];
     
      NSString *name = [self.aVenue objectForKey:@"name"];
     
@@ -106,6 +106,41 @@
 
 - (IBAction)addFavVenueButton:(UIButton *)sender
 {
+    Venue *aVenue = [NSEntityDescription insertNewObjectForEntityForName:@"Venue" inManagedObjectContext:self.cdStack.managedObjectContext]; // using core data / database to create a student object for us
+    NSDictionary *location = [self.aVenue objectForKey:@"location"];
+    lat = [[location objectForKey:@"lat"] doubleValue];
+    lng = [[location objectForKey:@"lng"] doubleValue];
+    
+    aVenue.name = self.name.text;
+    aVenue.category = self.category.text;
+    aVenue.streeAddress = self.streetAddy.text;
+    aVenue.city = self.city.text;
+    aVenue.state = self.state.text;
+//    NSString *zip =  // try nsnumber number with int
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    f.numberStyle = NSNumberFormatterDecimalStyle;
+    aVenue.postalCode =  [f numberFromString:[location objectForKey:@"postalCode"]];
+    aVenue.location.latValue = lat;
+    aVenue.location.lngValue = lng;
+    
+    [self saveCoreDataUpdates];
+
+}
+
+- (void)saveCoreDataUpdates
+{
+    [self.cdStack saveOrFail:^(NSError *errorOrNil)
+     {
+         if (errorOrNil)
+         {
+             NSLog(@"Error from CDStack: %@", [errorOrNil localizedDescription]);
+         }
+     }];
     
 }
+
+
+
+
+
 @end

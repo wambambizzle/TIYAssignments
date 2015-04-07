@@ -43,7 +43,7 @@
                         <nil key="title"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1k7-JV-0H7">
                             <connections>
-                                <segue destination="ITC-y1-Djy" kind="presentation" identifier="AddVenueSegue" id="tnR-JJ-8L0"/>
+                                <segue destination="ITC-y1-Djy" kind="presentation" identifier="AddVenueSearchSegue" id="tnR-JJ-8L0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -138,12 +138,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CtiyStateZip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1y-hm-fxu">
-                                <rect key="frame" x="253" y="140" width="95" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="407-854-9455" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yre-JE-exm">
                                 <rect key="frame" x="246" y="169" width="109" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -168,11 +162,29 @@
                                     <action selector="addFavVenueButton:" destination="QfN-zS-Twy" eventType="touchUpInside" id="h1d-Us-k4T"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEq-Zf-KMF">
+                                <rect key="frame" x="239" y="140" width="31" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zipcode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njp-SI-v9V">
+                                <rect key="frame" x="331" y="140" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHG-lF-yOG">
+                                <rect key="frame" x="280" y="140" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gEq-Zf-KMF" firstAttribute="centerY" secondItem="iHG-lF-yOG" secondAttribute="centerY" id="1FB-xz-q4C"/>
                             <constraint firstAttribute="trailing" secondItem="1dd-PQ-D1v" secondAttribute="trailing" id="4fO-Fm-65q"/>
-                            <constraint firstItem="yre-JE-exm" firstAttribute="top" secondItem="d1y-hm-fxu" secondAttribute="bottom" constant="8" id="4qU-Xc-D0E"/>
                             <constraint firstItem="1dd-PQ-D1v" firstAttribute="leading" secondItem="eQM-sC-Ywa" secondAttribute="leading" id="5Nk-Ar-SxT"/>
                             <constraint firstItem="1dd-PQ-D1v" firstAttribute="top" secondItem="yre-JE-exm" secondAttribute="bottom" constant="8" id="73s-mo-tyX"/>
                             <constraint firstItem="BX0-CB-bdz" firstAttribute="top" secondItem="1dd-PQ-D1v" secondAttribute="bottom" id="8Gi-fp-PsW"/>
@@ -180,21 +192,25 @@
                             <constraint firstAttribute="trailing" secondItem="BiV-tz-5Qt" secondAttribute="trailing" id="Ib3-Rl-l88"/>
                             <constraint firstItem="1dd-PQ-D1v" firstAttribute="top" secondItem="BiV-tz-5Qt" secondAttribute="bottom" constant="20" id="N85-hD-QWd"/>
                             <constraint firstAttribute="centerY" secondItem="4gJ-0g-yrI" secondAttribute="centerY" constant="240" id="N8U-Fw-tXf"/>
+                            <constraint firstItem="iHG-lF-yOG" firstAttribute="top" secondItem="kVM-mt-6Q1" secondAttribute="bottom" constant="8" id="OaX-LI-jDE"/>
                             <constraint firstAttribute="centerX" secondItem="4gJ-0g-yrI" secondAttribute="centerX" id="Pe7-gl-e8E"/>
-                            <constraint firstItem="d1y-hm-fxu" firstAttribute="centerX" secondItem="kVM-mt-6Q1" secondAttribute="centerX" id="PhG-Dc-aLa"/>
                             <constraint firstItem="BiV-tz-5Qt" firstAttribute="centerX" secondItem="1dd-PQ-D1v" secondAttribute="centerX" id="Sdn-QX-XwK"/>
+                            <constraint firstItem="yre-JE-exm" firstAttribute="top" secondItem="iHG-lF-yOG" secondAttribute="bottom" constant="8" id="T1F-cg-q6t"/>
+                            <constraint firstItem="kVM-mt-6Q1" firstAttribute="centerX" secondItem="iHG-lF-yOG" secondAttribute="centerX" id="XUH-R9-u5H"/>
                             <constraint firstItem="1dd-PQ-D1v" firstAttribute="top" secondItem="BiV-tz-5Qt" secondAttribute="bottom" id="XaF-34-pSR"/>
                             <constraint firstItem="1dd-PQ-D1v" firstAttribute="centerX" secondItem="yre-JE-exm" secondAttribute="centerX" id="YF7-er-Y4Y"/>
                             <constraint firstItem="H2c-dU-7b6" firstAttribute="top" secondItem="4gJ-0g-yrI" secondAttribute="bottom" constant="8" id="YLI-jX-TBD"/>
+                            <constraint firstItem="Njp-SI-v9V" firstAttribute="leading" secondItem="iHG-lF-yOG" secondAttribute="trailing" constant="10" id="YPR-kj-T4Y"/>
                             <constraint firstItem="H2c-dU-7b6" firstAttribute="centerX" secondItem="kVM-mt-6Q1" secondAttribute="centerX" id="YzC-YM-JiB"/>
                             <constraint firstItem="BiV-tz-5Qt" firstAttribute="top" secondItem="yre-JE-exm" secondAttribute="bottom" constant="20" id="akW-oz-Zce"/>
-                            <constraint firstItem="d1y-hm-fxu" firstAttribute="top" secondItem="kVM-mt-6Q1" secondAttribute="bottom" constant="8" id="cx7-Jg-4KC"/>
                             <constraint firstItem="kVM-mt-6Q1" firstAttribute="top" secondItem="H2c-dU-7b6" secondAttribute="bottom" constant="8" id="fdK-F8-1BK"/>
+                            <constraint firstItem="iHG-lF-yOG" firstAttribute="leading" secondItem="gEq-Zf-KMF" secondAttribute="trailing" constant="10" id="gAG-Mk-FR3"/>
                             <constraint firstItem="BX0-CB-bdz" firstAttribute="top" secondItem="1dd-PQ-D1v" secondAttribute="bottom" constant="20" id="gEt-jC-E4f"/>
                             <constraint firstItem="4gJ-0g-yrI" firstAttribute="centerX" secondItem="H2c-dU-7b6" secondAttribute="centerX" id="gW4-Sw-zzg"/>
+                            <constraint firstItem="iHG-lF-yOG" firstAttribute="centerX" secondItem="yre-JE-exm" secondAttribute="centerX" id="l8W-mW-YCe"/>
+                            <constraint firstItem="Njp-SI-v9V" firstAttribute="centerY" secondItem="iHG-lF-yOG" secondAttribute="centerY" id="lBi-hk-R1f"/>
                             <constraint firstItem="BiV-tz-5Qt" firstAttribute="top" secondItem="1dd-PQ-D1v" secondAttribute="bottom" constant="15" id="qsL-tO-1Om"/>
                             <constraint firstItem="BiV-tz-5Qt" firstAttribute="leading" secondItem="eQM-sC-Ywa" secondAttribute="leading" id="rZj-Az-Wld"/>
-                            <constraint firstItem="d1y-hm-fxu" firstAttribute="centerX" secondItem="yre-JE-exm" secondAttribute="centerX" id="yQQ-aD-Nkf"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -211,11 +227,13 @@
                     <navigationItem key="navigationItem" id="5aS-tU-uSe"/>
                     <connections>
                         <outlet property="category" destination="H2c-dU-7b6" id="PED-Rv-FxR"/>
-                        <outlet property="cityStateZip" destination="d1y-hm-fxu" id="qWl-87-o2r"/>
+                        <outlet property="city" destination="gEq-Zf-KMF" id="gOp-QD-bUf"/>
                         <outlet property="mapView" destination="BiV-tz-5Qt" id="8x4-aq-S33"/>
                         <outlet property="name" destination="4gJ-0g-yrI" id="eoS-pz-UAO"/>
                         <outlet property="phoneNumber" destination="yre-JE-exm" id="Gsn-If-pBr"/>
+                        <outlet property="state" destination="iHG-lF-yOG" id="4Nm-Il-OZY"/>
                         <outlet property="streetAddy" destination="kVM-mt-6Q1" id="YCQ-ed-k1l"/>
+                        <outlet property="zipCode" destination="Njp-SI-v9V" id="iGc-OA-n31"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4BE-fR-jbE" userLabel="First Responder" sceneMemberID="firstResponder"/>

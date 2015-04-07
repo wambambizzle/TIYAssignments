@@ -4,10 +4,13 @@
 #import <CoreData/CoreData.h>
 
 extern const struct VenueAttributes {
+	__unsafe_unretained NSString *category;
 	__unsafe_unretained NSString *city;
 	__unsafe_unretained NSString *name;
+	__unsafe_unretained NSString *phone;
 	__unsafe_unretained NSString *postalCode;
 	__unsafe_unretained NSString *state;
+	__unsafe_unretained NSString *streeAddress;
 	__unsafe_unretained NSString *userRating;
 } VenueAttributes;
 
@@ -26,6 +29,10 @@ extern const struct VenueRelationships {
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) VenueID* objectID;
 
+@property (nonatomic, strong) NSString* category;
+
+//- (BOOL)validateCategory:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSString* city;
 
 //- (BOOL)validateCity:(id*)value_ error:(NSError**)error_;
@@ -33,6 +40,10 @@ extern const struct VenueRelationships {
 @property (nonatomic, strong) NSString* name;
 
 //- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSString* phone;
+
+//- (BOOL)validatePhone:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSNumber* postalCode;
 
@@ -45,6 +56,10 @@ extern const struct VenueRelationships {
 @property (nonatomic, strong) NSString* state;
 
 //- (BOOL)validateState:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSString* streeAddress;
+
+//- (BOOL)validateStreeAddress:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSNumber* userRating;
 
@@ -62,11 +77,17 @@ extern const struct VenueRelationships {
 
 @interface _Venue (CoreDataGeneratedPrimitiveAccessors)
 
+- (NSString*)primitiveCategory;
+- (void)setPrimitiveCategory:(NSString*)value;
+
 - (NSString*)primitiveCity;
 - (void)setPrimitiveCity:(NSString*)value;
 
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;
+
+- (NSString*)primitivePhone;
+- (void)setPrimitivePhone:(NSString*)value;
 
 - (NSNumber*)primitivePostalCode;
 - (void)setPrimitivePostalCode:(NSNumber*)value;
@@ -76,6 +97,9 @@ extern const struct VenueRelationships {
 
 - (NSString*)primitiveState;
 - (void)setPrimitiveState:(NSString*)value;
+
+- (NSString*)primitiveStreeAddress;
+- (void)setPrimitiveStreeAddress:(NSString*)value;
 
 - (NSNumber*)primitiveUserRating;
 - (void)setPrimitiveUserRating:(NSNumber*)value;
