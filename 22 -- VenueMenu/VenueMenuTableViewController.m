@@ -11,6 +11,7 @@
 #import "SearchResultsTableViewController.h"
 
 #import "CoreDataStack.h"
+#import "Venue.h"
 
 @import MapKit;
 @import CoreLocation;
@@ -77,7 +78,13 @@
  {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VenueCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+     Venue *theVenue = venuesArray[indexPath.row];
+     cell.textLabel.text = theVenue.name;
+     
+     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@ %@, %@", theVenue.streeAddress, theVenue.city, theVenue.state, theVenue.postalCode];
+     
+      [tableView deselectRowAtIndexPath:indexPath animated:YES];
+     
     
     return cell;
 }

@@ -7,6 +7,7 @@
 //
 
 #import "SearchResultsViewController.h"
+#import "VenueMenuTableViewController.h"
 
 #import "Venue.h"
 #import "Location.h"
@@ -124,6 +125,11 @@
     aVenue.location.lngValue = lng;
     
     [self saveCoreDataUpdates];
+    
+//    VenueMenuTableViewController *venuMenuTVC = [navC viewControllers][0];
+    
+ [self dismissViewControllerAnimated:YES completion:nil];
+
 
 }
 

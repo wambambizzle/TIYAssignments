@@ -177,7 +177,6 @@
         
          venues = [response objectForKey:@"venues"];
     
-        
         [self.tableView reloadData];
     }
 }

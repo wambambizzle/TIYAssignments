@@ -7,7 +7,7 @@
         <!--Venue Menu Table View Controller-->
         <scene sceneID="uCy-xV-H0E">
             <objects>
-                <tableViewController id="S6Y-UI-d5v" customClass="VenueMenuTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="VenueMenu" id="S6Y-UI-d5v" customClass="VenueMenuTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="D7b-YX-hqS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -243,7 +243,7 @@
         <!--Navigation Controller-->
         <scene sceneID="VHh-Bd-g0T">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NzK-OL-v8E" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="VenueMenuNavC" automaticallyAdjustsScrollViewInsets="NO" id="NzK-OL-v8E" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DWd-rX-2ed">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
