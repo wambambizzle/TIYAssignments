@@ -9,6 +9,7 @@
 #import "VenueMenuTableViewController.h"
 
 #import "SearchResultsTableViewController.h"
+#import "SearchResultsViewController.h"
 
 #import "CoreDataStack.h"
 #import "Venue.h"
@@ -100,29 +101,44 @@
         SearchResultsTableViewController *searchTVC = [navC viewControllers][0];
         searchTVC.cdStack = cdStack;
     }
+    
+    else if ([segue.identifier isEqualToString:@"ShowDetailSegue"])
+    {
+        SearchResultsViewController *searchDetailsVC = [segue destinationViewController];
+        //use the venu object
+    }
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath 
  {
-    // Return NO if you do not want the specified item to be editable.
+
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSManagedObjectContext *context = [cdStack managedObjectContext];
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
         // Delete the row from the data source
+      [context deleteObject:[venuesArray objectAtIndex:indexPath.row]];
+     [venuesArray removeObjectAtIndex:indexPath.row];
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert)
+    {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.

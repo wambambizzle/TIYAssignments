@@ -75,16 +75,6 @@
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (void)configureMapView
 {
     NSDictionary *location = [self.aVenue objectForKey:@"location"];
@@ -103,8 +93,6 @@
     [self.mapView addAnnotation:mapObject];
 }
 
-
-
 - (IBAction)addFavVenueButton:(UIButton *)sender
 {
     Venue *aVenue = [NSEntityDescription insertNewObjectForEntityForName:@"Venue" inManagedObjectContext:self.cdStack.managedObjectContext]; // using core data / database to create a student object for us
@@ -117,7 +105,7 @@
     aVenue.streeAddress = self.streetAddy.text;
     aVenue.city = self.city.text;
     aVenue.state = self.state.text;
-//    NSString *zip =  // try nsnumber number with int
+
     NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
     f.numberStyle = NSNumberFormatterDecimalStyle;
     aVenue.postalCode =  [f numberFromString:[location objectForKey:@"postalCode"]];
@@ -126,10 +114,7 @@
     
     [self saveCoreDataUpdates];
     
-//    VenueMenuTableViewController *venuMenuTVC = [navC viewControllers][0];
-    
  [self dismissViewControllerAnimated:YES completion:nil];
-
 
 }
 

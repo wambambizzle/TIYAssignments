@@ -44,6 +44,7 @@
 {
     [super viewDidLoad];
     self.venueSearchBar.delegate = self;
+    self.title = @"Search for a Venue";
 
 }
 
@@ -93,6 +94,18 @@
     NSString *citySate = [addy objectAtIndex:1];
     
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ | %@",streetAddy,citySate];
+    
+    NSArray *categories = [aVenue objectForKey:@"categories"];
+    NSDictionary *iconA = [categories objectAtIndex:0];
+    NSDictionary *iconTrue = [iconA objectForKey:@"icon"];
+    NSString *prefix = [iconTrue objectForKey:@"prefix"];
+    NSString *suffix = [iconTrue objectForKey:@"suffix"];
+    
+    NSString *icon = [NSString stringWithFormat:@"%@44%@", prefix, suffix];
+    NSURL *iconURL = [NSURL URLWithString:icon];
+    NSData *imageData = [NSData dataWithContentsOfURL:iconURL];
+    UIImage *image = [UIImage imageWithData:imageData];
+    cell.imageView.image = image;
         
     return cell;
 }
@@ -127,8 +140,9 @@
 -(void)foursquareURLSession
 {
     NSString *querySearch = self.venueSearchBar.text;
+    NSString *escapedString = [querySearch stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
 //    NSLog(@"querySearch used: %@", querySearch);
-    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?client_id=%@&client_secret=%@&v=20130815&ll=%f,%f&query=%@&radius=800",kClientID,kClientSecret,userLat,userLng,querySearch];
+    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?client_id=%@&client_secret=%@&v=20130815&ll=%f,%f&query=%@&radius=800",kClientID,kClientSecret,userLat,userLng,escapedString];
 //     NSLog(@"%f, %f", userLat, userLng);
 //    NSLog(@"urlstring:%@",urlString);
     NSURL *url = [NSURL URLWithString:urlString];
@@ -255,54 +269,7 @@
     
       [self foursquareURLSession];
     
-    
-    
-//    MKCoordinateRegion userLocation = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 1500.00, 1500.00);
-    
 }
-
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath 
- {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath 
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) 
-    {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath 
- {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath 
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
 
 
 
