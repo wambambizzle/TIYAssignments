@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A89FB0561AE2D1C6003FD85D /* CurrentRates.m in Sources */ = {isa = PBXBuildFile; fileRef = A89FB0551AE2D1C6003FD85D /* CurrentRates.m */; };
+		A8AECBD81AE17FD400A650F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AECBD71AE17FD400A650F0 /* main.m */; };
+		A8AECBDB1AE17FD400A650F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AECBDA1AE17FD400A650F0 /* AppDelegate.m */; };
+		A8AECBDE1AE17FD400A650F0 /* CoinlessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AECBDD1AE17FD400A650F0 /* CoinlessViewController.m */; };
+		A8AECBE11AE17FD400A650F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8AECBDF1AE17FD400A650F0 /* Main.storyboard */; };
+		A8AECBE31AE17FD400A650F0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8AECBE21AE17FD400A650F0 /* Images.xcassets */; };
+		A8AECBE61AE17FD400A650F0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8AECBE41AE17FD400A650F0 /* LaunchScreen.xib */; };
+		A8AECBF21AE17FD400A650F0 /* CoinlessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AECBF11AE17FD400A650F0 /* CoinlessTests.m */; };
+		A8AECC001AE19DEC00A650F0 /* CurrentRatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AECBFF1AE19DEC00A650F0 /* CurrentRatesViewController.m */; };
+		A8AECC041AE1A2C700A650F0 /* PriceCalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AECC031AE1A2C700A650F0 /* PriceCalculatorViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A8AECBEC1AE17FD400A650F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8AECBCA1AE17FD400A650F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8AECBD11AE17FD400A650F0;
+			remoteInfo = Coinless;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A89FB0541AE2D1C6003FD85D /* CurrentRates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentRates.h; sourceTree = "<group>"; };
+		A89FB0551AE2D1C6003FD85D /* CurrentRates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentRates.m; sourceTree = "<group>"; };
+		A8AECBD21AE17FD400A650F0 /* Coinless.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinless.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8AECBD61AE17FD400A650F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8AECBD71AE17FD400A650F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A8AECBD91AE17FD400A650F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A8AECBDA1AE17FD400A650F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A8AECBDC1AE17FD400A650F0 /* CoinlessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinlessViewController.h; sourceTree = "<group>"; };
+		A8AECBDD1AE17FD400A650F0 /* CoinlessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinlessViewController.m; sourceTree = "<group>"; };
+		A8AECBE01AE17FD400A650F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A8AECBE21AE17FD400A650F0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A8AECBE51AE17FD400A650F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A8AECBEB1AE17FD400A650F0 /* CoinlessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinlessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8AECBF01AE17FD400A650F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8AECBF11AE17FD400A650F0 /* CoinlessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinlessTests.m; sourceTree = "<group>"; };
+		A8AECBFE1AE19DEC00A650F0 /* CurrentRatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentRatesViewController.h; sourceTree = "<group>"; };
+		A8AECBFF1AE19DEC00A650F0 /* CurrentRatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentRatesViewController.m; sourceTree = "<group>"; };
+		A8AECC021AE1A2C700A650F0 /* PriceCalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceCalculatorViewController.h; sourceTree = "<group>"; };
+		A8AECC031AE1A2C700A650F0 /* PriceCalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceCalculatorViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A8AECBCF1AE17FD400A650F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8AECBE81AE17FD400A650F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A89FB0571AE2D1CE003FD85D /* Model Objects */ = {
+			isa = PBXGroup;
+			children = (
+				A89FB0541AE2D1C6003FD85D /* CurrentRates.h */,
+				A89FB0551AE2D1C6003FD85D /* CurrentRates.m */,
+			);
+			name = "Model Objects";
+			sourceTree = "<group>";
+		};
+		A8AECBC91AE17FD400A650F0 = {
+			isa = PBXGroup;
+			children = (
+				A8AECBD41AE17FD400A650F0 /* Coinless */,
+				A8AECBEE1AE17FD400A650F0 /* CoinlessTests */,
+				A8AECBD31AE17FD400A650F0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A8AECBD31AE17FD400A650F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A8AECBD21AE17FD400A650F0 /* Coinless.app */,
+				A8AECBEB1AE17FD400A650F0 /* CoinlessTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A8AECBD41AE17FD400A650F0 /* Coinless */ = {
+			isa = PBXGroup;
+			children = (
+				A8AECBD91AE17FD400A650F0 /* AppDelegate.h */,
+				A8AECBDA1AE17FD400A650F0 /* AppDelegate.m */,
+				A8AECC011AE19DF700A650F0 /* View Controllers */,
+				A8AECBDF1AE17FD400A650F0 /* Main.storyboard */,
+				A8AECBE21AE17FD400A650F0 /* Images.xcassets */,
+				A8AECBE41AE17FD400A650F0 /* LaunchScreen.xib */,
+				A8AECBD51AE17FD400A650F0 /* Supporting Files */,
+			);
+			path = Coinless;
+			sourceTree = "<group>";
+		};
+		A8AECBD51AE17FD400A650F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A8AECBD61AE17FD400A650F0 /* Info.plist */,
+				A8AECBD71AE17FD400A650F0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A8AECBEE1AE17FD400A650F0 /* CoinlessTests */ = {
+			isa = PBXGroup;
+			children = (
+				A8AECBF11AE17FD400A650F0 /* CoinlessTests.m */,
+				A8AECBEF1AE17FD400A650F0 /* Supporting Files */,
+			);
+			path = CoinlessTests;
+			sourceTree = "<group>";
+		};
+		A8AECBEF1AE17FD400A650F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A8AECBF01AE17FD400A650F0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A8AECC011AE19DF700A650F0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A8AECBDC1AE17FD400A650F0 /* CoinlessViewController.h */,
+				A8AECBDD1AE17FD400A650F0 /* CoinlessViewController.m */,
+				A8AECBFE1AE19DEC00A650F0 /* CurrentRatesViewController.h */,
+				A8AECBFF1AE19DEC00A650F0 /* CurrentRatesViewController.m */,
+				A8AECC021AE1A2C700A650F0 /* PriceCalculatorViewController.h */,
+				A8AECC031AE1A2C700A650F0 /* PriceCalculatorViewController.m */,
+				A89FB0571AE2D1CE003FD85D /* Model Objects */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A8AECBD11AE17FD400A650F0 /* Coinless */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8AECBF51AE17FD400A650F0 /* Build configuration list for PBXNativeTarget "Coinless" */;
+			buildPhases = (
+				A8AECBCE1AE17FD400A650F0 /* Sources */,
+				A8AECBCF1AE17FD400A650F0 /* Frameworks */,
+				A8AECBD01AE17FD400A650F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Coinless;
+			productName = Coinless;
+			productReference = A8AECBD21AE17FD400A650F0 /* Coinless.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A8AECBEA1AE17FD400A650F0 /* CoinlessTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8AECBF81AE17FD400A650F0 /* Build configuration list for PBXNativeTarget "CoinlessTests" */;
+			buildPhases = (
+				A8AECBE71AE17FD400A650F0 /* Sources */,
+				A8AECBE81AE17FD400A650F0 /* Frameworks */,
+				A8AECBE91AE17FD400A650F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A8AECBED1AE17FD400A650F0 /* PBXTargetDependency */,
+			);
+			name = CoinlessTests;
+			productName = CoinlessTests;
+			productReference = A8AECBEB1AE17FD400A650F0 /* CoinlessTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A8AECBCA1AE17FD400A650F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "The Iron Yard";
+				TargetAttributes = {
+					A8AECBD11AE17FD400A650F0 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					A8AECBEA1AE17FD400A650F0 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = A8AECBD11AE17FD400A650F0;
+					};
+				};
+			};
+			buildConfigurationList = A8AECBCD1AE17FD400A650F0 /* Build configuration list for PBXProject "Coinless" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A8AECBC91AE17FD400A650F0;
+			productRefGroup = A8AECBD31AE17FD400A650F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A8AECBD11AE17FD400A650F0 /* Coinless */,
+				A8AECBEA1AE17FD400A650F0 /* CoinlessTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A8AECBD01AE17FD400A650F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8AECBE11AE17FD400A650F0 /* Main.storyboard in Resources */,
+				A8AECBE61AE17FD400A650F0 /* LaunchScreen.xib in Resources */,
+				A8AECBE31AE17FD400A650F0 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8AECBE91AE17FD400A650F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A8AECBCE1AE17FD400A650F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8AECC041AE1A2C700A650F0 /* PriceCalculatorViewController.m in Sources */,
+				A89FB0561AE2D1C6003FD85D /* CurrentRates.m in Sources */,
+				A8AECC001AE19DEC00A650F0 /* CurrentRatesViewController.m in Sources */,
+				A8AECBDE1AE17FD400A650F0 /* CoinlessViewController.m in Sources */,
+				A8AECBDB1AE17FD400A650F0 /* AppDelegate.m in Sources */,
+				A8AECBD81AE17FD400A650F0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8AECBE71AE17FD400A650F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8AECBF21AE17FD400A650F0 /* CoinlessTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A8AECBED1AE17FD400A650F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A8AECBD11AE17FD400A650F0 /* Coinless */;
+			targetProxy = A8AECBEC1AE17FD400A650F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A8AECBDF1AE17FD400A650F0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8AECBE01AE17FD400A650F0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A8AECBE41AE17FD400A650F0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8AECBE51AE17FD400A650F0 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A8AECBF31AE17FD400A650F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A8AECBF41AE17FD400A650F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A8AECBF61AE17FD400A650F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Coinless/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A8AECBF71AE17FD400A650F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Coinless/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A8AECBF91AE17FD400A650F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CoinlessTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coinless.app/Coinless";
+			};
+			name = Debug;
+		};
+		A8AECBFA1AE17FD400A650F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CoinlessTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coinless.app/Coinless";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A8AECBCD1AE17FD400A650F0 /* Build configuration list for PBXProject "Coinless" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8AECBF31AE17FD400A650F0 /* Debug */,
+				A8AECBF41AE17FD400A650F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8AECBF51AE17FD400A650F0 /* Build configuration list for PBXNativeTarget "Coinless" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8AECBF61AE17FD400A650F0 /* Debug */,
+				A8AECBF71AE17FD400A650F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8AECBF81AE17FD400A650F0 /* Build configuration list for PBXNativeTarget "CoinlessTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8AECBF91AE17FD400A650F0 /* Debug */,
+				A8AECBFA1AE17FD400A650F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A8AECBCA1AE17FD400A650F0 /* Project object */;
+}

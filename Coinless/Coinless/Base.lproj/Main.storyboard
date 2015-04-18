@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H3m-IQ-G2n">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--Coinless View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="CoinlessViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is Bitcoin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCB-yV-pBe">
+                                <rect key="frame" x="15" y="72" width="570" height="113"/>
+                                <color key="backgroundColor" red="0.32959084220000001" green="0.69708952550000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="113" id="s5U-EH-Xft"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96404693279999998" green="1" blue="0.92952568410000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="15" y="72" width="320" height="168"/>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="AwH-q4-GSb" appends="YES" id="RTn-qk-L2I"/>
+                                </connections>
+                            </label>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Rates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbD-fw-mke">
+                                <rect key="frame" x="15" y="193" width="570" height="113"/>
+                                <color key="backgroundColor" red="0.74509803919999995" green="0.53725490200000003" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96404693279999998" green="1" blue="0.92952568410000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="40" y="231" width="320" height="150"/>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="wQ6-Az-mAg" appends="YES" id="Uqc-fe-xjG"/>
+                                </connections>
+                            </label>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DM0-lv-XVx">
+                                <rect key="frame" x="15" y="314" width="570" height="113"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="40" y="381" width="320" height="150"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="KbD-fw-mke" firstAttribute="top" secondItem="rCB-yV-pBe" secondAttribute="bottom" constant="8" id="G0z-Y0-KCd"/>
+                            <constraint firstItem="rCB-yV-pBe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="15" id="GRQ-62-h31"/>
+                            <constraint firstItem="rCB-yV-pBe" firstAttribute="height" secondItem="KbD-fw-mke" secondAttribute="height" id="OIb-jd-QX4"/>
+                            <constraint firstItem="rCB-yV-pBe" firstAttribute="centerX" secondItem="KbD-fw-mke" secondAttribute="centerX" id="PQg-OU-Ghf"/>
+                            <constraint firstItem="KbD-fw-mke" firstAttribute="centerX" secondItem="DM0-lv-XVx" secondAttribute="centerX" id="SvH-nZ-NkE"/>
+                            <constraint firstAttribute="trailing" secondItem="rCB-yV-pBe" secondAttribute="trailing" constant="15" id="Uty-CA-RaE"/>
+                            <constraint firstItem="KbD-fw-mke" firstAttribute="width" secondItem="DM0-lv-XVx" secondAttribute="width" id="aB5-4k-qti"/>
+                            <constraint firstItem="DM0-lv-XVx" firstAttribute="top" secondItem="KbD-fw-mke" secondAttribute="bottom" constant="8" id="bOg-Pe-Kza"/>
+                            <constraint firstItem="rCB-yV-pBe" firstAttribute="width" secondItem="KbD-fw-mke" secondAttribute="width" id="fNu-yA-eqx"/>
+                            <constraint firstItem="rCB-yV-pBe" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="iHd-kq-ZLD"/>
+                            <constraint firstItem="KbD-fw-mke" firstAttribute="height" secondItem="DM0-lv-XVx" secondAttribute="height" id="jSV-Bt-NJS"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="VkM-D7-odt" appends="YES" id="LTN-Y9-7R5"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="y4w-j7-9YW"/>
+                    <connections>
+                        <outlet property="bitcoinInfoLabel" destination="rCB-yV-pBe" id="n7z-eX-rUo"/>
+                        <outlet property="currentRatesLabel" destination="KbD-fw-mke" id="FWX-Vn-q9r"/>
+                        <outlet property="priceCalcLabel" destination="DM0-lv-XVx" id="bt1-y0-exs"/>
+                        <segue destination="wux-pu-Fpr" kind="show" identifier="CurrentRatesSegue" id="ruK-eO-DrN"/>
+                        <segue destination="kqK-p8-xge" kind="show" identifier="PriceCalcSegue" id="xrk-Qz-hdR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="AwH-q4-GSb" userLabel="Bit Info Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="bitcoinInfoTapped:" destination="vXZ-lx-hvc" id="fxx-gU-pL9"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="wQ6-Az-mAg" userLabel="Current RatesTap Gesture Recognizer">
+                    <connections>
+                        <action selector="currentRatesTapped:" destination="vXZ-lx-hvc" id="XRm-Wl-vND"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="VkM-D7-odt" userLabel="Price Calc Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="priceCalcTapped:" destination="vXZ-lx-hvc" id="0oZ-Bg-cKa"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1335" y="387"/>
+        </scene>
+        <!--Current Rates View Controller-->
+        <scene sceneID="gwJ-Vv-3dB">
+            <objects>
+                <viewController id="cUr-Wi-pSe" customClass="CurrentRatesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CD7-jl-3Ak"/>
+                        <viewControllerLayoutGuide type="bottom" id="bm1-hZ-2rY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zfb-TO-RcK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£GBP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCN-LV-ZEY">
+                                <rect key="frame" x="35" y="171" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€EURO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptJ-dQ-U99">
+                                <rect key="frame" x="507" y="171" width="58" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Per Bitcoin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk9-ob-7s2">
+                                <rect key="frame" x="236" y="80" width="129" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$USD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xT-KC-xkb">
+                                <rect key="frame" x="278" y="171" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by CoinDesk" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvG-Wk-Ayk">
+                                <rect key="frame" x="238" y="549" width="124" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zl-UY-CQ5">
+                                <rect key="frame" x="29" y="200" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dollars" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUa-Xf-eBe">
+                                <rect key="frame" x="274" y="200" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Euros" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crp-tL-wzC">
+                                <rect key="frame" x="514" y="200" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="LvG-Wk-Ayk" secondAttribute="centerY" constant="-270" id="1yt-az-kwI"/>
+                            <constraint firstItem="7xT-KC-xkb" firstAttribute="centerY" secondItem="ptJ-dQ-U99" secondAttribute="centerY" id="27Z-AW-txO"/>
+                            <constraint firstItem="Pk9-ob-7s2" firstAttribute="top" secondItem="CD7-jl-3Ak" secondAttribute="bottom" constant="16" id="8BU-hk-j55"/>
+                            <constraint firstAttribute="centerX" secondItem="Pk9-ob-7s2" secondAttribute="centerX" id="CyW-cA-ZXv"/>
+                            <constraint firstItem="crp-tL-wzC" firstAttribute="centerX" secondItem="ptJ-dQ-U99" secondAttribute="centerX" id="DdS-mN-6r8"/>
+                            <constraint firstItem="7xT-KC-xkb" firstAttribute="centerX" secondItem="eUa-Xf-eBe" secondAttribute="centerX" id="Eqb-J7-QXD"/>
+                            <constraint firstItem="crp-tL-wzC" firstAttribute="top" secondItem="ptJ-dQ-U99" secondAttribute="bottom" constant="8" id="Gct-A5-ExW"/>
+                            <constraint firstItem="7xT-KC-xkb" firstAttribute="top" secondItem="Pk9-ob-7s2" secondAttribute="bottom" constant="70" id="PMG-7q-g4F"/>
+                            <constraint firstItem="eUa-Xf-eBe" firstAttribute="top" secondItem="7xT-KC-xkb" secondAttribute="bottom" constant="8" id="S7l-72-L7V"/>
+                            <constraint firstItem="bm1-hZ-2rY" firstAttribute="top" secondItem="LvG-Wk-Ayk" secondAttribute="bottom" constant="8" id="VAe-cP-Xu0"/>
+                            <constraint firstItem="7xT-KC-xkb" firstAttribute="centerX" secondItem="Pk9-ob-7s2" secondAttribute="centerX" id="aQH-Lh-rXX"/>
+                            <constraint firstItem="7xT-KC-xkb" firstAttribute="centerY" secondItem="xCN-LV-ZEY" secondAttribute="centerY" id="ctK-hr-Hlg"/>
+                            <constraint firstAttribute="trailing" secondItem="ptJ-dQ-U99" secondAttribute="trailing" constant="35" id="eZ6-j0-UTh"/>
+                            <constraint firstAttribute="centerX" secondItem="LvG-Wk-Ayk" secondAttribute="centerX" id="ge0-W1-RVN"/>
+                            <constraint firstItem="4zl-UY-CQ5" firstAttribute="top" secondItem="xCN-LV-ZEY" secondAttribute="bottom" constant="8" id="ltp-sA-avX"/>
+                            <constraint firstItem="xCN-LV-ZEY" firstAttribute="centerX" secondItem="4zl-UY-CQ5" secondAttribute="centerX" id="uk2-X8-c4E"/>
+                            <constraint firstAttribute="centerY" secondItem="Pk9-ob-7s2" secondAttribute="centerY" constant="209.5" id="unf-hk-dwj"/>
+                            <constraint firstItem="xCN-LV-ZEY" firstAttribute="leading" secondItem="Zfb-TO-RcK" secondAttribute="leading" constant="35" id="xsm-fZ-bLi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="b0b-Yv-wp1"/>
+                    <connections>
+                        <outlet property="euroRateLabel" destination="ptJ-dQ-U99" id="wtV-vW-JjK"/>
+                        <outlet property="poundsRateLabel" destination="xCN-LV-ZEY" id="KLq-OQ-Lgk"/>
+                        <outlet property="usdRateLabel" destination="7xT-KC-xkb" id="DwV-zD-Oqt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLH-tp-Zc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2732" y="495"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="L14-8O-3lv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H3m-IQ-G2n" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gO0-ET-CCD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="bGP-GH-Ye3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lUC-AN-7iu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="642" y="387"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nXE-Uq-H85">
+            <objects>
+                <navigationController storyboardIdentifier="CurrentRatesNavC" automaticallyAdjustsScrollViewInsets="NO" id="wux-pu-Fpr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UmD-Uo-7Jx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cUr-Wi-pSe" kind="relationship" relationship="rootViewController" id="UTl-g0-Psu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfu-uq-GEq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2048" y="479"/>
+        </scene>
+        <!--Price Calculator View Controller-->
+        <scene sceneID="NEb-ZG-9bl">
+            <objects>
+                <viewController id="gSd-Uw-ukd" customClass="PriceCalculatorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xOs-2o-TR3"/>
+                        <viewControllerLayoutGuide type="bottom" id="yGi-4e-XiW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gy4-AS-lZu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Euro" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zfB-rk-8v6">
+                                <rect key="frame" x="15" y="181" width="100" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gSd-Uw-ukd" id="Dph-FU-4UH"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pound" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAB-Ua-kww">
+                                <rect key="frame" x="15" y="223" width="100" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gSd-Uw-ukd" id="jcI-5i-vFr"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bitcoins" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZLQ-9F-fRV">
+                                <rect key="frame" x="485" y="139" width="100" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gSd-Uw-ukd" id="QpL-lI-fzT"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bitcoins" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jFU-QB-HXe">
+                                <rect key="frame" x="487" y="181" width="100" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gSd-Uw-ukd" id="v21-DZ-gT7"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a value to get conversion rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xM7-uA-mqh">
+                                <rect key="frame" x="164" y="72" width="272" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bitcoins" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dh6-tW-fsp">
+                                <rect key="frame" x="487" y="223" width="100" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gSd-Uw-ukd" id="i9I-rQ-Vxi"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="USD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="id1-oX-sp8">
+                                <rect key="frame" x="15" y="139" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="RL7-eU-qB1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gSd-Uw-ukd" id="v31-TX-NG5"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AAB-Ua-kww" firstAttribute="top" secondItem="zfB-rk-8v6" secondAttribute="bottom" constant="12" id="3f4-FQ-Ogw"/>
+                            <constraint firstAttribute="centerY" secondItem="xM7-uA-mqh" secondAttribute="centerY" constant="198.5" id="3iI-Eg-ipn"/>
+                            <constraint firstItem="AAB-Ua-kww" firstAttribute="width" secondItem="zfB-rk-8v6" secondAttribute="width" id="4TN-Wz-dcm"/>
+                            <constraint firstItem="jFU-QB-HXe" firstAttribute="top" secondItem="ZLQ-9F-fRV" secondAttribute="bottom" constant="12" id="A6G-KY-2ei"/>
+                            <constraint firstItem="jFU-QB-HXe" firstAttribute="centerX" secondItem="ZLQ-9F-fRV" secondAttribute="centerX" constant="1.5" id="AuH-Ya-gC5"/>
+                            <constraint firstAttribute="centerX" secondItem="xM7-uA-mqh" secondAttribute="centerX" id="DHn-ca-x9R"/>
+                            <constraint firstItem="xM7-uA-mqh" firstAttribute="top" secondItem="xOs-2o-TR3" secondAttribute="bottom" constant="8" id="N3S-3o-S2Z"/>
+                            <constraint firstItem="dh6-tW-fsp" firstAttribute="top" secondItem="jFU-QB-HXe" secondAttribute="bottom" constant="12" id="QKk-Za-Yak"/>
+                            <constraint firstItem="zfB-rk-8v6" firstAttribute="centerX" secondItem="id1-oX-sp8" secondAttribute="centerX" id="V6g-tk-N6d"/>
+                            <constraint firstItem="zfB-rk-8v6" firstAttribute="width" secondItem="id1-oX-sp8" secondAttribute="width" id="WGC-oi-wck"/>
+                            <constraint firstItem="ZLQ-9F-fRV" firstAttribute="width" secondItem="id1-oX-sp8" secondAttribute="width" id="Wxz-R7-4iX"/>
+                            <constraint firstItem="ZLQ-9F-fRV" firstAttribute="centerY" secondItem="id1-oX-sp8" secondAttribute="centerY" id="c0X-6N-jIS"/>
+                            <constraint firstItem="jFU-QB-HXe" firstAttribute="width" secondItem="dh6-tW-fsp" secondAttribute="width" id="dHx-wn-5EE"/>
+                            <constraint firstItem="ZLQ-9F-fRV" firstAttribute="leading" secondItem="id1-oX-sp8" secondAttribute="trailing" constant="370" id="gwD-1U-d3g"/>
+                            <constraint firstItem="jFU-QB-HXe" firstAttribute="width" secondItem="ZLQ-9F-fRV" secondAttribute="width" id="jdP-IH-VM6"/>
+                            <constraint firstItem="id1-oX-sp8" firstAttribute="top" secondItem="xM7-uA-mqh" secondAttribute="bottom" constant="8" id="kox-1Z-LlN"/>
+                            <constraint firstAttribute="trailing" secondItem="ZLQ-9F-fRV" secondAttribute="trailing" constant="15" id="n7F-yM-iPM"/>
+                            <constraint firstItem="zfB-rk-8v6" firstAttribute="top" secondItem="id1-oX-sp8" secondAttribute="bottom" constant="12" id="qpP-Im-Cli"/>
+                            <constraint firstItem="id1-oX-sp8" firstAttribute="leading" secondItem="Gy4-AS-lZu" secondAttribute="leading" constant="15" id="rvD-5d-j21"/>
+                            <constraint firstItem="AAB-Ua-kww" firstAttribute="centerX" secondItem="zfB-rk-8v6" secondAttribute="centerX" constant="-0.5" id="tTX-5n-hHs"/>
+                            <constraint firstItem="jFU-QB-HXe" firstAttribute="centerX" secondItem="dh6-tW-fsp" secondAttribute="centerX" id="uUM-nA-gbN"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gwD-1U-d3g"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="mRm-C7-lfF"/>
+                    <connections>
+                        <outlet property="euroBitcoinTextField" destination="jFU-QB-HXe" id="YB4-ZD-tex"/>
+                        <outlet property="euroTextField" destination="zfB-rk-8v6" id="jfl-0R-mXT"/>
+                        <outlet property="poundsBitcoinTextField" destination="dh6-tW-fsp" id="pOP-aT-zY4"/>
+                        <outlet property="poundsTextField" destination="AAB-Ua-kww" id="IBd-E4-D4c"/>
+                        <outlet property="usdBitcoinTextField" destination="ZLQ-9F-fRV" id="zp1-gc-OgO"/>
+                        <outlet property="usdTextField" destination="id1-oX-sp8" id="LNN-nc-kPI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nLu-E9-4JN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2732" y="1175"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hCu-q2-iX6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kqK-p8-xge" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kh3-nS-UZx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gSd-Uw-ukd" kind="relationship" relationship="rootViewController" id="sbg-Zb-V5P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kip-2l-SO8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2058" y="1175"/>
+        </scene>
+    </scenes>
+</document>
