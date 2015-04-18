@@ -6,6 +6,7 @@
 extern const struct VenueAttributes {
 	__unsafe_unretained NSString *category;
 	__unsafe_unretained NSString *city;
+	__unsafe_unretained NSString *icon;
 	__unsafe_unretained NSString *name;
 	__unsafe_unretained NSString *phone;
 	__unsafe_unretained NSString *postalCode;
@@ -36,6 +37,10 @@ extern const struct VenueRelationships {
 @property (nonatomic, strong) NSString* city;
 
 //- (BOOL)validateCity:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSData* icon;
+
+//- (BOOL)validateIcon:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSString* name;
 
@@ -82,6 +87,9 @@ extern const struct VenueRelationships {
 
 - (NSString*)primitiveCity;
 - (void)setPrimitiveCity:(NSString*)value;
+
+- (NSData*)primitiveIcon;
+- (void)setPrimitiveIcon:(NSData*)value;
 
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;

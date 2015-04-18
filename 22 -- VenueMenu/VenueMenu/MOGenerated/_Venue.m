@@ -6,6 +6,7 @@
 const struct VenueAttributes VenueAttributes = {
 	.category = @"category",
 	.city = @"city",
+	.icon = @"icon",
 	.name = @"name",
 	.phone = @"phone",
 	.postalCode = @"postalCode",
@@ -61,6 +62,8 @@ const struct VenueRelationships VenueRelationships = {
 @dynamic category;
 
 @dynamic city;
+
+@dynamic icon;
 
 @dynamic name;
 

@@ -82,7 +82,7 @@
      Venue *theVenue = venuesArray[indexPath.row];
      cell.textLabel.text = theVenue.name;
      
-     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@ %@, %@", theVenue.streeAddress, theVenue.city, theVenue.state, theVenue.postalCode];
+     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@ %@, %@", theVenue.streeAddress, theVenue.city, theVenue.state, theVenue.postalCode]; // theVenue.location.zipCode
      
       [tableView deselectRowAtIndexPath:indexPath animated:YES];
      

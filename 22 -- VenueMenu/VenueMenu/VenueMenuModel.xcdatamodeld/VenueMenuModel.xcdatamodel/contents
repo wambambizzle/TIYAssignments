@@ -8,6 +8,7 @@
     <entity name="Venue" representedClassName="Venue" syncable="YES">
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="city" attributeType="String" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postalCode" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -18,6 +19,6 @@
     </entity>
     <elements>
         <element name="Location" positionX="99" positionY="50" width="128" height="88"/>
-        <element name="Venue" positionX="-63" positionY="9" width="128" height="178"/>
+        <element name="Venue" positionX="-63" positionY="9" width="128" height="195"/>
     </elements>
 </model>

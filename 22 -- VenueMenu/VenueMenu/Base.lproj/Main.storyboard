@@ -230,7 +230,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="5aS-tU-uSe"/>
                     <connections>
                         <outlet property="category" destination="H2c-dU-7b6" id="PED-Rv-FxR"/>
                         <outlet property="city" destination="gEq-Zf-KMF" id="gOp-QD-bUf"/>

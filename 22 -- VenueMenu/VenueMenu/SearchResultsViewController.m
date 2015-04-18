@@ -111,6 +111,7 @@
     aVenue.postalCode =  [f numberFromString:[location objectForKey:@"postalCode"]];
     aVenue.location.latValue = lat;
     aVenue.location.lngValue = lng;
+//    aVenue.icon
     
     [self saveCoreDataUpdates];
     
