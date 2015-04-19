@@ -17,11 +17,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Rates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbD-fw-mke">
-                                <rect key="frame" x="15" y="193" width="570" height="113"/>
-                                <color key="backgroundColor" red="0.74509803919999995" green="0.53725490200000003" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="468" y="184" width="107" height="21"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.96404693279999998" green="1" blue="0.92952568410000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="40" y="231" width="320" height="150"/>
@@ -30,25 +28,10 @@
                                     <outletCollection property="gestureRecognizers" destination="wQ6-Az-mAg" appends="YES" id="Uqc-fe-xjG"/>
                                 </connections>
                             </label>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DM0-lv-XVx">
-                                <rect key="frame" x="15" y="314" width="570" height="113"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="40" y="381" width="320" height="150"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is Bitcoin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCB-yV-pBe">
-                                <rect key="frame" x="15" y="72" width="570" height="113"/>
-                                <color key="backgroundColor" red="0.32959084220000001" green="0.69708952550000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="21" y="184" width="116" height="21"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="113" id="s5U-EH-Xft"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.96404693279999998" green="1" blue="0.92952568410000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="15" y="72" width="320" height="168"/>
@@ -57,22 +40,110 @@
                                     <outletCollection property="gestureRecognizers" destination="AwH-q4-GSb" appends="YES" id="RTn-qk-L2I"/>
                                 </connections>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpC-p9-iEG">
+                                <rect key="frame" x="30" y="79" width="97" height="97"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="KQL-RW-Amh"/>
+                                    <constraint firstAttribute="height" constant="97" id="hba-Bn-DhE"/>
+                                </constraints>
+                                <state key="normal" image="bitinfo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="bitcoinInfoTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QlP-8R-Y8L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zU-9P-8Mt">
+                                <rect key="frame" x="473" y="79" width="97" height="97"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="8D6-Xb-EfZ"/>
+                                    <constraint firstAttribute="height" constant="97" id="sJU-nj-eCO"/>
+                                </constraints>
+                                <state key="normal" image="currentrates">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="currentRatesTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="RE1-db-OuC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iO-fz-LJY">
+                                <rect key="frame" x="473" y="235" width="97" height="97"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="6YD-rW-U7E"/>
+                                    <constraint firstAttribute="width" constant="97" id="Wh4-fC-FYC"/>
+                                </constraints>
+                                <state key="normal" image="calculator">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="priceCalcTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oGX-UM-1Oh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DM0-lv-XVx">
+                                <rect key="frame" x="461" y="340" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="40" y="381" width="320" height="150"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sB-y7-VP2">
+                                <rect key="frame" x="30" y="242" width="97" height="97"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="QY0-Ot-QbN"/>
+                                    <constraint firstAttribute="width" constant="97" id="atO-O2-kFm"/>
+                                </constraints>
+                                <state key="normal" image="unselectedcoinless">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="selectedcoinless"/>
+                                <state key="highlighted" image="selectedcoinless"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coinless" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SP2-Xl-Odb">
+                                <rect key="frame" x="45" y="347" width="66" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="KbD-fw-mke" firstAttribute="top" secondItem="rCB-yV-pBe" secondAttribute="bottom" constant="8" id="G0z-Y0-KCd"/>
-                            <constraint firstItem="rCB-yV-pBe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="15" id="GRQ-62-h31"/>
-                            <constraint firstItem="rCB-yV-pBe" firstAttribute="height" secondItem="KbD-fw-mke" secondAttribute="height" id="OIb-jd-QX4"/>
-                            <constraint firstItem="rCB-yV-pBe" firstAttribute="centerX" secondItem="KbD-fw-mke" secondAttribute="centerX" id="PQg-OU-Ghf"/>
-                            <constraint firstItem="KbD-fw-mke" firstAttribute="centerX" secondItem="DM0-lv-XVx" secondAttribute="centerX" id="SvH-nZ-NkE"/>
-                            <constraint firstAttribute="trailing" secondItem="rCB-yV-pBe" secondAttribute="trailing" constant="15" id="Uty-CA-RaE"/>
-                            <constraint firstItem="KbD-fw-mke" firstAttribute="width" secondItem="DM0-lv-XVx" secondAttribute="width" id="aB5-4k-qti"/>
-                            <constraint firstItem="DM0-lv-XVx" firstAttribute="top" secondItem="KbD-fw-mke" secondAttribute="bottom" constant="8" id="bOg-Pe-Kza"/>
-                            <constraint firstItem="rCB-yV-pBe" firstAttribute="width" secondItem="KbD-fw-mke" secondAttribute="width" id="fNu-yA-eqx"/>
-                            <constraint firstItem="rCB-yV-pBe" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="iHd-kq-ZLD"/>
-                            <constraint firstItem="KbD-fw-mke" firstAttribute="height" secondItem="DM0-lv-XVx" secondAttribute="height" id="jSV-Bt-NJS"/>
+                            <constraint firstItem="4zU-9P-8Mt" firstAttribute="centerX" secondItem="KbD-fw-mke" secondAttribute="centerX" id="2ta-dE-CCq"/>
+                            <constraint firstItem="hpC-p9-iEG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="30" id="4KC-RY-ab6"/>
+                            <constraint firstItem="rCB-yV-pBe" firstAttribute="top" secondItem="hpC-p9-iEG" secondAttribute="bottom" constant="8" id="5xV-hZ-75y"/>
+                            <constraint firstItem="0sB-y7-VP2" firstAttribute="centerX" secondItem="SP2-Xl-Odb" secondAttribute="centerX" constant="0.5" id="Bje-Hd-qdy"/>
+                            <constraint firstItem="3iO-fz-LJY" firstAttribute="centerY" secondItem="4zU-9P-8Mt" secondAttribute="centerY" id="DPc-M7-NJo"/>
+                            <constraint firstItem="hpC-p9-iEG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="GDM-Kz-gat"/>
+                            <constraint firstItem="4zU-9P-8Mt" firstAttribute="leading" secondItem="3iO-fz-LJY" secondAttribute="trailing" constant="79" id="MIN-ww-Ko1"/>
+                            <constraint firstItem="hpC-p9-iEG" firstAttribute="centerY" secondItem="3iO-fz-LJY" secondAttribute="centerY" constant="-5" id="NUZ-sF-xK8"/>
+                            <constraint firstAttribute="trailing" secondItem="4zU-9P-8Mt" secondAttribute="trailing" constant="30" id="QCA-LC-SUs"/>
+                            <constraint firstItem="0sB-y7-VP2" firstAttribute="top" secondItem="rCB-yV-pBe" secondAttribute="bottom" constant="37" id="SRT-Dx-9uE"/>
+                            <constraint firstItem="DM0-lv-XVx" firstAttribute="top" secondItem="3iO-fz-LJY" secondAttribute="bottom" constant="8" id="T50-Al-H10"/>
+                            <constraint firstItem="hpC-p9-iEG" firstAttribute="centerX" secondItem="rCB-yV-pBe" secondAttribute="centerX" id="Ywh-Uc-CSt"/>
+                            <constraint firstItem="SP2-Xl-Odb" firstAttribute="top" secondItem="0sB-y7-VP2" secondAttribute="bottom" constant="8" id="Zy6-3K-yMb"/>
+                            <constraint firstItem="DM0-lv-XVx" firstAttribute="top" secondItem="3iO-fz-LJY" secondAttribute="bottom" constant="8" id="hCc-Rc-Rrg"/>
+                            <constraint firstItem="KbD-fw-mke" firstAttribute="top" secondItem="4zU-9P-8Mt" secondAttribute="bottom" constant="8" id="hKc-Hw-aFS"/>
+                            <constraint firstItem="3iO-fz-LJY" firstAttribute="leading" secondItem="hpC-p9-iEG" secondAttribute="trailing" constant="74" id="kE7-Bf-BoM"/>
+                            <constraint firstItem="3iO-fz-LJY" firstAttribute="centerX" secondItem="DM0-lv-XVx" secondAttribute="centerX" id="nYl-be-bIh"/>
+                            <constraint firstItem="3iO-fz-LJY" firstAttribute="top" secondItem="KbD-fw-mke" secondAttribute="bottom" constant="30" id="qEg-Ol-f1P"/>
+                            <constraint firstItem="rCB-yV-pBe" firstAttribute="centerX" secondItem="0sB-y7-VP2" secondAttribute="centerX" constant="0.5" id="qM8-RV-4xO"/>
+                            <constraint firstAttribute="trailing" secondItem="3iO-fz-LJY" secondAttribute="trailing" constant="25" id="rIW-Gn-s1l"/>
+                            <constraint firstItem="3iO-fz-LJY" firstAttribute="centerX" secondItem="DM0-lv-XVx" secondAttribute="centerX" id="t2W-ix-bLE"/>
+                            <constraint firstItem="4zU-9P-8Mt" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="yYC-XQ-J1r"/>
+                            <constraint firstItem="3iO-fz-LJY" firstAttribute="centerX" secondItem="KbD-fw-mke" secondAttribute="centerX" id="zUd-Va-wAi"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="NUZ-sF-xK8"/>
+                                <exclude reference="MIN-ww-Ko1"/>
+                                <exclude reference="DPc-M7-NJo"/>
+                                <exclude reference="kE7-Bf-BoM"/>
+                                <exclude reference="rIW-Gn-s1l"/>
+                                <exclude reference="t2W-ix-bLE"/>
+                                <exclude reference="hCc-Rc-Rrg"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="VkM-D7-odt" appends="YES" id="LTN-Y9-7R5"/>
                         </connections>
@@ -81,7 +152,7 @@
                     <connections>
                         <outlet property="bitcoinInfoLabel" destination="rCB-yV-pBe" id="n7z-eX-rUo"/>
                         <outlet property="currentRatesLabel" destination="KbD-fw-mke" id="FWX-Vn-q9r"/>
-                        <outlet property="priceCalcLabel" destination="DM0-lv-XVx" id="bt1-y0-exs"/>
+                        <outlet property="priceCalcLabel" destination="DM0-lv-XVx" id="AyI-Zu-BDG"/>
                         <segue destination="wux-pu-Fpr" kind="show" identifier="CurrentRatesSegue" id="ruK-eO-DrN"/>
                         <segue destination="kqK-p8-xge" kind="show" identifier="PriceCalcSegue" id="xrk-Qz-hdR"/>
                         <segue destination="nbj-QV-SnC" kind="presentation" identifier="ShowBitInfoSegue" id="qNT-DL-70b"/>
@@ -208,6 +279,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gO0-ET-CCD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.8901960784313725" green="0.73725490196078436" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -422,4 +497,11 @@
             <point key="canvasLocation" x="2058" y="1175"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bitinfo" width="137" height="138"/>
+        <image name="calculator" width="138" height="138"/>
+        <image name="currentrates" width="137" height="138"/>
+        <image name="selectedcoinless" width="132" height="132"/>
+        <image name="unselectedcoinless" width="132" height="132"/>
+    </resources>
 </document>

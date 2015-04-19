@@ -22,6 +22,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"- Coinless -";
 //    self.bitcoinInfoLabel.layer.borderWidth = 3.0;
 //    self.bitcoinInfoLabel.layer.borderColor = [[UIColor blackColor] CGColor];
     
