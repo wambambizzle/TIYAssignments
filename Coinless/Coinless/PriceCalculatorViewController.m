@@ -11,10 +11,12 @@
 @interface PriceCalculatorViewController () <NSURLSessionDataDelegate, UITextFieldDelegate>
 {
     NSMutableData *_receivedData;
-    double _usdRate;
-    double _euroRate;
-    double _britRate;
+    NSString *_usdRate;
+    NSString *_euroRate;
+    NSString *_poundsRate;
 }
+
+- (IBAction)clearCalcValuesTapped:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *usdTextField;
 @property (weak, nonatomic) IBOutlet UITextField *euroTextField;
@@ -25,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *poundsBitcoinTextField;
 
 - (void)coinDeskAPICall;
+//- (void)calcAllValues;
 
 @end
 
@@ -34,7 +37,15 @@
 {
     [super viewDidLoad];
     [self coinDeskAPICall];
-
+    
+    self.usdTextField.text = @"";
+    self.euroTextField.text = @"";
+    self.poundsTextField.text = @"";
+    
+    self.usdBitcoinTextField.text = @"";
+    self.euroBitcoinTextField.text = @"";
+    self.poundsBitcoinTextField.text = @"";
+    
 
 }
 
@@ -45,26 +56,92 @@
 }
 
 
+- (void)preformCalcConversion
+{
+    if (![self.usdTextField.text isEqualToString:@""] && [self.usdBitcoinTextField.text isEqualToString:@""])
+    {
+        float bitVal = [self.usdTextField.text floatValue] / [_usdRate floatValue];
+        self.usdBitcoinTextField.text = [NSString stringWithFormat:@"฿%g", bitVal];
+    }
+     else if (![self.usdBitcoinTextField.text isEqualToString:@""] && [self.usdTextField.text isEqualToString:@""] )
+    {
+        float currencyVal = [self.usdBitcoinTextField.text floatValue] * [_usdRate floatValue];
+        self.usdTextField.text = [NSString stringWithFormat:@"$%g", currencyVal];
+    }
+    else if (![self.euroTextField.text isEqualToString:@""] && [self.euroBitcoinTextField.text isEqualToString:@""])
+    {
+        float bitVal = [self.euroTextField.text floatValue] / [_euroRate floatValue];
+        self.euroBitcoinTextField.text = [NSString stringWithFormat:@"฿%g", bitVal];
+    }
+    else if (![self.euroBitcoinTextField.text isEqualToString:@""] && [self.euroTextField.text isEqualToString:@""] )
+    {
+        float currencyVal = [self.euroBitcoinTextField.text floatValue] * [_euroRate floatValue];
+        self.euroTextField.text = [NSString stringWithFormat:@"€%g", currencyVal];
+    }
+    else if (![self.poundsTextField.text isEqualToString:@""] && [self.poundsBitcoinTextField.text isEqualToString:@""])
+    {
+        float bitVal = [self.poundsTextField.text floatValue] / [_poundsRate floatValue];
+        self.poundsBitcoinTextField.text = [NSString stringWithFormat:@"฿%g", bitVal];
+    }
+    else if (![self.poundsBitcoinTextField.text isEqualToString:@""] && [self.poundsTextField.text isEqualToString:@""] )
+    {
+        float currencyVal = [self.poundsBitcoinTextField.text floatValue] * [_poundsRate floatValue];
+        self.poundsTextField.text = [NSString stringWithFormat:@"£%g", currencyVal];
+    }
+    
+}
+
 #pragma mark - TextField delegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    BOOL rc = NO;
+    BOOL rc;
     
     if (![textField.text isEqualToString:@""])
     {
         NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
         
-        if ([textField.text length] == 5 && [textField.text rangeOfCharacterFromSet:set].location != NSNotFound)
+        if ([textField.text rangeOfCharacterFromSet:set].location != NSNotFound)
         {
+            if (![textField.text isEqualToString:@""])
+            {
+                rc = YES;
+                [self preformCalcConversion];
+                if (textField == self.usdTextField)
+                {
+                    [self.euroTextField becomeFirstResponder];
+                }
+                else if (textField == self.euroTextField)
+                {
+                    [self.poundsTextField becomeFirstResponder];
+                }
+                else if (textField == self.usdBitcoinTextField)
+                {
+                    [self.euroBitcoinTextField becomeFirstResponder];
+                }
+                else if (textField == self.euroBitcoinTextField)
+                {
+                    [self.poundsBitcoinTextField becomeFirstResponder];
+                }
+
+            }
             [textField resignFirstResponder];
             
-            rc = YES;
         }
 
     }
     
-    return rc;
+    return YES;
+}
+
+- (IBAction)clearCalcValuesTapped:(id)sender
+{
+    self.usdTextField.text = @"";
+    self.euroTextField.text = @"";
+    self.poundsTextField.text = @"";
+    self.usdBitcoinTextField.text = @"";
+    self.euroBitcoinTextField.text = @"";
+    self.poundsBitcoinTextField.text = @"";
 }
 
 #pragma mark - Coinbase Api call
@@ -111,21 +188,15 @@
         NSDictionary *coinBaseDict = [jsonData objectForKey:@"bpi"];
         // USD Parse
         NSDictionary *usdDict = [coinBaseDict objectForKey:@"USD"];
-        NSString *usdRateString = [usdDict objectForKey:@"rate_float"];
-       _usdRate = [usdRateString doubleValue];
+        _usdRate = [usdDict objectForKey:@"rate_float"];
         
         // Euro Parse
         NSDictionary *euroDict = [coinBaseDict objectForKey:@"EUR"];
-        NSString *euroRateString = [euroDict objectForKey:@"rate_float"];
-        _euroRate = [euroRateString doubleValue];
+        _euroRate = [euroDict objectForKey:@"rate_float"];
         
         // GBP Parse
         NSDictionary *britDict = [coinBaseDict objectForKey:@"GBP"];
-        NSString *britRateString = [britDict objectForKey:@"rate_float"];
-        _britRate = [britRateString doubleValue];
-
-        NSLog(@"us:%f, euro:%f, brit:%f",_usdRate, _euroRate, _britRate);
-        
+        _poundsRate = [britDict objectForKey:@"rate_float"];
         
     }
 }

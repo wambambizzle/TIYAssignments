@@ -335,7 +335,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="mRm-C7-lfF"/>
+                    <navigationItem key="navigationItem" id="mRm-C7-lfF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="oPP-Kn-W2Z">
+                            <connections>
+                                <action selector="clearCalcValuesTapped:" destination="gSd-Uw-ukd" id="46v-oK-Jru"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="euroBitcoinTextField" destination="jFU-QB-HXe" id="YB4-ZD-tex"/>
                         <outlet property="euroTextField" destination="zfB-rk-8v6" id="jfl-0R-mXT"/>

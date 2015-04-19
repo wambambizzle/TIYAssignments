@@ -9,9 +9,6 @@
 #import "CoinlessViewController.h"
 #import "CurrentRatesViewController.h"
 
-#import "CurrentRates.h"
-
-
 @interface CoinlessViewController () 
 {
     
