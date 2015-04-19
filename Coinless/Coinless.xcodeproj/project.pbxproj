@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A89FB0D21AE36643003FD85D /* BitInfoRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89FB0D11AE36643003FD85D /* BitInfoRootViewController.m */; };
 		A8AECBD81AE17FD400A650F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AECBD71AE17FD400A650F0 /* main.m */; };
 		A8AECBDB1AE17FD400A650F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AECBDA1AE17FD400A650F0 /* AppDelegate.m */; };
 		A8AECBDE1AE17FD400A650F0 /* CoinlessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AECBDD1AE17FD400A650F0 /* CoinlessViewController.m */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A89FB0D01AE36643003FD85D /* BitInfoRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitInfoRootViewController.h; sourceTree = "<group>"; };
+		A89FB0D11AE36643003FD85D /* BitInfoRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitInfoRootViewController.m; sourceTree = "<group>"; };
 		A8AECBD21AE17FD400A650F0 /* Coinless.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinless.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8AECBD61AE17FD400A650F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8AECBD71AE17FD400A650F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				A8AECC021AE1A2C700A650F0 /* PriceCalculatorViewController.h */,
 				A8AECC031AE1A2C700A650F0 /* PriceCalculatorViewController.m */,
 				A89FB0571AE2D1CE003FD85D /* Model Objects */,
+				A89FB0D01AE36643003FD85D /* BitInfoRootViewController.h */,
+				A89FB0D11AE36643003FD85D /* BitInfoRootViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 			files = (
 				A8AECC041AE1A2C700A650F0 /* PriceCalculatorViewController.m in Sources */,
 				A8AECC001AE19DEC00A650F0 /* CurrentRatesViewController.m in Sources */,
+				A89FB0D21AE36643003FD85D /* BitInfoRootViewController.m in Sources */,
 				A8AECBDE1AE17FD400A650F0 /* CoinlessViewController.m in Sources */,
 				A8AECBDB1AE17FD400A650F0 /* AppDelegate.m in Sources */,
 				A8AECBD81AE17FD400A650F0 /* main.m in Sources */,

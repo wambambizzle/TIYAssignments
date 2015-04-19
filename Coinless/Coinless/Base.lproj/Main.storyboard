@@ -16,23 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is Bitcoin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCB-yV-pBe">
-                                <rect key="frame" x="15" y="72" width="570" height="113"/>
-                                <color key="backgroundColor" red="0.32959084220000001" green="0.69708952550000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="113" id="s5U-EH-Xft"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.96404693279999998" green="1" blue="0.92952568410000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="15" y="72" width="320" height="168"/>
-                                </variation>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="AwH-q4-GSb" appends="YES" id="RTn-qk-L2I"/>
-                                </connections>
-                            </label>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Rates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbD-fw-mke">
                                 <rect key="frame" x="15" y="193" width="570" height="113"/>
                                 <color key="backgroundColor" red="0.74509803919999995" green="0.53725490200000003" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -56,6 +39,23 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="40" y="381" width="320" height="150"/>
                                 </variation>
+                            </label>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is Bitcoin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCB-yV-pBe">
+                                <rect key="frame" x="15" y="72" width="570" height="113"/>
+                                <color key="backgroundColor" red="0.32959084220000001" green="0.69708952550000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="113" id="s5U-EH-Xft"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96404693279999998" green="1" blue="0.92952568410000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="15" y="72" width="320" height="168"/>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="AwH-q4-GSb" appends="YES" id="RTn-qk-L2I"/>
+                                </connections>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -84,6 +84,7 @@
                         <outlet property="priceCalcLabel" destination="DM0-lv-XVx" id="bt1-y0-exs"/>
                         <segue destination="wux-pu-Fpr" kind="show" identifier="CurrentRatesSegue" id="ruK-eO-DrN"/>
                         <segue destination="kqK-p8-xge" kind="show" identifier="PriceCalcSegue" id="xrk-Qz-hdR"/>
+                        <segue destination="nbj-QV-SnC" kind="presentation" identifier="ShowBitInfoSegue" id="qNT-DL-70b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -216,6 +217,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUC-AN-7iu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="642" y="387"/>
+        </scene>
+        <!--Bit Info Root View Controller-->
+        <scene sceneID="O53-hY-2ug">
+            <objects>
+                <viewController id="nbj-QV-SnC" customClass="BitInfoRootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yuj-YV-Kkb"/>
+                        <viewControllerLayoutGuide type="bottom" id="tKG-GT-msd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dDV-2a-SWO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAw-l5-13a">
+                                <rect key="frame" x="284" y="562" width="32" height="30"/>
+                                <state key="normal" title="Hide">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="bitInfoHideModal:" destination="nbj-QV-SnC" eventType="touchUpInside" id="cmi-Rh-Lkj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="rAw-l5-13a" secondAttribute="centerX" id="Tdd-5E-9cc"/>
+                            <constraint firstItem="tKG-GT-msd" firstAttribute="top" secondItem="rAw-l5-13a" secondAttribute="bottom" constant="8" id="tES-OB-eGX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ps-1K-Se6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2048" y="-255"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="z7w-dx-et9">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="oMZ-3E-9Ko" customClass="PageViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A4w-YI-hJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2751" y="-864"/>
+        </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="An0-Vf-gYm">
+            <objects>
+                <viewController storyboardIdentifier="PageContentViewController" id="hW8-BY-XTV" customClass="PageContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aL2-St-Vdw"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mw2-K5-ZG4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sIz-jC-3vQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IrV-4b-BqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2751" y="-194"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nXE-Uq-H85">

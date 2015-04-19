@@ -10,11 +10,6 @@
 #import "CurrentRatesViewController.h"
 
 @interface CoinlessViewController () 
-{
-    
-    NSDictionary *_coinBaseDict;
-    CurrentRatesViewController *curateVC;
-}
 
 @property (weak, nonatomic) IBOutlet UILabel *bitcoinInfoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentRatesLabel;
@@ -40,8 +35,9 @@
 
 - (IBAction)bitcoinInfoTapped:(id)sender
 {
-//    [self performSegueWithIdentifier:@"BitcoinInfoSegue" sender:self];
-//    NSLog(@"Bit Info Tapped");
+    
+[self performSegueWithIdentifier:@"ShowBitInfoSegue" sender:self];
+
 }
 
 - (IBAction)currentRatesTapped:(id)sender
@@ -56,7 +52,6 @@
     
     NSLog(@"Price Calc Tapped");
 }
-
 
 
 
