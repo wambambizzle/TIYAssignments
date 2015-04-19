@@ -9,6 +9,9 @@
 #import "BitInfoRootViewController.h"
 
 @interface BitInfoRootViewController ()
+{
+    UIScrollView *scrollView;
+}
 
 @end
 
