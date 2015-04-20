@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *euroRateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *poundsRateLabel;
 
+
+
 @end
 
 @implementation CurrentRatesViewController

@@ -144,6 +144,14 @@
     self.poundsBitcoinTextField.text = @"";
 }
 
+#pragma mark - UITableView delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  
+}
+
 #pragma mark - Coinbase Api call
 
 
