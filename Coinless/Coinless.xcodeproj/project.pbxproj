@@ -17,6 +17,11 @@
 		A8AECBF21AE17FD400A650F0 /* CoinlessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AECBF11AE17FD400A650F0 /* CoinlessTests.m */; };
 		A8AECC001AE19DEC00A650F0 /* CurrentRatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AECBFF1AE19DEC00A650F0 /* CurrentRatesViewController.m */; };
 		A8AECC041AE1A2C700A650F0 /* PriceCalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AECC031AE1A2C700A650F0 /* PriceCalculatorViewController.m */; };
+		A8EE27671AE46C69001BEF88 /* PricesCalculationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE27661AE46C69001BEF88 /* PricesCalculationsTableViewController.m */; };
+		A8EE276D1AE4795B001BEF88 /* BankGotBTLig in Resources */ = {isa = PBXBuildFile; fileRef = A8EE27691AE4795B001BEF88 /* BankGotBTLig */; };
+		A8EE276E1AE4795B001BEF88 /* BankGotBTMed in Resources */ = {isa = PBXBuildFile; fileRef = A8EE276A1AE4795B001BEF88 /* BankGotBTMed */; };
+		A8EE276F1AE4795B001BEF88 /* BankGothicBT-Light in Resources */ = {isa = PBXBuildFile; fileRef = A8EE276B1AE4795B001BEF88 /* BankGothicBT-Light */; };
+		A8EE27701AE4795B001BEF88 /* BankGothicBT-Medium in Resources */ = {isa = PBXBuildFile; fileRef = A8EE276C1AE4795B001BEF88 /* BankGothicBT-Medium */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,12 @@
 		A8AECBFF1AE19DEC00A650F0 /* CurrentRatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentRatesViewController.m; sourceTree = "<group>"; };
 		A8AECC021AE1A2C700A650F0 /* PriceCalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceCalculatorViewController.h; sourceTree = "<group>"; };
 		A8AECC031AE1A2C700A650F0 /* PriceCalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceCalculatorViewController.m; sourceTree = "<group>"; };
+		A8EE27651AE46C69001BEF88 /* PricesCalculationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PricesCalculationsTableViewController.h; sourceTree = "<group>"; };
+		A8EE27661AE46C69001BEF88 /* PricesCalculationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PricesCalculationsTableViewController.m; sourceTree = "<group>"; };
+		A8EE27691AE4795B001BEF88 /* BankGotBTLig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BankGotBTLig; path = "Bank Gothic/BankGotBTLig"; sourceTree = "<group>"; };
+		A8EE276A1AE4795B001BEF88 /* BankGotBTMed */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BankGotBTMed; path = "Bank Gothic/BankGotBTMed"; sourceTree = "<group>"; };
+		A8EE276B1AE4795B001BEF88 /* BankGothicBT-Light */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "BankGothicBT-Light"; path = "Bank Gothic/BankGothicBT-Light"; sourceTree = "<group>"; };
+		A8EE276C1AE4795B001BEF88 /* BankGothicBT-Medium */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "BankGothicBT-Medium"; path = "Bank Gothic/BankGothicBT-Medium"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +108,10 @@
 		A8AECBD41AE17FD400A650F0 /* Coinless */ = {
 			isa = PBXGroup;
 			children = (
+				A8EE27691AE4795B001BEF88 /* BankGotBTLig */,
+				A8EE276A1AE4795B001BEF88 /* BankGotBTMed */,
+				A8EE276B1AE4795B001BEF88 /* BankGothicBT-Light */,
+				A8EE276C1AE4795B001BEF88 /* BankGothicBT-Medium */,
 				A8AECBD91AE17FD400A650F0 /* AppDelegate.h */,
 				A8AECBDA1AE17FD400A650F0 /* AppDelegate.m */,
 				A8AECC011AE19DF700A650F0 /* View Controllers */,
@@ -141,6 +156,8 @@
 				A8AECBDD1AE17FD400A650F0 /* CoinlessViewController.m */,
 				A8AECBFE1AE19DEC00A650F0 /* CurrentRatesViewController.h */,
 				A8AECBFF1AE19DEC00A650F0 /* CurrentRatesViewController.m */,
+				A8EE27651AE46C69001BEF88 /* PricesCalculationsTableViewController.h */,
+				A8EE27661AE46C69001BEF88 /* PricesCalculationsTableViewController.m */,
 				A8AECC021AE1A2C700A650F0 /* PriceCalculatorViewController.h */,
 				A8AECC031AE1A2C700A650F0 /* PriceCalculatorViewController.m */,
 				A89FB0571AE2D1CE003FD85D /* Model Objects */,
@@ -230,9 +247,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8EE276D1AE4795B001BEF88 /* BankGotBTLig in Resources */,
 				A8AECBE11AE17FD400A650F0 /* Main.storyboard in Resources */,
 				A8AECBE61AE17FD400A650F0 /* LaunchScreen.xib in Resources */,
+				A8EE276E1AE4795B001BEF88 /* BankGotBTMed in Resources */,
 				A8AECBE31AE17FD400A650F0 /* Images.xcassets in Resources */,
+				A8EE276F1AE4795B001BEF88 /* BankGothicBT-Light in Resources */,
+				A8EE27701AE4795B001BEF88 /* BankGothicBT-Medium in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +275,7 @@
 				A8AECC001AE19DEC00A650F0 /* CurrentRatesViewController.m in Sources */,
 				A89FB0D21AE36643003FD85D /* BitInfoRootViewController.m in Sources */,
 				A8AECBDE1AE17FD400A650F0 /* CoinlessViewController.m in Sources */,
+				A8EE27671AE46C69001BEF88 /* PricesCalculationsTableViewController.m in Sources */,
 				A8AECBDB1AE17FD400A650F0 /* AppDelegate.m in Sources */,
 				A8AECBD81AE17FD400A650F0 /* main.m in Sources */,
 			);
