@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "selectedcoinless.png"
+      "filename" : "selectedCoinless.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "selectedcoinless@2x.png"
+      "filename" : "selectedCoinless@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "selectedcoinless@3x.png"
+      "filename" : "selectedCoinless@3x.png"
     }
   ],
   "info" : {

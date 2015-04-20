@@ -26,7 +26,7 @@
 {
     [super viewDidLoad];
     [self coinDeskAPICall];
-
+    self.title = @"Current Rates";
 }
 
 - (void)didReceiveMemoryWarning

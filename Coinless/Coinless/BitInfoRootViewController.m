@@ -9,9 +9,6 @@
 #import "BitInfoRootViewController.h"
 
 @interface BitInfoRootViewController ()
-{
-    UIScrollView *scrollView;
-}
 
 @end
 
@@ -20,12 +17,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.title = @"Bitcoin Basics";
+
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 -(IBAction)bitInfoHideModal:(id)sender
