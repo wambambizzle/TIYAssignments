@@ -49,6 +49,7 @@
     
     [dataTask resume];
 
+
 }
 
 -(IBAction)cancelButtonTapped:(id)sender
@@ -91,6 +92,10 @@
 //        NSLog(@"%@", self.friends);
 
         [self cancel];
+    }
+    else if (error)
+    {
+        NSLog(@"Sorry there was an error");
     }
 }
 

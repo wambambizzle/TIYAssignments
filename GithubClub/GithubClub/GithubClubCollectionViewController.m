@@ -159,14 +159,7 @@ static NSString * const reuseIdentifier = @"Cell";
         NSDictionary *aHub = _friends[indexPath.row];
 
         userDetailVC.userDetails = aHub;
-
-        
-        
-//        FriendDetialViewController *detailVC = [segue destinationViewController];
-//        GitFriendsCell *senderCell = (GitFriendsCell *)sender;
-//        NSIndexPath *indexPath = [self.collectionView indexPathForCell:senderCell];
-//        NSDictionary *aFriend = gitFriendsArray[indexPath.row];
-//        detailVC.friends = aFriend;
+        NSLog(@"userdetails: %@", userDetailVC.userDetails);
         
     }
     
