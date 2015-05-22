@@ -31,7 +31,8 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
@@ -54,7 +55,8 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -69,7 +71,9 @@
     {
         BirthdayPickerViewController *bdayPickerVC = (BirthdayPickerViewController *)[segue destinationViewController];
         
-        bdayPickerVC.delegate = self; // assigning a pointer or memory location (object) of the self object to the bdaypicker.delegate 
+        bdayPickerVC.delegate = self; // assigning a pointer or memory location (object) of the self object to the bdaypicker.delegate
+        
+        self.usersAgeLabel.text = @"--";
     }
     
 }
@@ -113,7 +117,6 @@
 }
 
 
-
 - (IBAction)calculateAge:(UIButton *)sender
 {
     if (usersBirthDate)
@@ -122,22 +125,8 @@
         
     }
     
-   
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
