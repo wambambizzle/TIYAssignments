@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>8170431E-5327-4C52-AEDB-9EF92C1BADEF</string>
 	<key>IDESourceControlProjectName</key>
-	<string>CoreList</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>8857142BA431033B1E2C809D422317A36461A458</key>
 		<string>https://www.github.com/wambambizzle/TIYAssignments.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>20 -- CoreList/CoreList.xcodeproj</string>
+	<string>20 -- CoreList/CoreList.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>8857142BA431033B1E2C809D422317A36461A458</key>
