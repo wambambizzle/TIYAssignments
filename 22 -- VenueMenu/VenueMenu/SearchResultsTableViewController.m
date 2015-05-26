@@ -131,7 +131,14 @@
 {
     [searchBar resignFirstResponder];
     
+    if (locationManager)
+    {
+        [self foursquareURLSession];
+    }
+    
     [self configureLocationManager];
+    
+
 }
 
 

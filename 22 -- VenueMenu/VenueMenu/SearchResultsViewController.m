@@ -22,6 +22,7 @@
 {
     double lat;
     double lng;
+    NSData *iconData;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *name;
@@ -64,7 +65,15 @@
     
     NSDictionary *contact = [self.aVenue objectForKey:@"contact"];
     self.phoneNumber.text = [contact objectForKey:@"formattedPhone"];
-
+    
+    NSDictionary *iconA = [categories objectAtIndex:0];
+    NSDictionary *iconTrue = [iconA objectForKey:@"icon"];
+    NSString *prefix = [iconTrue objectForKey:@"prefix"];
+    NSString *suffix = [iconTrue objectForKey:@"suffix"];
+    
+    NSString *icon = [NSString stringWithFormat:@"%@44%@", prefix, suffix];
+    NSURL *iconURL = [NSURL URLWithString:icon];
+    iconData = [NSData dataWithContentsOfURL:iconURL];
     
 }
 
@@ -111,7 +120,8 @@
     aVenue.postalCode =  [f numberFromString:[location objectForKey:@"postalCode"]];
     aVenue.location.latValue = lat;
     aVenue.location.lngValue = lng;
-//    aVenue.icon
+    aVenue.icon = iconData;
+    
     
     [self saveCoreDataUpdates];
     

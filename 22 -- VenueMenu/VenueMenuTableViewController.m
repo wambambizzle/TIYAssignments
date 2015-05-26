@@ -84,6 +84,9 @@
      
      cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@ %@, %@", theVenue.streeAddress, theVenue.city, theVenue.state, theVenue.postalCode]; // theVenue.location.zipCode
      
+     UIImage *icon =  [UIImage imageWithData:theVenue.icon];
+     cell.imageView.image = icon;
+     
       [tableView deselectRowAtIndexPath:indexPath animated:YES];
      
     
@@ -105,7 +108,7 @@
     else if ([segue.identifier isEqualToString:@"ShowDetailSegue"])
     {
         SearchResultsViewController *searchDetailsVC = [segue destinationViewController];
-        //use the venu object
+
     }
 }
 
