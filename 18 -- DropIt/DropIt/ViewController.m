@@ -91,8 +91,15 @@
 
 - (IBAction)addNewPinButton:(UIBarButtonItem *)sender
 {
-    [self addAnnotationMap];
-    self.currentLocation.name = self.titleTextField.text;
+    if (![self.titleTextField.text  isEqualToString:@""])
+    {
+        [self addAnnotationMap];
+        self.currentLocation.name = self.titleTextField.text;
+        
+        [self.titleTextField resignFirstResponder];
+        self.titleTextField.text = @"";
+
+    }
 }
 
 - (IBAction)clearPinsButton:(UIBarButtonItem *)sender
@@ -100,7 +107,7 @@
     [self.mapView removeAnnotation:self.currentLocation];
     self.currentLocation = nil;
     
-    [self configureLocationManager];
+//    [self configureLocationManager];
 }
 
 #pragma mark - Configure map view

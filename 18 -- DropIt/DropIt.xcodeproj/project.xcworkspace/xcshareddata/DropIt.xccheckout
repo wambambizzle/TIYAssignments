@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>A8B5931D-1F39-4BB5-BCFA-35463E0140D1</string>
 	<key>IDESourceControlProjectName</key>
-	<string>DropIt</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>8857142BA431033B1E2C809D422317A36461A458</key>
 		<string>https://www.github.com/wambambizzle/TIYAssignments.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>18 -- DropIt/DropIt.xcodeproj</string>
+	<string>18 -- DropIt/DropIt.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>8857142BA431033B1E2C809D422317A36461A458</key>
