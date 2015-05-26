@@ -74,6 +74,7 @@
     Count *item = counterList[indexPath.row];
     
     cell.countDescriptionTextField.text = @"";
+    cell.countLabel.text = @"0";
     
     if (item.name)
     {
