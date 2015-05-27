@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>4F6BBAA9-523B-4C86-86C0-24118D4F462B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>StormCaster</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>8857142BA431033B1E2C809D422317A36461A458</key>
 		<string>https://www.github.com/wambambizzle/TIYAssignments.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>17 -- StormCaster 2/StormCaster.xcodeproj</string>
+	<string>17 -- StormCaster 2/StormCaster.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>8857142BA431033B1E2C809D422317A36461A458</key>
