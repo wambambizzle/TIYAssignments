@@ -42,7 +42,13 @@
         [[NetworkManager sharedNetworkManager] fetchCurrentWeatherForCities:cities];
     }
     
-    self.title = @"City";
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"HelveticaNeue-Light" size:20],
+      NSFontAttributeName,
+      [UIColor whiteColor],NSForegroundColorAttributeName, nil]];
+    
+    self.title = @"Stormcaster";
     [NetworkManager sharedNetworkManager].delegate = self;
    // self.navigationItem.leftBarButtonItem = self.editButtonItem;
     

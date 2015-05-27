@@ -34,6 +34,12 @@
 {
     [super viewDidLoad];
     
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"HelveticaNeue-Light" size:20],
+      NSFontAttributeName,
+      [UIColor whiteColor],NSForegroundColorAttributeName, nil]];
+    
     self.navigationItem.backBarButtonItem.tintColor = [UIColor colorWithRed:192 green:161 blue:255 alpha:1];
     self.title = self.aCity.name;
  //    self.cityName.text = self.aCity.name;

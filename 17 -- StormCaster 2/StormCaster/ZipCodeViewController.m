@@ -41,6 +41,13 @@
 {
     [super viewDidLoad];
 //    self.navigationItem.prompt = @"Please enter a zipcode to find the current weather conditions";
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"HelveticaNeue-Light" size:20],
+      NSFontAttributeName,
+      [UIColor whiteColor],NSForegroundColorAttributeName, nil]];
+    
     self.title = @"Add a City";
     geocoder = [[CLGeocoder alloc] init];
     
